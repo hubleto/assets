@@ -7424,7 +7424,7 @@ body.ajax-loading #logo {
   font-family: 'Gabarito';
   font-style: normal;
   font-weight: 500;
-  src: url("../../../vendor/hubleto/main/assets/fonts/Gabarito/static/Gabarito-Regular.ttf") format('truetype');
+  src: url("../../fonts/Gabarito/static/Gabarito-Regular.ttf") format('truetype');
 }
 /*!
  * Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com
