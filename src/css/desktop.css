@@ -14,7 +14,7 @@
   table tr td { @apply p-1; } */
 
   input, select, textarea { @apply bg-white/20 border-slate-500 border rounded p-1; }
-
+  code { @apply bg-slate-100 p-1; }
 
   /* SPECIAL components, idetified by # id */
   aside#default-sidebar { @apply flex fixed top-0 left-0 z-10 mt-12 h-full transition-transform -translate-x-full md:translate-x-0; }
