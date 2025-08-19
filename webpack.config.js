@@ -20,7 +20,7 @@ module.exports = (env, arg) => {
     entry: {
       main: [
         './src/Main',
-        ...loadEntriesFromRepository(path.resolve(__dirname, '../src')),
+        ...loadEntriesFromRepository(path.resolve(__dirname, '../apps/src')),
       ],
     },
     output: {
@@ -43,13 +43,13 @@ module.exports = (env, arg) => {
     resolve: {
       modules: [
         path.resolve(__dirname, './node_modules'),
-        path.resolve(__dirname, '../hubleto/react-ui/node_modules'),
+        path.resolve(__dirname, '../react-ui/node_modules'),
       ],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
       alias: {
-        '@hubleto/ui/core': path.resolve(__dirname, '../framework/src/Components/Core'),
-        '@hubleto/ui/ext': path.resolve(__dirname, '../framework/src/Components/Ext'),
-        '@hubleto/framework': path.resolve(__dirname, '../framework'),
+        '@hubleto/react-ui/core': path.resolve(__dirname, '../react-ui/core'),
+        '@hubleto/react-ui/ext': path.resolve(__dirname, '../react-ui/ext'),
+        // '@hubleto/framework': path.resolve(__dirname, '../framework'),
         '@hubleto/apps': path.resolve(__dirname, '../apps/src'),
       },
     }
