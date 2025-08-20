@@ -68,6 +68,13 @@ class HubletoMain extends HubletoReactUi {
     this.registerReactComponent('Tooltip', Tooltip);
   }
 
+  init() {
+    for (let appNamespace in this.apps) {
+      // console.log('Init app ' + appNamespace);
+      this.apps[appNamespace].init();
+    }
+  }
+
   translate(orig: string, context?: string): string {
     let translated: string = orig;
 
@@ -215,6 +222,7 @@ globalThis.main = main;
 
 document.addEventListener('readystatechange', function() {
   if (document.readyState === 'complete') {
+    globalThis.main.init();
     globalThis.main.renderReactElements();
     globalThis.main.createThemeObserver();
   }
