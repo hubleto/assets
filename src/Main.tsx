@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import 'primereact/resources/themes/lara-light-teal/theme.css';
 
 import { HubletoReactUi } from "@hubleto/react-ui/core/Loader";
+import HubletoApp from '@hubleto/react-ui/ext/HubletoApp'
 import request from "@hubleto/react-ui/core/Request";
 
 import Modal from "@hubleto/react-ui/core/ModalSimple";
@@ -74,8 +75,6 @@ class HubletoMain extends HubletoReactUi {
     const contextClass = tmp[0];
     const contextInner = tmp[1];
 
-    // console.log('translate', contextClass, contextInner, orig, this.dictionary, this.dictionary[contextClass], this.dictionary[contextClass][contextInner]);
-
     if (this.dictionary === null) return orig;
 
     if (
@@ -84,10 +83,8 @@ class HubletoMain extends HubletoReactUi {
       && this.dictionary[contextClass][contextInner][orig]
       && this.dictionary[contextClass][contextInner][orig] != ''
     ) {
-      console.log('tr1');
       translated = this.dictionary[contextClass][contextInner][orig] ?? '';
     } else {
-      console.log('tr2');
       translated = '';
       this.addToDictionary(orig, context);
     }
@@ -114,13 +111,20 @@ class HubletoMain extends HubletoReactUi {
   addToDictionary(orig: string, context: string) {
     request.get(
       'api/dictionary',
-      { language: this.language, addNew: { orig: orig, context: context } },
+      {
+        language: this.language,
+        addNew: { orig: orig, context: context }
+      },
     );
   }
 
-  registerApp(appUid, appClass) {
-    // console.log('registeringApp', appUid, appClass);
-    this.apps[appUid] = new appClass(this);
+  registerApp(appNamespace: string, app: HubletoApp) {
+    app.namespace = appNamespace;
+    this.apps[appNamespace] = app;
+  }
+
+  getApp(appNamespace: string) {
+    return this.apps[appNamespace] ?? null;
   }
 
   createThemeObserver() {
