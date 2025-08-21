@@ -50,7 +50,7 @@
 
   .app-launcher-show-btn { @apply cursor-pointer bg-primary/70 text-white text-xs m-1 p-1 flex items-center gap-2 justify-center rounded hover:bg-primary; }
 
-  aside#default-sidebar > nav { @apply w-48 !bg-white border-r border-primary/20; }
+  aside#default-sidebar > nav { @apply w-48 !bg-white; }
   aside#default-sidebar > nav .btn { @apply hover:bg-primary/10 pl-1; }
   aside#default-sidebar > nav .btn .icon { @apply text-gray-800; }
   aside#default-sidebar > nav .btn .text { @apply text-gray-800; }
@@ -82,5 +82,8 @@
 
   .fc .fc-toolbar-title { @apply !text-base; }
 
-  .sidebar-group-btns { @apply ml-1 p-1 rounded my-1 bg-primary/10; }
+  .sidebar-group .sidebar-group-btns { @apply hidden border border-primary/20 rounded relative p-1 my-2 bg-white shadow border-blue-600 ; }
+  .sidebar-group.activated > .btn { @apply bg-primary/20; }
+  .sidebar-group.activated .sidebar-group-btns { @apply block; }
+  
 }
