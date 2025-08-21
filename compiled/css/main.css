@@ -1819,6 +1819,9 @@
   .bg-slate-50 {
     background-color: var(--color-slate-50);
   }
+  .bg-slate-800 {
+    background-color: var(--color-slate-800);
+  }
   .bg-transparent {
     background-color: transparent;
   }
