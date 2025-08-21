@@ -4,6 +4,7 @@
 
   .p-progressbar .p-progressbar-value { @apply bg-primary; }
   .p-datatable .p-datatable-tbody > tr > td { @apply border-gray-50 dark:border-slate-600; }
+  .p-datatable .p-datatable-tbody > tr.p-highlight { @apply bg-primary/20 text-primary; }
   .p-datatable .p-datatable-thead > tr > th { @apply p-1 dark:bg-slate-800 dark:text-white dark:border-slate-800; }
   .p-datatable .p-datatable-thead > tr > th .p-sortable-column-icon { @apply scale-[0.75] dark:text-gray-400; }
   .p-datatable .p-sortable-column.p-highlight { @apply bg-slate-100; }
