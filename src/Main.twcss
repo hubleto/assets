@@ -48,7 +48,7 @@
   #app-main-content > h1, h1.app-main-title { @apply flex justify-between w-full p-0 pb-2 m-0 border-b border-b-primary/20 mb-2 text-primary dark:text-white; }
   h1.app-main-title .app-main-title-buttons { @apply text-base }
 
-  .app-launcher-show-btn { @apply cursor-pointer bg-primary/70 text-white text-xs m-1 p-1 flex items-center gap-2 justify-center rounded hover:bg-primary; }
+  .app-launcher-show-btn { @apply cursor-pointer border border-primary text-primary m-1 p-1 flex items-center gap-2 justify-center rounded hover:bg-primary hover:text-white; }
 
   aside#default-sidebar > nav { @apply w-48 !bg-white; }
   aside#default-sidebar > nav .btn { @apply hover:bg-primary/10 pl-1; }
@@ -65,8 +65,8 @@
   #app-launcher > div .app-launcher-header { @apply w-full; }
   #app-launcher > div .app-launcher-header input { @apply bg-white w-1/2 mr-2 text-lg border border-primary rounded p-2; }
   #app-launcher > div .app-launcher-app-button { @apply text-slate-800 cursor-pointer w-1/6 bg-white shadow-sm flex flex-col border border-primary hover:bg-primary hover:text-white; }
-  #app-launcher > div .app-launcher-app-button .icon { @apply p-4 text-center text-4xl; }
-  #app-launcher > div .app-launcher-app-button .text { @apply p-4 text-center; }
+  #app-launcher > div .app-launcher-app-button .icon { @apply p-2 text-center text-2xl; }
+  #app-launcher > div .app-launcher-app-button .text { @apply p-2 text-center; }
 
   .btn-add { @apply bg-amber-600 hover:bg-amber-400; }
   .btn-add-outline { @apply border-amber-600 text-amber-600 border-solid hover:bg-amber-600/20; }
