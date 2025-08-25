@@ -1817,9 +1817,6 @@
   .bg-slate-100 {
     background-color: var(--color-slate-100);
   }
-  .bg-slate-200 {
-    background-color: var(--color-slate-200);
-  }
   .bg-slate-300 {
     background-color: var(--color-slate-300);
   }
@@ -2319,9 +2316,6 @@
   }
   .opacity-60 {
     opacity: 60%;
-  }
-  .opacity-75 {
-    opacity: 75%;
   }
   .opacity-85 {
     opacity: 85%;
