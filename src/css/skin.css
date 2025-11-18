@@ -130,7 +130,7 @@
 
   .card { @apply flex flex-col border border-solid border-slate-200 rounded shadow hover:shadow-lg dark:bg-gray-900 dark:border-gray-800 dark:text-white; }
   .card.card-horizontal { @apply flex flex-row; }
-  .card-header { @apply flex justify-between items-center font-bold p-2 text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white; }
+  .card-header { @apply flex justify-between items-center font-bold p-2 text-gray-700 dark:!bg-gray-800 dark:!border-gray-700 dark:!text-white; }
   .card.card-horizontal .card-header { @apply border-none; }
   .card-header-buttons { @apply -m-4; }
   .card-header-buttons .btn { @apply font-normal p-4 border-none rounded-none; }
