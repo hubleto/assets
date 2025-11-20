@@ -33,6 +33,7 @@ import { Tooltip } from "primereact/tooltip";
 
 class HubletoErp extends HubletoReactUi {
   language: string = 'en';
+  currencySymbol: string = '€';
   idUser: number = 0;
   userEmail: string = '';
   isPremium: boolean = false;
@@ -190,6 +191,7 @@ class HubletoErp extends HubletoReactUi {
     value = (value ?? '').toString().replace(/[^0-9+\-Ee.]/g, '');
 
     let n = parseFloat(value);
+    if (isNaN(n)) n = 0;
 
     n = Math.round(n * Math.pow(10, decimals)) / Math.pow(10, decimals);
     let [integerPart, fractionalPart] = n.toString().split('.');
@@ -234,9 +236,10 @@ class HubletoErp extends HubletoReactUi {
 }
 
 //@ts-ignore
-const main: HubletoErp = new HubletoErp(window.ConfigEnv);
+const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
 
-globalThis.main = main;
+globalThis.main = hubleto; // deprecated
+globalThis.hubleto = hubleto;
 
 document.addEventListener('readystatechange', function() {
   if (document.readyState === 'complete') {
