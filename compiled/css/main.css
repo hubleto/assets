@@ -846,6 +846,9 @@
   .max-h-\[1000px\] {
     max-height: 1000px;
   }
+  .max-h-none {
+    max-height: none;
+  }
   .min-h-0 {
     min-height: calc(var(--spacing) * 0);
   }
@@ -1061,6 +1064,9 @@
   }
   .flex-3 {
     flex: 3;
+  }
+  .flex-5 {
+    flex: 5;
   }
   .flex-6 {
     flex: 6;
@@ -1701,9 +1707,6 @@
   .border-t-blue-400 {
     border-top-color: var(--color-blue-400);
   }
-  .border-t-blue-600 {
-    border-top-color: var(--color-blue-600);
-  }
   .border-t-gray-600 {
     border-top-color: var(--color-gray-600);
   }
@@ -1716,9 +1719,6 @@
   .border-t-orange-300 {
     border-top-color: var(--color-orange-300);
   }
-  .border-t-slate-600 {
-    border-top-color: var(--color-slate-600);
-  }
   .border-r-gray-600 {
     border-right-color: var(--color-gray-600);
   }
@@ -1727,9 +1727,6 @@
   }
   .border-b-gray-600 {
     border-bottom-color: var(--color-gray-600);
-  }
-  .border-b-red-800 {
-    border-bottom-color: var(--color-red-800);
   }
   .border-l-gray-600 {
     border-left-color: var(--color-gray-600);
@@ -1860,12 +1857,6 @@
       background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
     }
   }
-  .bg-primary\/20 {
-    background-color: color-mix(in srgb, #4780bf 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
-    }
-  }
   .bg-purple-500 {
     background-color: var(--color-purple-500);
   }
@@ -1936,10 +1927,6 @@
   }
   .from-red-50 {
     --tw-gradient-from: var(--color-red-50);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .from-slate-100 {
-    --tw-gradient-from: var(--color-slate-100);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-white {
@@ -3907,6 +3894,12 @@
       border-bottom-width: 1px;
     }
   }
+  .dark\:border-none {
+    &:where(.dark, .dark *) {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
   .dark\:border-blue-300 {
     &:where(.dark, .dark *) {
       border-color: var(--color-blue-300);
@@ -3958,6 +3951,11 @@
   .dark\:border-sky-300 {
     &:where(.dark, .dark *) {
       border-color: var(--color-sky-300);
+    }
+  }
+  .dark\:border-slate-600 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-600);
     }
   }
   .dark\:border-b-gray-700 {
@@ -4060,6 +4058,11 @@
       background-color: var(--color-orange-400);
     }
   }
+  .dark\:bg-primary {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-primary);
+    }
+  }
   .dark\:bg-purple-400 {
     &:where(.dark, .dark *) {
       background-color: var(--color-purple-400);
@@ -4093,6 +4096,14 @@
   .dark\:bg-transparent {
     &:where(.dark, .dark *) {
       background-color: transparent;
+    }
+  }
+  .dark\:bg-white\/20 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in srgb, #fff 20%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+      }
     }
   }
   .dark\:stroke-gray-700 {
@@ -5164,14 +5175,16 @@ body.ajax-loading #logo {
       --tw-border-style: none;
       border-style: none;
     }
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
     border-left-width: 1px;
     border-left-style: var(--tw-border-style);
-    border-left-width: 4px;
-    border-left-color: var(--color-primary);
+    border-left-width: 6px;
+    border-color: var(--color-primary);
     color: var(--color-primary);
   }
   .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div {
-    padding-left: calc(var(--spacing) * 2);
+    margin-left: calc(var(--spacing) * 2);
   }
   .hubleto.component.table .table-body tr td {
     cursor: pointer;
@@ -5189,13 +5202,10 @@ body.ajax-loading #logo {
     color: var(--color-red-500);
   }
   .hubleto.component.table .table-cell-content {
-    max-width: calc(var(--spacing) * 48);
+    max-width: calc(var(--spacing) * 90);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    @media (width >= 48rem) {
-      max-width: none;
-    }
   }
   .hubleto.component.table .table-cell-content.column-lookup {
     color: var(--color-primary);
@@ -5960,7 +5970,9 @@ body.ajax-loading #logo {
     height: auto;
   }
   .btn .icon {
+    display: flex;
     height: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-color: var(--color-slate-200);
@@ -5977,13 +5989,11 @@ body.ajax-loading #logo {
     overflow: hidden;
   }
   .btn .shortcut {
-    margin-right: calc(var(--spacing) * 1);
     flex: 1;
-    text-align: right;
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
+    padding-top: calc(var(--spacing) * 1);
     color: var(--color-gray-400);
     max-height: 3.5rem;
+    font-size: 0.5em;
     overflow: hidden;
   }
   .btn .hover {
@@ -7451,9 +7461,9 @@ body.ajax-loading #logo {
     @supports (color: color-mix(in lab, red, red)) {
       border-bottom-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
     }
-    background-color: color-mix(in srgb, #4780bf 5%, transparent);
+    background-color: color-mix(in srgb, #4780bf 8%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-primary) 5%, transparent);
+      background-color: color-mix(in oklab, var(--color-primary) 8%, transparent);
     }
     padding: calc(var(--spacing) * 2);
     color: var(--color-primary);
@@ -7466,6 +7476,13 @@ body.ajax-loading #logo {
     &:where(.dark, .dark *) {
       color: var(--color-white);
     }
+  }
+  .modal > .modal-inner > .modal-header:not(.active) {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-500);
+  }
+  .modal > .modal-inner > .modal-header:not(.active) * {
+    color: var(--color-gray-500) !important;
   }
   .modal > .modal-inner > .modal-header > .modal-header-left {
     display: flex;

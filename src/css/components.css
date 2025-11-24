@@ -20,9 +20,9 @@
   /* .hubleto.component.table .table-body tbody tr td > div { @apply; } */
   .hubleto.component.table .table-body tbody tr td .inline-edit-icon { @apply invisible cursor-pointer; }
   .hubleto.component.table .table-body tbody tr td:hover .inline-edit-icon { @apply visible; }
-  .hubleto.component.table .table-body tr.highlighted { @apply divide-none text-primary border-l border-l-primary border-l-4; }
+  .hubleto.component.table .table-body tr.highlighted { @apply divide-none text-primary border-primary border-l border-l-6 border-t border-t-1; }
   /* .hubleto.component.table .table-body tr.highlighted td > div { @apply border-b border-primary dark:bg-slate-600 dark:border-slate-600; } */
-  .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div { @apply pl-2; }
+  .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div { @apply ml-2; }
   .hubleto.component.table .table-body tr td { @apply cursor-pointer; }
   .hubleto.component.input.table { @apply max-w-[100%] }
 
@@ -31,7 +31,7 @@
   .hubleto.component.table .table-body tbody tr td .to-be-deleted { @apply bg-red-500; }
   .hubleto.component.table .table-body tbody tr td .to-be-deleted input { @apply text-red-500; }
 
-  .hubleto.component.table .table-cell-content { @apply truncate whitespace-nowrap max-w-48 md:max-w-none; }
+  .hubleto.component.table .table-cell-content { @apply truncate max-w-90; }
   .hubleto.component.table .table-cell-content.column-lookup { @apply text-primary dark:text-white; }
   .hubleto.component.table .table-cell-content.column-int { @apply text-right font-semibold; }
   .hubleto.component.table .table-cell-content.column-float { @apply text-right font-semibold; }

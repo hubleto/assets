@@ -250,8 +250,43 @@ document.addEventListener('readystatechange', function() {
 });
 
 document.addEventListener('keydown', function(e) {
+  // console.log('keydown', e);
   if (e.ctrlKey && e.key === 'k') {
-    globalThis.main.reactElements['global-fulltext-search'].searchRef.current.focus();
+    globalThis.hubleto.reactElements['global-fulltext-search'].searchRef.current.focus();
     e.preventDefault();
   }
+  if (e.ctrlKey && e.key === 's') {
+    const activeForm = globalThis.hubleto.getActiveFormInStack();
+    if (activeForm) {
+      activeForm.saveRecord();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+  if (e.ctrlKey && e.shiftKey && e.key === 'ArrowRight') {
+    const activeForm = globalThis.hubleto.getActiveFormInStack();
+    if (activeForm) {
+      activeForm.openNextRecord();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+  if (e.ctrlKey && e.shiftKey && e.key === 'ArrowLeft') {
+    const activeForm = globalThis.hubleto.getActiveFormInStack();
+    if (activeForm) {
+      activeForm.openPrevRecord();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+  if (e.key === 'Escape') {
+    const activeForm = globalThis.hubleto.getActiveFormInStack();
+    if (activeForm) {
+      activeForm.closeForm();
+    }
+  }
+  // // if (e.code === 27) {
+  // //   globalThis.main.reactElements['global-fulltext-search'].searchRef.current.focus();
+  // //   e.preventDefault();
+  // // }
 });

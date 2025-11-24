@@ -38,9 +38,9 @@
 
   .btn { @apply relative rounded inline-flex text-left p-0 m-0 min-h-4 items-center bg-primary text-white cursor-pointer border-slate-200 hover:bg-secondary hover:text-white hover:no-underline; box-sizing: border-box; }
   .btn.btn-small { @apply h-auto; }
-  .btn .icon { @apply h-full items-center px-2 py-1 justify-center border-slate-200; }
+  .btn .icon { @apply h-full items-center px-2 py-1 justify-center border-slate-200 flex flex-col; }
   .btn .text { @apply h-full items-center px-2 py-1 break-words; max-height: 3.5rem; overflow: hidden; }
-  .btn .shortcut { @apply flex-1 text-right mr-1 text-xs text-gray-400; max-height: 3.5rem; overflow: hidden; }
+  .btn .shortcut { @apply flex-1 text-gray-400 pt-1; max-height: 3.5rem; font-size: 0.5em; overflow: hidden; }
   .btn .hover { @apply hidden absolute text-nowrap text-gray-800 top-10 left-2 p-2 border border-gray-200 bg-gray-50 shadow-lg rounded-lg; z-index: 999999; }
   .btn:hover .hover { @apply block; }
 
@@ -228,7 +228,9 @@
   .modal.inside-parent > .modal-inner { @apply border border-primary shadow; width: calc(100% - 2em); margin: 1em; background: white; }
 
   .modal > .modal-inner { @apply flex flex-col w-full h-full; }
-  .modal > .modal-inner > .modal-header { @apply flex items-center border-b border-b-primary/20 text-primary dark:text-white dark:bg-slate-900 dark:border-slate-800 items-baseline w-full justify-between p-2 bg-primary/5; }
+  .modal > .modal-inner > .modal-header { @apply flex items-center border-b border-b-primary/20 text-primary dark:text-white dark:bg-slate-900 dark:border-slate-800 items-baseline w-full justify-between p-2 bg-primary/8; }
+  .modal > .modal-inner > .modal-header:not(.active) { @apply bg-gray-100 text-gray-500; }
+  .modal > .modal-inner > .modal-header:not(.active) * { @apply !text-gray-500; }
   .modal > .modal-inner > .modal-header > .modal-header-left { @apply flex grow-1 gap-1; }
   .modal > .modal-inner > .modal-header > .modal-header-title { @apply grow-1 text-center text-sm md:text-xl; }
   .modal > .modal-inner > .modal-header > .modal-header-title h2 { @apply m-0 p-0 text-sm md:text-xl text-primary; }
