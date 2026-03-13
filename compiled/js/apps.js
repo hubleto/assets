@@ -184,6 +184,83 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hu
 
 /***/ }),
 
+/***/ "../enterprise/apps/Banks/Components/FormAccount.tsx":
+/*!***********************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/FormAccount.tsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FormEntry)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/ext/FormExtended */ \"../react-ui/ext/FormExtended.tsx\");\n\n\nclass FormEntry extends _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Account'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\FormAccount';\n  constructor(props) {\n    super(props);\n    this.refLogActivityInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createRef();\n    this.state = {\n      ...this.getStateFromProps(props)\n    };\n  }\n  renderContent() {\n    const R = this.state.record;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, this.inputWrapper('name'));\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/FormAccount.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Components/FormBank.tsx":
+/*!********************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/FormBank.tsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FormEntry)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/ext/FormExtended */ \"../react-ui/ext/FormExtended.tsx\");\n\n\nclass FormEntry extends _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Bank'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\FormBank';\n  constructor(props) {\n    super(props);\n    this.refLogActivityInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createRef();\n    this.state = {\n      ...this.getStateFromProps(props)\n    };\n  }\n  renderContent() {\n    const R = this.state.record;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, this.inputWrapper('name'));\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/FormBank.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Components/FormTransaction.tsx":
+/*!***************************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/FormTransaction.tsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FormEntry)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/ext/FormExtended */ \"../react-ui/ext/FormExtended.tsx\");\n\n\nclass FormEntry extends _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Transaction'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\FormTransaction';\n  constructor(props) {\n    super(props);\n    this.refLogActivityInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createRef();\n    this.state = {\n      ...this.getStateFromProps(props)\n    };\n  }\n  renderContent() {\n    const R = this.state.record;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, this.inputWrapper('name'));\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/FormTransaction.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Components/TableAccounts.tsx":
+/*!*************************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/TableAccounts.tsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TableAccounts)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/core/Table */ \"../react-ui/core/Table.tsx\");\n/* harmony import */ var _FormAccount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormAccount */ \"../enterprise/apps/Banks/Components/FormAccount.tsx\");\n\n\n\nclass TableAccounts extends _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    formUseModalSimple: true,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Account'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\TableAccounts';\n  constructor(props) {\n    super(props);\n    this.state = this.getStateFromProps(props);\n  }\n  getStateFromProps(props) {\n    return {\n      ...super.getStateFromProps(props)\n    };\n  }\n  getFormModalProps() {\n    let params = super.getFormModalProps();\n    params.type = 'right';\n    return params;\n  }\n  renderForm() {\n    let formDescription = this.getFormProps();\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormAccount__WEBPACK_IMPORTED_MODULE_2__[\"default\"], formDescription);\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/TableAccounts.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Components/TableBanks.tsx":
+/*!**********************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/TableBanks.tsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TableBanks)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/core/Table */ \"../react-ui/core/Table.tsx\");\n/* harmony import */ var _FormBank__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormBank */ \"../enterprise/apps/Banks/Components/FormBank.tsx\");\n\n\n\nclass TableBanks extends _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    formUseModalSimple: true,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Bank'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\TableBanks';\n  constructor(props) {\n    super(props);\n    this.state = this.getStateFromProps(props);\n  }\n  getStateFromProps(props) {\n    return {\n      ...super.getStateFromProps(props)\n    };\n  }\n  getFormModalProps() {\n    let params = super.getFormModalProps();\n    params.type = 'right';\n    return params;\n  }\n  renderForm() {\n    let formDescription = this.getFormProps();\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormBank__WEBPACK_IMPORTED_MODULE_2__[\"default\"], formDescription);\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/TableBanks.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Components/TableTransactions.tsx":
+/*!*****************************************************************!*\
+  !*** ../enterprise/apps/Banks/Components/TableTransactions.tsx ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TableTransactions)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/core/Table */ \"../react-ui/core/Table.tsx\");\n/* harmony import */ var _FormTransaction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormTransaction */ \"../enterprise/apps/Banks/Components/FormTransaction.tsx\");\n\n\n\nclass TableTransactions extends _hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    formUseModalSimple: true,\n    model: 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Models\\\\Transaction'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Enterprise\\\\Banks\\\\Loader::Components\\\\TableTransactions';\n  constructor(props) {\n    super(props);\n    this.state = this.getStateFromProps(props);\n  }\n  getStateFromProps(props) {\n    return {\n      ...super.getStateFromProps(props)\n    };\n  }\n  getFormModalProps() {\n    let params = super.getFormModalProps();\n    params.type = 'right';\n    return params;\n  }\n  renderForm() {\n    let formDescription = this.getFormProps();\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormTransaction__WEBPACK_IMPORTED_MODULE_2__[\"default\"], formDescription);\n  }\n}\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Components/TableTransactions.tsx?\n}");
+
+/***/ }),
+
+/***/ "../enterprise/apps/Banks/Loader.tsx":
+/*!*******************************************!*\
+  !*** ../enterprise/apps/Banks/Loader.tsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hubleto_react_ui_core_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/core/App */ \"../react-ui/core/App.tsx\");\n/* harmony import */ var _Components_TableBanks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Components/TableBanks */ \"../enterprise/apps/Banks/Components/TableBanks.tsx\");\n/* harmony import */ var _Components_TableTransactions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/TableTransactions */ \"../enterprise/apps/Banks/Components/TableTransactions.tsx\");\n/* harmony import */ var _Components_TableAccounts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/TableAccounts */ \"../enterprise/apps/Banks/Components/TableAccounts.tsx\");\n\n\n\n\nclass Banks extends _hubleto_react_ui_core_App__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  init() {\n    super.init();\n\n    // register react components\n    globalThis.hubleto.registerReactComponent('BanksTableBanks', _Components_TableBanks__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n    globalThis.hubleto.registerReactComponent('BanksTableTransactions', _Components_TableTransactions__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n    globalThis.hubleto.registerReactComponent('BanksTableAccounts', _Components_TableAccounts__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n  }\n}\n\n// register app\nglobalThis.hubleto.registerApp('Hubleto/App/Enterprise/Banks', new Banks());\n\n//# sourceURL=webpack:///../enterprise/apps/Banks/Loader.tsx?\n}");
+
+/***/ }),
+
 /***/ "../enterprise/apps/Einvoice/Components/FormExport.tsx":
 /*!*************************************************************!*\
   !*** ../enterprise/apps/Einvoice/Components/FormExport.tsx ***!
