@@ -327,6 +327,39 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hu
 
 /***/ }),
 
+/***/ "../erp/apps/AuditLogs/Components/FormAuditLog.tsx":
+/*!*********************************************************!*\
+  !*** ../erp/apps/AuditLogs/Components/FormAuditLog.tsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ FormAuditLog)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/ext/FormExtended */ \"../react-ui/ext/FormExtended.tsx\");\n\n\nclass FormAuditLog extends _hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_ext_FormExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    model: 'Hubleto/App/Community/AuditLogs/Models/AuditLog'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Community\\\\AuditLogs\\\\Loader';\n  translationContextInner = 'Components\\\\FormAuditLog';\n  constructor(props) {\n    super(props);\n    this.state = this.getStateFromProps(props);\n  }\n  getStateFromProps(props) {\n    return {\n      ...super.getStateFromProps(props)\n    };\n  }\n  renderTitle() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"small\", null, this.translate('Audit Log')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"h2\", null, this.state.record.context), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"small\", null, this.state.record.model, \" #\", this.state.record.record_id));\n  }\n  renderContent() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, this.inputWrapper('datetime'), this.inputWrapper('type'), this.inputWrapper('context'), this.inputWrapper('model'), this.inputWrapper('record_id'), this.inputWrapper('message'), this.inputWrapper('priority'), this.inputWrapper('id_user'), this.inputWrapper('ip'));\n  }\n}\n\n//# sourceURL=webpack:///../erp/apps/AuditLogs/Components/FormAuditLog.tsx?\n}");
+
+/***/ }),
+
+/***/ "../erp/apps/AuditLogs/Components/TableAuditLogs.tsx":
+/*!***********************************************************!*\
+  !*** ../erp/apps/AuditLogs/Components/TableAuditLogs.tsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TableAuditLogs)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_ext_TableExtended__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/ext/TableExtended */ \"../react-ui/ext/TableExtended.tsx\");\n/* harmony import */ var _FormAuditLog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormAuditLog */ \"../erp/apps/AuditLogs/Components/FormAuditLog.tsx\");\n\n\n\nclass TableAuditLogs extends _hubleto_react_ui_ext_TableExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  static defaultProps = {\n    ..._hubleto_react_ui_ext_TableExtended__WEBPACK_IMPORTED_MODULE_1__[\"default\"].defaultProps,\n    formUseModalSimple: true,\n    model: 'Hubleto/App/Community/AuditLogs/Models/AuditLog'\n  };\n  translationContext = 'Hubleto\\\\App\\\\Community\\\\AuditLogs\\\\Loader';\n  translationContextInner = 'Components\\\\TableAuditLogs';\n  constructor(props) {\n    super(props);\n    this.state = {\n      ...this.getStateFromProps(props)\n    };\n  }\n  getEndpointParams() {\n    return {\n      ...super.getEndpointParams(),\n      folder: this.props.folder\n    };\n  }\n  getFormModalProps() {\n    let params = super.getFormModalProps();\n    params.type = 'right';\n    return params;\n  }\n  renderForm() {\n    let formProps = this.getFormProps();\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FormAuditLog__WEBPACK_IMPORTED_MODULE_2__[\"default\"], formProps);\n  }\n}\n\n//# sourceURL=webpack:///../erp/apps/AuditLogs/Components/TableAuditLogs.tsx?\n}");
+
+/***/ }),
+
+/***/ "../erp/apps/AuditLogs/Loader.tsx":
+/*!****************************************!*\
+  !*** ../erp/apps/AuditLogs/Loader.tsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Components_TableAuditLogs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Components/TableAuditLogs */ \"../erp/apps/AuditLogs/Components/TableAuditLogs.tsx\");\n\nglobalThis.hubleto.registerReactComponent('AuditLogsTableAuditLogs', _Components_TableAuditLogs__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack:///../erp/apps/AuditLogs/Loader.tsx?\n}");
+
+/***/ }),
+
 /***/ "../erp/apps/Billing/Components/TableBillingAccountServices.tsx":
 /*!**********************************************************************!*\
   !*** ../erp/apps/Billing/Components/TableBillingAccountServices.tsx ***!

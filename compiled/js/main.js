@@ -254,6 +254,7 @@ eval("{/* (ignored) */\n\n//# sourceURL=webpack:///./util.inspect_(ignored)?\n}"
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("./src/Main.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Api/Loader.tsx")))
+/******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/AuditLogs/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Billing/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Calendar/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/CalendarSync/Loader.tsx")))
