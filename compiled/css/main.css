@@ -2481,6 +2481,9 @@
   .text-violet-600 {
     color: var(--color-violet-600);
   }
+  .text-violet-800 {
+    color: var(--color-violet-800);
+  }
   .text-white {
     color: var(--color-white);
   }
