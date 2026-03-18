@@ -42,7 +42,7 @@
   div#sign-in-screen > .inner > .form > .title { @apply text-center; }
   div#sign-in-screen > .inner > .form > .content > input { @apply border border-gray-300 rounded-sm w-full p-4 mb-1; }
 
-  div#app-main-content { @apply sm:ml-0 md:ml-64 mt-12 px-3 dark:bg-gray-950; }
+  div#app-main-content { @apply flex flex-col sm:ml-0 md:ml-64 mt-12 px-3 dark:bg-gray-950; height: calc(100vh - 3em); overflow: auto; }
   div#app-main-content.sidebar-only-nav { @apply md:ml-36; }
 }
 
