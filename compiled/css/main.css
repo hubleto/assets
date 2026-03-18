@@ -374,6 +374,9 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-1 {
+    top: calc(var(--spacing) * 1);
+  }
   .top-1\/2 {
     top: calc(1 / 2 * 100%);
   }
@@ -1125,6 +1128,18 @@
   .max-w-\[75\%\] {
     max-width: 75%;
   }
+  .max-w-\[80vw\] {
+    max-width: 80vw;
+  }
+  .max-w-\[95vw\] {
+    max-width: 95vw;
+  }
+  .max-w-\[97vw\] {
+    max-width: 97vw;
+  }
+  .max-w-\[98vw\] {
+    max-width: 98vw;
+  }
   .max-w-\[100\%\] {
     max-width: 100%;
   }
@@ -1227,6 +1242,9 @@
   .grow-0 {
     flex-grow: 0;
   }
+  .basis-2 {
+    flex-basis: calc(var(--spacing) * 2);
+  }
   .basis-2\/4 {
     flex-basis: calc(2 / 4 * 100%);
   }
@@ -1305,6 +1323,10 @@
   }
   .translate-y-0 {
     --tw-translate-y: calc(var(--spacing) * 0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-2 {
+    --tw-translate-y: calc(var(--spacing) * 2);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-2\/4 {
@@ -1489,6 +1511,9 @@
   }
   .justify-start {
     justify-content: flex-start;
+  }
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -1971,6 +1996,9 @@
   .border-r-gray-600 {
     border-right-color: var(--color-gray-600);
   }
+  .border-r-primary {
+    border-right-color: var(--color-primary);
+  }
   .border-r-primary\/10 {
     border-right-color: color-mix(in srgb, #4780bf 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1983,11 +2011,17 @@
   .border-b-gray-600 {
     border-bottom-color: var(--color-gray-600);
   }
+  .border-b-primary {
+    border-bottom-color: var(--color-primary);
+  }
   .border-b-primary\/20 {
     border-bottom-color: color-mix(in srgb, #4780bf 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-bottom-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
     }
+  }
+  .border-b-secondary {
+    border-bottom-color: var(--color-secondary);
   }
   .border-b-secondary\/20 {
     border-bottom-color: color-mix(in srgb, #41c50d 20%, transparent);
@@ -2000,6 +2034,9 @@
   }
   .border-l-gray-600 {
     border-left-color: var(--color-gray-600);
+  }
+  .border-l-primary {
+    border-left-color: var(--color-primary);
   }
   .border-l-primary\/10 {
     border-left-color: color-mix(in srgb, #4780bf 10%, transparent);
@@ -2586,6 +2623,9 @@
   }
   .text-nowrap {
     text-wrap: nowrap;
+  }
+  .text-wrap {
+    text-wrap: wrap;
   }
   .break-words {
     overflow-wrap: break-word;
@@ -6021,7 +6061,9 @@ body #ajax-loader::before {
 }
 @layer hubleto-framework {
   .hubleto.component.table {
+    display: flex;
     width: 100%;
+    flex-direction: column;
   }
   .hubleto.component.table.loading {
     opacity: 0.25;
@@ -6041,8 +6083,12 @@ body #ajax-loader::before {
     display: flex;
     width: 100%;
     flex: 1;
+    flex-direction: column;
     align-items: center;
     gap: calc(var(--spacing) * 1);
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
   }
   .hubleto.component.table .table-header-title {
     margin-right: calc(var(--spacing) * 2);
@@ -8417,18 +8463,6 @@ body #ajax-loader::before {
   [id^="react-select-"][id*="-option"]:hover {
     &:where(.dark, .dark *) {
       background-color: var(--color-slate-600) !important;
-    }
-  }
-  #app-main-content > * > .hubleto.component.table .table-body thead th:nth-child(n+4) {
-    display: none;
-    @media (width >= 48rem) {
-      display: table-cell;
-    }
-  }
-  #app-main-content > * > .hubleto.component.table .table-body tbody tr td:nth-child(n+4) {
-    display: none;
-    @media (width >= 48rem) {
-      display: table-cell;
     }
   }
 }

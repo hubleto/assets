@@ -2,10 +2,10 @@
 
   /* CLASSES in alphabetical order */
 
-  .hubleto.component.table { @apply w-full; }
+  .hubleto.component.table { @apply w-full flex flex-col; }
   .hubleto.component.table.loading { opacity: 0.25; }
   .hubleto.component.table .table-header { @apply flex flex-col md:flex-row items-center gap-2 mb-2 justify-between; }
-  .hubleto.component.table .table-header-left { @apply w-full flex flex-1 gap-1 items-center; }
+  .hubleto.component.table .table-header-left { @apply w-full flex flex-1 gap-1 items-center flex-col md:flex-row; }
   .hubleto.component.table .table-header-title { @apply flex-1 text-left text-primary text-center text-2xl mr-2 dark:text-white; }
   .hubleto.component.table .table-header-right { @apply flex flex-1 text-center gap-1 justify-end; }
   .hubleto.component.table .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
@@ -371,7 +371,7 @@
 
 
   /* main table responsiveness */
-  #app-main-content > * > .hubleto.component.table .table-body thead th:nth-child(n+4) { @apply hidden md:table-cell; }
-  #app-main-content > * > .hubleto.component.table .table-body tbody tr td:nth-child(n+4) { @apply hidden md:table-cell;}
+  /* #app-main-content > * > .hubleto.component.table .table-body thead th:nth-child(n+4) { @apply hidden md:table-cell; } */
+  /* #app-main-content > * > .hubleto.component.table .table-body tbody tr td:nth-child(n+4) { @apply hidden md:table-cell;} */
 
 }
