@@ -5,13 +5,13 @@
 @layer theme, base, components, primereact, hubleto-framework, utilities, hubleto-main;
 
 @import "tailwindcss";
-@import "../node_modules/@hubleto/react-ui/css/desktop.twcss";
-@import "../node_modules/@hubleto/react-ui/css/components.twcss";
-@import "../node_modules/@hubleto/react-ui/css/primereact.twcss";
-@import "../node_modules/@hubleto/react-ui/css/color-scales.twcss";
+@import "../css/desktop.twcss";
+@import "../css/components.twcss";
+@import "../css/primereact.twcss";
+@import "../css/color-scales.twcss";
 
-@import "../node_modules/@hubleto/react-ui/css/font-gabarito.css";
-@import "../node_modules/@hubleto/react-ui/css/fontawesome-6.6.css";
+@import "../css/font-gabarito.css";
+@import "../css/fontawesome-6.6.css";
 
 @theme {
   --font-sans: 'Gabarito', 'sans-serif';
