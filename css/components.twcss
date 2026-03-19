@@ -292,11 +292,11 @@
   .modal.right.wide { @apply md:w-[80%]; }
   .modal.right.wider { @apply md:w-[93%]; }
 
-  .modal.right .modal.right { @apply border-t border-t-primary; height: calc(100vh - 4em); top: 4em; }
-  .modal.right .modal.right .modal.right { @apply border-t border-t-primary; height: calc(100vh - 6em); top: 6em; }
-  .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary; height: calc(100vh - 8em); top: 8em; }
-  .modal.right .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary; height: calc(100vh - 10em); top: 10em; }
-  .modal.right .modal.right .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary; height: calc(100vh - 12em); top: 12em; }
+  .modal.right .modal.right { @apply border-t border-t-primary top-0 h-full md:top-[4em] md:h-[calc(100vh-4em)]; }
+  .modal.right .modal.right .modal.right { @apply border-t border-t-primary  top-0 h-full md:top-[6em] md:h-[calc(100vh-6em)]; }
+  .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary  top-0 h-full md:top-[8em] md:h-[calc(100vh-8em)]; }
+  .modal.right .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary  top-0 h-full md:top-[10em] md:h-[calc(100vh-10em)]; }
+  .modal.right .modal.right .modal.right .modal.right .modal.right .modal.right { @apply border-t border-t-primary top-0 h-full md:top-[12em] md:h-[calc(100vh-12em)]; }
 
   .modal.right.wide .modal.right.wide { @apply !shadow-2xl md:w-[76%]; }
 
