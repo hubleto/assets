@@ -360,7 +360,7 @@
   .hubleto-lookup *[class*='-Input'] { @apply !text-sm; }
   .hubleto-lookup *[class*='-menu'] * { @apply !text-sm; }
   .hubleto-lookup > div > div { @apply p-0; }
-  .hubleto-lookup > div > div > div { @apply p-0 dark:!text-white; }
+  .hubleto-lookup > div > div > div { @apply p-0 !m-0 dark:!text-white; }
 
   [id^="react-select-"][id*="-listbox"] {@apply dark:!bg-slate-800 dark:!border-slate-500 dark:!border;}
   [id^="react-select-"][id*="-option"] {@apply dark:!bg-slate-800 dark:!text-white;}

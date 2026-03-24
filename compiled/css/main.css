@@ -8480,6 +8480,7 @@ body #ajax-loader::before {
     padding: calc(var(--spacing) * 0);
   }
   .hubleto-lookup > div > div > div {
+    margin: calc(var(--spacing) * 0) !important;
     padding: calc(var(--spacing) * 0);
     &:where(.dark, .dark *) {
       color: var(--color-white) !important;
