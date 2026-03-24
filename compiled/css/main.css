@@ -4549,11 +4549,6 @@
       grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
-  .md\:flex-col {
-    @media (width >= 48rem) {
-      flex-direction: column;
-    }
-  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -6247,10 +6242,9 @@ body #ajax-loader::before {
   .hubleto.component.table .table-cell-content {
     position: relative;
     max-width: calc(var(--spacing) * 90);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow-x: hidden;
     padding-inline: calc(var(--spacing) * 1);
+    text-wrap: nowrap;
   }
   .hubleto.component.table .table-cell-content.column-lookup {
     color: var(--color-primary);
@@ -6284,7 +6278,8 @@ body #ajax-loader::before {
     top: 0;
   }
   .hubleto.component.table .table-cell-content:hover .cell-buttons {
-    display: block;
+    display: flex;
+    gap: calc(var(--spacing) * 2);
   }
   .hubleto.component.table .table-sidebar-filter {
     display: none;
@@ -6698,12 +6693,12 @@ body #ajax-loader::before {
     font-size: 0.3rem;
   }
   .btn.btn-small .icon {
-    padding-block: calc(var(--spacing) * 0);
+    padding-block: calc(var(--spacing) * 0.5);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .btn.btn-small .text {
-    padding-block: calc(var(--spacing) * 0);
+    padding-block: calc(var(--spacing) * 0.5);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }

@@ -33,7 +33,7 @@
   .hubleto.component.table .table-body tbody tr td .to-be-deleted { @apply bg-red-500; }
   .hubleto.component.table .table-body tbody tr td .to-be-deleted input { @apply text-red-500; }
 
-  .hubleto.component.table .table-cell-content { @apply relative truncate max-w-90 px-1; }
+  .hubleto.component.table .table-cell-content { @apply relative overflow-x-hidden text-nowrap max-w-90 px-1; }
   .hubleto.component.table .table-cell-content.column-lookup { @apply text-primary dark:text-white; }
   .hubleto.component.table .table-cell-content.column-int { @apply text-right font-semibold; }
   .hubleto.component.table .table-cell-content.column-float { @apply text-right font-semibold; }
@@ -41,7 +41,7 @@
   .hubleto.component.table .table-cell-content.column-datetime { @apply text-right; }
   .hubleto.component.table .table-cell-content.column-boolean { @apply text-center; }
   .hubleto.component.table .table-cell-content .cell-buttons { @apply hidden absolute; right: 0; top: 0; }
-  .hubleto.component.table .table-cell-content:hover .cell-buttons { @apply block; }
+  .hubleto.component.table .table-cell-content:hover .cell-buttons { @apply flex gap-2; }
   .hubleto.component.table .table-sidebar-filter { @apply hidden md:block; }
 
   .hubleto.component.table .column-search .input-element { @apply bg-white dark:bg-slate-800; }
@@ -126,8 +126,8 @@
 
   .btn.btn-extra-small .icon { @apply px-1 py-0.5; font-size: 0.3rem; }
   .btn.btn-extra-small .text { @apply px-1 py-0.5; font-size: 0.3rem; }
-  .btn.btn-small .icon { @apply text-sm py-0; }
-  .btn.btn-small .text { @apply text-sm py-0; }
+  .btn.btn-small .icon { @apply text-sm py-0.5; }
+  .btn.btn-small .text { @apply text-sm py-0.5; }
   .btn.btn-large .icon { @apply text-lg px-2.5 py-1.5; }
   .btn.btn-large .text { @apply text-lg px-2.5 py-1.5; }
   .btn.btn-extra-large .icon { @apply text-2xl px-3.5 py-2; }
