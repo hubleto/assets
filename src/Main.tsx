@@ -205,6 +205,8 @@ const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
 globalThis.main = hubleto; // deprecated
 globalThis.hubleto = hubleto;
 
+console.log('Hubleto is ready...');
+
 document.addEventListener('readystatechange', function() {
   if (document.readyState === 'complete') {
     globalThis.hubleto.init();
