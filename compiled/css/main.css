@@ -666,6 +666,9 @@
   .ml-0 {
     margin-left: calc(var(--spacing) * 0);
   }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
+  }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
@@ -1122,6 +1125,9 @@
   }
   .max-w-\[30rem\] {
     max-width: 30rem;
+  }
+  .max-w-\[38vw\] {
+    max-width: 38vw;
   }
   .max-w-\[90\%\] {
     max-width: 90%;
@@ -6241,7 +6247,7 @@ body #ajax-loader::before {
   }
   .hubleto.component.table .table-cell-content {
     position: relative;
-    max-width: calc(var(--spacing) * 90);
+    max-width: 38vw;
     overflow-x: hidden;
     padding-inline: calc(var(--spacing) * 1);
     text-wrap: nowrap;
