@@ -36,182 +36,194 @@ import TableExtendedColumnCustomize from "@hubleto/react-ui/ext/TableExtendedCol
 // Primereact
 import { Tooltip } from "primereact/tooltip";
 
-class HubletoErp extends HubletoReactUi {
-  language: string = 'en';
-  currencySymbol: string = '€';
-  idUser: number = 0;
-  userEmail: string = '';
-  isPremium: boolean = false;
-  user: any;
-  users: any;
-  apps: any = {};
+try {
+  console.log('Initializing Hubleto, step 1...');
 
-  constructor(config: any) {
-    super(config);
+  class HubletoErp extends HubletoReactUi {
+    language: string = 'en';
+    currencySymbol: string = '€';
+    idUser: number = 0;
+    userEmail: string = '';
+    isPremium: boolean = false;
+    user: any;
+    users: any;
+    apps: any = {};
 
-    this.idUser = config.idUser;
-    this.userEmail = config.userEmail;
-    this.isPremium = config.isPremium;
-    this.language = config.language;
-    this.dictionary = globalThis.dictionary;
+    constructor(config: any) {
+      super(config);
 
-    this.registerReactComponent('Modal', Modal);
+      this.idUser = config.idUser;
+      this.userEmail = config.userEmail;
+      this.isPremium = config.isPremium;
+      this.language = config.language;
+      this.dictionary = globalThis.dictionary;
 
-    this.registerReactComponent('InputVarchar', InputVarchar);
-    this.registerReactComponent('InputInt', InputInt);
-    this.registerReactComponent('InputLookup', InputLookup);
-    this.registerReactComponent('InputBoolean', InputBoolean);
-    this.registerReactComponent('InputImage', InputImage);
-    this.registerReactComponent('InputColor', InputColor);
-    this.registerReactComponent('InputHyperlink', InputHyperlink);
-    this.registerReactComponent('InputUserSelect', InputUserSelect);
-    this.registerReactComponent('InputSharedWith', InputSharedWith);
-    this.registerReactComponent('InputWysiwyg', InputWysiwyg);
-    this.registerReactComponent('InputTextareaWithHtmlPreview', InputTextareaWithHtmlPreview);
-    this.registerReactComponent('InputJsonKeyValue', InputJsonKeyValue);
+      this.registerReactComponent('Modal', Modal);
 
-    this.registerReactComponent('TableCellRendererHyperlink', TableCellRendererHyperlink);
-    this.registerReactComponent('TableCellRendererSharedWith', TableCellRendererSharedWith);
+      this.registerReactComponent('InputVarchar', InputVarchar);
+      this.registerReactComponent('InputInt', InputInt);
+      this.registerReactComponent('InputLookup', InputLookup);
+      this.registerReactComponent('InputBoolean', InputBoolean);
+      this.registerReactComponent('InputImage', InputImage);
+      this.registerReactComponent('InputColor', InputColor);
+      this.registerReactComponent('InputHyperlink', InputHyperlink);
+      this.registerReactComponent('InputUserSelect', InputUserSelect);
+      this.registerReactComponent('InputSharedWith', InputSharedWith);
+      this.registerReactComponent('InputWysiwyg', InputWysiwyg);
+      this.registerReactComponent('InputTextareaWithHtmlPreview', InputTextareaWithHtmlPreview);
+      this.registerReactComponent('InputJsonKeyValue', InputJsonKeyValue);
 
-    // Hubleto components
-    this.registerReactComponent('Search', ErpSearch);
-    this.registerReactComponent('Form', FormExtended);
-    this.registerReactComponent('Table', TableExtended);
-    this.registerReactComponent('Tree', Tree);
-    this.registerReactComponent('TableColumnsCustomize', TableExtendedColumnCustomize);
-    this.registerReactComponent('Chart', Chart);
+      this.registerReactComponent('TableCellRendererHyperlink', TableCellRendererHyperlink);
+      this.registerReactComponent('TableCellRendererSharedWith', TableCellRendererSharedWith);
 
-    // Primereact
-    this.registerReactComponent('Tooltip', Tooltip);
-  }
+      // Hubleto components
+      this.registerReactComponent('Search', ErpSearch);
+      this.registerReactComponent('Form', FormExtended);
+      this.registerReactComponent('Table', TableExtended);
+      this.registerReactComponent('Tree', Tree);
+      this.registerReactComponent('TableColumnsCustomize', TableExtendedColumnCustomize);
+      this.registerReactComponent('Chart', Chart);
 
-  init() {
-    request.post(
-      'api/get-users',
-      {},
-      {},
-      (data: any) => {
-        this.users = data;
-      }
-    );
-    for (let appNamespace in this.apps) {
-      // console.log('Init app ' + appNamespace);
-      this.apps[appNamespace].init();
-    }
-  }
-
-  translate(orig: string, context?: string, contextInner?: string): string {
-    let translated: string = orig;
-
-    if (this.language === 'en') return orig;
-    if (this.dictionary === null) return orig;
-
-    //@ts-ignore
-    context = (context ?? '').replaceAll('\\', '-').toLowerCase();
-
-    if (
-      this.dictionary[context]
-      && this.dictionary[context][contextInner]
-      && this.dictionary[context][contextInner][orig]
-      && this.dictionary[context][contextInner][orig] != ''
-    ) {
-      translated = this.dictionary[context][contextInner][orig] ?? '';
-    } else {
-      translated = '';
-      this.addToDictionary(orig, context, contextInner);
+      // Primereact
+      this.registerReactComponent('Tooltip', Tooltip);
     }
 
-    // if (this.dictionary[context] && this.dictionary[context][orig]) {
-    //   translated = this.dictionary[context][orig] ?? '';
-    // }
-
-    if (translated == '') translated = '**' + orig + '**';
-
-    return translated;
-  }
-
-  loadDictionary(language: string) {
-    // if (language == 'en') return;
-
-    // this.language = language;
-
-    // request.get(
-    //   'api/dictionary',
-    //   { language: language },
-    //   (data: any) => {
-    //     this.dictionary = data;
-    //   }
-    // );
-    this.dictionary = globalThis.dictionary;
-  }
-
-  addToDictionary(orig: string, context: string, contextInner: string) {
-    request.get(
-      'api/dictionary',
-      {
-        language: this.language,
-        addNew: {
-          orig: orig,
-          context: context,
-          contextInner: contextInner,
+    init() {
+      request.post(
+        'api/get-users',
+        {},
+        {},
+        (data: any) => {
+          this.users = data;
         }
-      },
-    );
-  }
-
-  registerApp(appNamespace: string, app: App) {
-    app.namespace = appNamespace;
-    this.apps[appNamespace] = app;
-  }
-
-  getApp(appNamespace: string) {
-    return this.apps[appNamespace] ?? null;
-  }
-
-  createThemeObserver() {
-    // MutationObserver looks for changes in DOM. Anytime a change is detected,
-    // a light or dark theme is applied to changed or newly created DOM elements.
-    (new MutationObserver((mutations, observer) => {
-      if (localStorage.theme == "dark") {
-        // Whenever the user explicitly chooses light mode
-        $('*').addClass('dark');
-      } else {
-        // Whenever the user explicitly chooses dark mode
-        $('*').removeClass('dark');
-      }
-    })).observe(document, { subtree: true, attributes: true });
-  }
-
-  startConsoleErrorLogger() {
-    console.log('Hubleto: Starting console.error debugger.');
-    if (window.console && console.error) {
-      const ce = console.error;
-      console.error = function() {
-        request.post(
-          'api/log-javascript-error',
-          {},
-          { errorRoute: '{{ route }}', errors: arguments }
-        );
-        ce.apply(this, arguments)
+      );
+      for (let appNamespace in this.apps) {
+        // console.log('Init app ' + appNamespace);
+        this.apps[appNamespace].init();
       }
     }
+
+    translate(orig: string, context?: string, contextInner?: string): string {
+      let translated: string = orig;
+
+      if (this.language === 'en') return orig;
+      if (this.dictionary === null) return orig;
+
+      //@ts-ignore
+      context = (context ?? '').replaceAll('\\', '-').toLowerCase();
+
+      if (
+        this.dictionary[context]
+        && this.dictionary[context][contextInner]
+        && this.dictionary[context][contextInner][orig]
+        && this.dictionary[context][contextInner][orig] != ''
+      ) {
+        translated = this.dictionary[context][contextInner][orig] ?? '';
+      } else {
+        translated = '';
+        this.addToDictionary(orig, context, contextInner);
+      }
+
+      // if (this.dictionary[context] && this.dictionary[context][orig]) {
+      //   translated = this.dictionary[context][orig] ?? '';
+      // }
+
+      if (translated == '') translated = '**' + orig + '**';
+
+      return translated;
+    }
+
+    loadDictionary(language: string) {
+      // if (language == 'en') return;
+
+      // this.language = language;
+
+      // request.get(
+      //   'api/dictionary',
+      //   { language: language },
+      //   (data: any) => {
+      //     this.dictionary = data;
+      //   }
+      // );
+      this.dictionary = globalThis.dictionary;
+    }
+
+    addToDictionary(orig: string, context: string, contextInner: string) {
+      request.get(
+        'api/dictionary',
+        {
+          language: this.language,
+          addNew: {
+            orig: orig,
+            context: context,
+            contextInner: contextInner,
+          }
+        },
+      );
+    }
+
+    registerApp(appNamespace: string, app: App) {
+      app.namespace = appNamespace;
+      this.apps[appNamespace] = app;
+    }
+
+    getApp(appNamespace: string) {
+      return this.apps[appNamespace] ?? null;
+    }
+
+    createThemeObserver() {
+      // MutationObserver looks for changes in DOM. Anytime a change is detected,
+      // a light or dark theme is applied to changed or newly created DOM elements.
+      (new MutationObserver((mutations, observer) => {
+        if (localStorage.theme == "dark") {
+          // Whenever the user explicitly chooses light mode
+          $('*').addClass('dark');
+        } else {
+          // Whenever the user explicitly chooses dark mode
+          $('*').removeClass('dark');
+        }
+      })).observe(document, { subtree: true, attributes: true });
+    }
+
+    startConsoleErrorLogger() {
+      console.log('Hubleto: Starting console.error debugger.');
+      if (window.console && console.error) {
+        const ce = console.error;
+        console.error = function() {
+          request.post(
+            'api/log-javascript-error',
+            {},
+            { errorRoute: '{{ route }}', errors: arguments }
+          );
+          ce.apply(this, arguments)
+        }
+      }
+    }
+
   }
 
+  console.log('Initializing Hubleto, step 2...');
+
+  //@ts-ignore
+  const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
+
+  console.log('Initializing Hubleto, step 3...');
+
+  globalThis.main = hubleto; // deprecated
+  globalThis.hubleto = hubleto;
+
+  console.log('Initializing Hubleto, step 4...');
+
+  document.addEventListener('readystatechange', function() {
+    console.log('Initializing Hubleto, step 5...');
+
+    if (document.readyState === 'complete') {
+      globalThis.hubleto.init();
+      globalThis.hubleto.renderReactElements();
+      globalThis.hubleto.createThemeObserver();
+      globalThis.hubleto.registerModalShortcuts();
+    }
+  });
+} catch (e) {
+  console.log('Failed to init Hubleto.', e);
 }
-
-//@ts-ignore
-const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
-
-globalThis.main = hubleto; // deprecated
-globalThis.hubleto = hubleto;
-
-console.log('Hubleto is ready...');
-
-document.addEventListener('readystatechange', function() {
-  if (document.readyState === 'complete') {
-    globalThis.hubleto.init();
-    globalThis.hubleto.renderReactElements();
-    globalThis.hubleto.createThemeObserver();
-    globalThis.hubleto.registerModalShortcuts();
-  }
-});
