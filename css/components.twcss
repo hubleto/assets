@@ -325,7 +325,7 @@
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper .btn { @apply p-1 border-none rounded-none shadow-none; }
   .modal > .modal-inner > .modal-body { @apply p-2 flex-1 overflow-y-auto relative; }
   .modal > .modal-inner > .modal-footer { @apply flex gap-2 p-2 border-t border-t-gray-200 bg-gray-50 dark:bg-slate-900 dark:border-slate-800; }
-  .modal > .modal-inner > .modal-footer-buttons { @apply flex gap-1 p-2 bg-white border-t border-t-gray-200; }
+  .modal > .modal-inner > .modal-footer-buttons { @apply flex gap-1 p-2 border-t border-t-gray-200 bg-secondary/20; }
 
   .modal.theme-secondary { @apply border-secondary; }
   .modal.theme-secondary > .modal-inner { @apply border-secondary; }
