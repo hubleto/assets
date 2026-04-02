@@ -103,32 +103,36 @@ try {
       }
     }
 
-    translate(orig: string, context?: string, contextInner?: string): string {
+    translate(orig: string, context?: string, contextInner?: string, vars?: any): string {
       let translated: string = orig;
 
-      if (this.language === 'en') return orig;
-      if (this.dictionary === null) return orig;
+      if (this.language === 'en') translated = orig;
+      else if (this.dictionary === null) translated = orig;
+      else {
+        //@ts-ignore
+        context = (context ?? '').replaceAll('\\', '-').toLowerCase();
 
-      //@ts-ignore
-      context = (context ?? '').replaceAll('\\', '-').toLowerCase();
+        if (
+          this.dictionary[context]
+          && this.dictionary[context][contextInner]
+          && this.dictionary[context][contextInner][orig]
+          && this.dictionary[context][contextInner][orig] != ''
+        ) {
+          translated = this.dictionary[context][contextInner][orig] ?? '';
+        } else {
+          translated = '';
+          this.addToDictionary(orig, context, contextInner);
+        }
 
-      if (
-        this.dictionary[context]
-        && this.dictionary[context][contextInner]
-        && this.dictionary[context][contextInner][orig]
-        && this.dictionary[context][contextInner][orig] != ''
-      ) {
-        translated = this.dictionary[context][contextInner][orig] ?? '';
-      } else {
-        translated = '';
-        this.addToDictionary(orig, context, contextInner);
+        if (translated == '') translated = '**' + orig + '**';
       }
-
-      // if (this.dictionary[context] && this.dictionary[context][orig]) {
-      //   translated = this.dictionary[context][orig] ?? '';
-      // }
-
-      if (translated == '') translated = '**' + orig + '**';
+      
+      if (vars) {
+        Object.keys(vars).map((varName) => {
+          const varValue = vars[varName];
+          translated = translated.replace('{{ ' + varName + ' }}', varValue);
+        })
+      }
 
       return translated;
     }
