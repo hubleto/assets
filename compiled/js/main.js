@@ -284,13 +284,13 @@ eval("{/* (ignored) */\n\n//# sourceURL=webpack:///./util.inspect_(ignored)?\n}"
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Shops/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Tasks/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Usage/Loader.tsx")))
-/******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Warehouses/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Workflow/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Worksheets/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/Accounting/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/Banks/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/Einvoice/Loader.tsx")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/LegalCases/Loader.tsx")))
+/******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/LegalCases/Loader.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../enterprise/apps/Warehouses/Loader.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
