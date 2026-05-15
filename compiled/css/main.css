@@ -1108,6 +1108,9 @@
   .max-w-92 {
     max-width: calc(var(--spacing) * 92);
   }
+  .max-w-120 {
+    max-width: calc(var(--spacing) * 120);
+  }
   .max-w-\[3rem\] {
     max-width: 3rem;
   }
