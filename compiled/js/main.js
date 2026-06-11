@@ -269,6 +269,7 @@ eval("{/* (ignored) */\n\n//# sourceURL=webpack:///./util.inspect_(ignored)?\n}"
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Developer/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Discussions/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Documents/Loader.tsx")))
+/******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/EmailMarketing/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/EventFeedback/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/EventRegistrations/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core","react-ui-ext"], () => (__webpack_require__("../erp/apps/Events/Loader.tsx")))
