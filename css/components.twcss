@@ -51,9 +51,9 @@
   .hubleto.component.input.date input { @apply max-w-[160px]; }
   .hubleto.component.input.datetime input { @apply max-w-[160px]; }
 
-  .hubleto.component.input .inner { @apply flex w-full items-center rounded gap-1; }
+  .hubleto.component.input .inner { @apply flex w-full items-center rounded gap-1 min-w-0; }
   .hubleto.component.input .inner .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }
-  .hubleto.component.input .inner .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white; min-height: 1.5rem; }
+  .hubleto.component.input .inner .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white min-w-0; min-height: 1.5rem; }
   .hubleto.component.input .inner .value-element .no-value { @apply text-gray-300 italic after:content-['N/A']; }
   .hubleto.component.input .inner .inline-editing-buttons { @apply flex flex-1 gap-1 invisible; }
   .hubleto.component.input .inner .inline-editing-buttons.always-visible { @apply !visible; }
@@ -121,6 +121,7 @@
   .btn .shortcut { @apply flex-1 text-gray-400 pt-1; max-height: 3.5rem; font-size: 0.5em; overflow: hidden; }
   .btn .hover { @apply hidden absolute text-nowrap text-gray-800 top-10 left-2 p-2 border border-gray-200 bg-gray-50 shadow-lg rounded-lg; z-index: 999999; }
   .btn:hover .hover { @apply block; }
+  .btn:disabled { @apply opacity-50 cursor-not-allowed pointer-events-none; }
 
   .btn.btn-no-border { @apply !border-none; }
 
@@ -351,7 +352,7 @@
 
   .table-default.not-striped > tbody > tr { @apply !bg-white; }
 
-  .hubleto-lookup[class*='-container'] { width: 100%; }
+  .hubleto-lookup[class*='-container'] { width: 100%; min-width: 0; }
   .hubleto-lookup *[class*='-indicator'] { padding: 0px !important; }
   .hubleto-lookup *[class*='-control'] { @apply !w-full rounded-sm !bg-white dark:!bg-white/20 dark:!border-slate-500 dark:!text-white; min-height: auto !important; }
   .hubleto-lookup *[class*='-control'] > div { padding-bottom: 0px !important; padding-top: 0px !important; }
@@ -362,6 +363,9 @@
   .hubleto-lookup *[class*='-menu'] * { @apply !text-sm; }
   .hubleto-lookup > div > div { @apply p-0; }
   .hubleto-lookup > div > div > div { @apply p-0 !m-0 dark:!text-white; }
+
+  .lookup-wrap *[class*='-singleValue'] { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; overflow-wrap: anywhere; }
+  .lookup-wrap *[class*='-ValueContainer'] { overflow: visible !important; }
 
   [id^="react-select-"][id*="-listbox"] {@apply dark:!bg-slate-800 dark:!border-slate-500 dark:!border;}
   [id^="react-select-"][id*="-option"] {@apply dark:!bg-slate-800 dark:!text-white;}
