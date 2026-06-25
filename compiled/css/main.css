@@ -74,6 +74,7 @@
     --color-violet-400: oklch(70.2% 0.183 293.541);
     --color-violet-600: oklch(54.1% 0.281 293.009);
     --color-violet-800: oklch(43.2% 0.232 292.759);
+    --color-purple-50: oklch(97.7% 0.014 308.299);
     --color-purple-300: oklch(82.7% 0.119 306.383);
     --color-purple-400: oklch(71.4% 0.203 305.504);
     --color-purple-500: oklch(62.7% 0.265 303.9);
@@ -875,6 +876,9 @@
   .max-h-4 {
     max-height: calc(var(--spacing) * 4);
   }
+  .max-h-8 {
+    max-height: calc(var(--spacing) * 8);
+  }
   .max-h-12 {
     max-height: calc(var(--spacing) * 12);
   }
@@ -1052,8 +1056,8 @@
   .w-\[50vw\] {
     width: 50vw;
   }
-  .w-\[75\%\] {
-    width: 75%;
+  .w-\[80\%\] {
+    width: 80%;
   }
   .w-\[95\%\] {
     width: 95%;
@@ -2179,6 +2183,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
     }
+  }
+  .bg-purple-50 {
+    background-color: var(--color-purple-50);
   }
   .bg-purple-500 {
     background-color: var(--color-purple-500);
@@ -4494,6 +4501,11 @@
       height: 100vh;
     }
   }
+  .md\:max-h-none {
+    @media (width >= 48rem) {
+      max-height: none;
+    }
+  }
   .md\:w-1\/2 {
     @media (width >= 48rem) {
       width: calc(1 / 2 * 100%);
@@ -5535,6 +5547,11 @@
   .\[\&_\.ql-editor\]\:\[word-break\:break-word\] {
     & .ql-editor {
       word-break: break-word;
+    }
+  }
+  .\[\&_\.table-header-search\]\:flex {
+    & .table-header-search {
+      display: flex;
     }
   }
   .\[\&\:\:-webkit-scrollbar\]\:hidden {
