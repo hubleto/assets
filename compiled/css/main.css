@@ -2523,6 +2523,9 @@
   .\!font-sans {
     font-family: var(--font-sans) !important;
   }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
   .font-sans {
     font-family: var(--font-sans);
   }
