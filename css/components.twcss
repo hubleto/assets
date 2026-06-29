@@ -33,7 +33,7 @@
   .hubleto.component.table .table-body tbody tr td .to-be-deleted { @apply bg-red-500; }
   .hubleto.component.table .table-body tbody tr td .to-be-deleted input { @apply text-red-500; }
 
-  .hubleto.component.table .table-cell-content { @apply relative overflow-x-hidden text-nowrap max-w-[38vw] px-1; }
+  .hubleto.component.table .table-cell-content { @apply relative overflow-auto scrollbar-none max-w-[38vw] max-h-24 px-1; }
   .hubleto.component.table .table-cell-content.column-lookup { @apply text-primary dark:text-white; }
   .hubleto.component.table .table-cell-content.column-int { @apply text-right font-semibold; }
   .hubleto.component.table .table-cell-content.column-float { @apply text-right font-semibold; }
