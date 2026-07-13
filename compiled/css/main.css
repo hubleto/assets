@@ -2564,6 +2564,9 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .text-\[3em\] {
+    font-size: 3em;
+  }
   .leading-4 {
     --tw-leading: calc(var(--spacing) * 4);
     line-height: calc(var(--spacing) * 4);
@@ -2787,14 +2790,8 @@
   .text-stone-700 {
     color: var(--color-stone-700);
   }
-  .text-violet-400 {
-    color: var(--color-violet-400);
-  }
   .text-violet-600 {
     color: var(--color-violet-600);
-  }
-  .text-violet-700 {
-    color: var(--color-violet-700);
   }
   .text-violet-800 {
     color: var(--color-violet-800);
