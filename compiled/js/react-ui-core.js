@@ -189,6 +189,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ },
 
+/***/ "../react-ui/core/Inputs/Json.tsx"
+/*!****************************************!*\
+  !*** ../react-ui/core/Inputs/Json.tsx ***!
+  \****************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Json)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../react-ui/node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hubleto_react_ui_core_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/core/Input */ \"../react-ui/core/Input.tsx\");\n/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uuid */ \"../react-ui/node_modules/uuid/dist/esm-browser/v4.js\");\n/* harmony import */ var json_edit_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! json-edit-react */ \"../react-ui/node_modules/json-edit-react/build/index.esm.js\");\n\n\n\n\nclass Json extends _hubleto_react_ui_core_Input__WEBPACK_IMPORTED_MODULE_1__.Input {\n  static defaultProps = {\n    inputClassName: 'json',\n    id: uuid__WEBPACK_IMPORTED_MODULE_2__[\"default\"]()\n  };\n  constructor(props) {\n    super(props);\n    this.state.isInitialized = true;\n  }\n  getStateFromProps(props) {\n    return {\n      ...this.state,\n      // Parent state\n      focused: false\n    };\n  }\n  renderValueElement() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(json_edit_react__WEBPACK_IMPORTED_MODULE_3__.JsonEditor, {\n      data: JSON.parse(this.state.value ?? '') ?? {},\n      onUpdate: props => {\n        if (props.newData) this.onChange(JSON.stringify(props.newData) ?? '');\n      }\n    }));\n  }\n  renderInputElement() {\n    return this.renderValueElement();\n  }\n}\n\n//# sourceURL=webpack:///../react-ui/core/Inputs/Json.tsx?\n}");
+
+/***/ },
+
 /***/ "../react-ui/core/Inputs/JsonKeyValue.tsx"
 /*!************************************************!*\
   !*** ../react-ui/core/Inputs/JsonKeyValue.tsx ***!
