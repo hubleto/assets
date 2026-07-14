@@ -87,4 +87,11 @@
   .sidebar-group .sidebar-group-btns .btn.btn-active .icon { @apply !text-white; }
   .sidebar-group .sidebar-group-btns .btn.btn-active .text { @apply !text-white; }
 
+  .sidebar-group.collapsed .sidebar-group-btns { @apply hidden; }
+
+  .sidebar-group .sidebar-group-collapse-expand-btn .icon-expanded { @apply block; }
+  .sidebar-group .sidebar-group-collapse-expand-btn .icon-collapsed { @apply hidden; }
+  .sidebar-group.collapsed .sidebar-group-collapse-expand-btn .icon-expanded { @apply hidden; }
+  .sidebar-group.collapsed .sidebar-group-collapse-expand-btn .icon-collapsed { @apply block; }
+
 }
