@@ -26,6 +26,7 @@
     --color-orange-600: oklch(64.6% 0.222 41.116);
     --color-orange-700: oklch(55.3% 0.195 38.402);
     --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-yellow-50: oklch(98.7% 0.026 102.212);
@@ -419,6 +420,9 @@
   }
   .left-44 {
     left: calc(var(--spacing) * 44);
+  }
+  .left-\[-1\.5em\] {
+    left: -1.5em;
   }
   .left-\[50\%\] {
     left: 50%;
@@ -1156,6 +1160,9 @@
   .max-w-\[150px\] {
     max-width: 150px;
   }
+  .max-w-\[160px\] {
+    max-width: 160px;
+  }
   .max-w-\[400px\] {
     max-width: 400px;
   }
@@ -1615,6 +1622,9 @@
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
+  .rounded-\[2em\] {
+    border-radius: 2em;
+  }
   .rounded-\[16px\] {
     border-radius: 16px;
   }
@@ -1838,6 +1848,10 @@
   .border-none {
     --tw-border-style: none;
     border-style: none;
+  }
+  .border-none\! {
+    --tw-border-style: none !important;
+    border-style: none !important;
   }
   .border-solid {
     --tw-border-style: solid;
@@ -3083,6 +3097,10 @@
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
+  }
+  .content-\[\'\+\'\] {
+    --tw-content: '+';
+    content: var(--tw-content);
   }
   .outline-none {
     --tw-outline-style: none;
@@ -6291,6 +6309,11 @@ body #ajax-loader::before {
   .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div {
     margin-left: calc(var(--spacing) * 2);
   }
+  .hubleto.component.table .table-body tr.insert-row {
+    --tw-border-style: none !important;
+    border-style: none !important;
+    background-color: var(--color-amber-50) !important;
+  }
   .hubleto.component.table .table-body tr td {
     cursor: pointer;
   }
@@ -6369,12 +6392,15 @@ body #ajax-loader::before {
   }
   .hubleto.component.input.int input {
     max-width: 160px;
+    background-color: var(--color-white);
   }
   .hubleto.component.input.date input {
     max-width: 160px;
+    background-color: var(--color-white);
   }
   .hubleto.component.input.datetime input {
     max-width: 160px;
+    background-color: var(--color-white);
   }
   .hubleto.component.input .inner {
     display: flex;
@@ -9803,8 +9829,8 @@ body #ajax-loader::before {
 }
 @property --tw-content {
   syntax: "*";
-  initial-value: "";
   inherits: false;
+  initial-value: "";
 }
 @property --tw-space-x-reverse {
   syntax: "*";

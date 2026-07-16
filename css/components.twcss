@@ -23,8 +23,9 @@
   .hubleto.component.table .table-body tbody tr td:hover .inline-edit-icon { @apply visible; }
   .hubleto.component.table .table-body tbody tr.hidden-record td { font-size: 0.6em; }
   .hubleto.component.table .table-body tr.highlighted { @apply divide-none text-primary border-primary border-l border-l-6 border-t border-t-1; }
-  /* .hubleto.component.table .table-body tr.highlighted td > div { @apply border-b border-primary dark:bg-slate-600 dark:border-slate-600; } */
   .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div { @apply ml-2; }
+  .hubleto.component.table .table-body tr.insert-row { @apply border-none! bg-amber-50!; }
+  /*.hubleto.component.table .table-body tr.insert-row td:first-child:hover::before { @apply content-['+'] absolute p-1 text-center left-[-1.5em] rounded-[2em] w-8 bg-amber-600 text-white; }*/
   .hubleto.component.table .table-body tr td { @apply cursor-pointer; }
   .hubleto.component.input.table { @apply max-w-[100%] }
 
@@ -47,9 +48,9 @@
   .hubleto.component.table .column-search .input-element { @apply bg-white dark:bg-slate-800; }
 
   .hubleto.component.input { @apply inline-flex justify-between items-center w-full; }
-  .hubleto.component.input.int input { @apply max-w-[160px]; }
-  .hubleto.component.input.date input { @apply max-w-[160px]; }
-  .hubleto.component.input.datetime input { @apply max-w-[160px]; }
+  .hubleto.component.input.int input { @apply max-w-[160px] bg-white; }
+  .hubleto.component.input.date input { @apply max-w-[160px] bg-white; }
+  .hubleto.component.input.datetime input { @apply max-w-[160px] bg-white; }
 
   .hubleto.component.input .inner { @apply flex w-full items-center rounded gap-1 min-w-0; }
   .hubleto.component.input .inner .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }

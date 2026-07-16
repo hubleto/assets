@@ -1,5 +1,14 @@
+declare global {
+  var dictionary: any;
+  var main: any;
+  var hubleto: any;
+}
+
+//@ts-ignore
 import $ from 'jquery';
+//@ts-ignore
 import React, { Component } from 'react';
+//@ts-ignore
 import 'primereact/resources/themes/lara-light-teal/theme.css';
 
 import { HubletoReactUi } from "@hubleto/react-ui/core/Loader";
@@ -38,7 +47,6 @@ import TableExtendedColumnCustomize from "@hubleto/react-ui/ext/TableExtendedCol
 import { Tooltip } from "primereact/tooltip";
 
 try {
-  console.log('Initializing Hubleto, step 1...');
 
   class HubletoErp extends HubletoReactUi {
     language: string = 'en';
@@ -111,8 +119,8 @@ try {
       if (this.language === 'en') translated = orig;
       else if (this.dictionary === null) translated = orig;
       else {
-        //@ts-ignore
         context = (context ?? '').replaceAll('\\', '-').toLowerCase();
+        contextInner = contextInner ?? '';
 
         if (
           this.dictionary[context]
@@ -191,38 +199,30 @@ try {
       })).observe(document, { subtree: true, attributes: true });
     }
 
-    startConsoleErrorLogger() {
-      console.log('Hubleto: Starting console.error debugger.');
-      if (window.console && console.error) {
-        const ce = console.error;
-        console.error = function() {
-          request.post(
-            'api/log-javascript-error',
-            {},
-            { errorRoute: '{{ route }}', errors: arguments }
-          );
-          ce.apply(this, arguments)
-        }
-      }
-    }
+    // startConsoleErrorLogger() {
+    //   console.log('Hubleto: Starting console.error debugger.');
+    //   if (window.console && console.error) {
+    //     const ce = console.error;
+    //     console.error = function() {
+    //       request.post(
+    //         'api/log-javascript-error',
+    //         {},
+    //         { errorRoute: '{{ route }}', errors: arguments }
+    //       );
+    //       ce.apply(this, arguments)
+    //     }
+    //   }
+    // }
 
   }
-
-  console.log('Initializing Hubleto, step 2...');
 
   //@ts-ignore
   const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
 
-  console.log('Initializing Hubleto, step 3...');
-
   globalThis.main = hubleto; // deprecated
   globalThis.hubleto = hubleto;
 
-  console.log('Initializing Hubleto, step 4...');
-
   document.addEventListener('readystatechange', function() {
-    console.log('Initializing Hubleto, step 5...');
-
     if (document.readyState === 'complete') {
       globalThis.hubleto.init();
       globalThis.hubleto.renderReactElements();
