@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "target": "es2022",
+    "module": "preserve",
+    "strict": false,
+    "noEmit": true,
+    // "moduleResolution": "node16",
+    "moduleDetection": "force",
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "preserveSymlinks": true,
-    "baseUrl": ".",
     "paths": {
       "@hubleto/react-ui/*": ["../react-ui/*"],
       "*": ["../react-ui/node_modules/*"],
-    }
+    },
+    "lib": ["es2022", "dom", "dom.iterable"],
   },
   "include": ["./**/*"]
 }

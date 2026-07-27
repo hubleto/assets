@@ -2,50 +2,62 @@
 
   /* CLASSES in alphabetical order */
 
-  .hubleto.component.table { @apply w-full flex flex-col; }
-  .hubleto.component.table.loading { opacity: 0.25; }
-  .hubleto.component.table .table-header { @apply flex flex-col md:flex-row items-center gap-2 mb-2 justify-between; }
-  .hubleto.component.table .table-header-left { @apply w-full flex flex-1 gap-1 items-center flex-col md:flex-row; }
-  .hubleto.component.table .table-header-title { @apply flex-1 text-left text-primary text-center text-2xl mr-2 dark:text-white; }
-  .hubleto.component.table .table-header-right { @apply flex flex-1 text-center gap-1 justify-end; }
-  .hubleto.component.table .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
-  .hubleto.component.table .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
-  .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
-  /* .hubleto.component.table .table-body { @apply border border-slate-200 dark:border-none; } */
-  .hubleto.component.table .table-body tr { @apply border border-transparent divide-x; box-sizing: border-box; }
-  .hubleto.component.table .table-body tr.hidden-record { @apply hidden; }
-  .hubleto.component.table .table-body tr:hover:not(.hidden-record) td { @apply bg-gray-100 dark:bg-slate-800; }
-  .hubleto.component.table .table-body thead th td { @apply p-0.5; margin: 1px; }
-  .hubleto.component.table .table-body thead th td { @apply p-0.5; margin: 1px; }
-  .hubleto.component.table .table-body tbody tr td { @apply p-0.5; margin: 1px; }
-  /* .hubleto.component.table .table-body tbody tr td > div { @apply; } */
-  .hubleto.component.table .table-body tbody tr td .inline-edit-icon { @apply invisible cursor-pointer; }
-  .hubleto.component.table .table-body tbody tr td:hover .inline-edit-icon { @apply visible; }
-  .hubleto.component.table .table-body tbody tr.hidden-record td { font-size: 0.6em; }
-  .hubleto.component.table .table-body tr.highlighted { @apply divide-none text-primary border-primary border-l border-l-6 border-t border-t-1; }
-  .hubleto.component.table .table-body tr.highlighted td:nth-child(1) > div { @apply ml-2; }
-  .hubleto.component.table .table-body tr.insert-row { @apply border-none! bg-amber-50!; }
-  /*.hubleto.component.table .table-body tr.insert-row td:first-child:hover::before { @apply content-['+'] absolute p-1 text-center left-[-1.5em] rounded-[2em] w-8 bg-amber-600 text-white; }*/
-  .hubleto.component.table .table-body tr td { @apply cursor-pointer; }
-  .hubleto.component.input.table { @apply max-w-[100%] }
+  .hubleto.component.table {
+    @apply w-full flex flex-col;
+    &.loading { opacity: 0.25; }
+    &.header-style-1 { @apply bg-green-50 }
+    .column-search .input-element { @apply bg-white dark:bg-slate-800; }
+   
+    .table-header-left { @apply w-full flex flex-1 gap-1 items-center flex-col md:flex-row; }
+    .table-header-title { @apply flex-1 text-left text-primary text-center text-2xl mr-2 dark:text-white; }
+    .table-header-right { @apply flex flex-1 text-center gap-1 justify-end; }
+    .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
+    .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
 
-  .hubleto.component.table.header-style-1 { @apply bg-green-50 }
+    .table-container {
+      @apply border border-slate-100;
+      table {
+        thead {
+          th > div { @apply p-1 flex gap-2 justify-between; }
+        }
+        tbody tr {
+          &.hidden-record { @apply hidden; }
+          &:hover:not(.hidden-record) td { @apply bg-gray-100 dark:bg-slate-800; }
 
-  .hubleto.component.table .table-body tbody tr td .to-be-deleted { @apply bg-red-500; }
-  .hubleto.component.table .table-body tbody tr td .to-be-deleted input { @apply text-red-500; }
+          &.highlighted { @apply divide-none text-primary border-primary border-l border-l-6 border-t border-t-1; }
+          &.highlighted td:nth-child(1) > div { @apply ml-2; }
+          &.insert-row { @apply border-none! bg-amber-50!; }
+          &.hidden-record td { font-size: 0.6em; }
 
-  .hubleto.component.table .table-cell-content { @apply relative overflow-auto scrollbar-none max-w-[38vw] max-h-24 px-1; }
-  .hubleto.component.table .table-cell-content.column-lookup { @apply text-primary dark:text-white; }
-  .hubleto.component.table .table-cell-content.column-int { @apply text-right font-semibold; }
-  .hubleto.component.table .table-cell-content.column-float { @apply text-right font-semibold; }
-  .hubleto.component.table .table-cell-content.column-date { @apply text-right; }
-  .hubleto.component.table .table-cell-content.column-datetime { @apply text-right; }
-  .hubleto.component.table .table-cell-content.column-boolean { @apply text-center; }
-  .hubleto.component.table .table-cell-content .cell-buttons { @apply hidden absolute; right: 0; top: 0; }
-  .hubleto.component.table .table-cell-content:hover .cell-buttons { @apply flex gap-2; }
-  .hubleto.component.table .table-sidebar-filter { @apply hidden md:block; }
+          td {
+            @apply border-t-1 border-t-slate-50 cursor-pointer p-0.5;
+            .inline-edit-icon { @apply invisible cursor-pointer; }
+            .to-be-deleted { @apply bg-red-100; }
+            .to-be-deleted input { @apply text-red-500; }
+            &:hover .inline-edit-icon { @apply visible; }
+          }
+        }
+      }
 
-  .hubleto.component.table .column-search .input-element { @apply bg-white dark:bg-slate-800; }
+      .table-sidebar-filter { @apply hidden md:block; }
+
+      .table-body tr td { @apply cursor-pointer; }
+
+      .table-cell-content {
+        @apply relative overflow-auto scrollbar-none max-w-[38vw] max-h-24 px-1;
+        &.column-lookup { @apply text-primary dark:text-white; }
+        &.column-int { @apply text-right font-semibold; }
+        &.column-float { @apply text-right font-semibold; }
+        &.column-date { @apply text-right; }
+        &.column-datetime { @apply text-right; }
+        &.column-boolean { @apply text-center; }
+        & .cell-buttons { @apply hidden absolute; right: 0; top: 0; }
+        &:hover .cell-buttons { @apply flex gap-2; }
+      }
+    }
+  }
+
+  
 
   .hubleto.component.input { @apply inline-flex justify-between items-center w-full; }
   .hubleto.component.input.int input { @apply max-w-[160px] bg-white; }

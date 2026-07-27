@@ -9,7 +9,7 @@ import $ from 'jquery';
 //@ts-ignore
 import React, { Component } from 'react';
 //@ts-ignore
-import 'primereact/resources/themes/lara-light-teal/theme.css';
+// import 'primereact/resources/themes/lara-light-teal/theme.css';
 
 import { HubletoReactUi } from "@hubleto/react-ui/core/Loader";
 import App from '@hubleto/react-ui/core/App'
