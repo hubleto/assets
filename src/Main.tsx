@@ -8,8 +8,6 @@ declare global {
 import $ from 'jquery';
 //@ts-ignore
 import React, { Component } from 'react';
-//@ts-ignore
-// import 'primereact/resources/themes/lara-light-teal/theme.css';
 
 import { HubletoReactUi } from "@hubleto/react-ui/core/Loader";
 import App from '@hubleto/react-ui/core/App'
@@ -21,10 +19,12 @@ import Chart from "@hubleto/react-ui/core/Chart";
 
 import InputVarchar from "@hubleto/react-ui/core/Inputs/Varchar";
 import InputInt from "@hubleto/react-ui/core/Inputs/Int";
-import InputLookup from "@hubleto/react-ui/core/Inputs/Lookup";
-import InputImage from "@hubleto/react-ui/core/Inputs/Image";
 import InputBoolean from "@hubleto/react-ui/core/Inputs/Boolean";
 import InputColor from "@hubleto/react-ui/core/Inputs/Color";
+import InputDateTime from "@hubleto/react-ui/core/Inputs/DateTime";
+
+import InputLookup from "@hubleto/react-ui/core/Inputs/Lookup";
+import InputImage from "@hubleto/react-ui/core/Inputs/Image";
 import InputHyperlink from "@hubleto/react-ui/core/Inputs/Hyperlink";
 import InputUserSelect from "@hubleto/react-ui/core/Inputs/UserSelect";
 import InputSharedWith from "@hubleto/react-ui/core/Inputs/SharedWith";
@@ -42,9 +42,6 @@ import FormExtended from "@hubleto/react-ui/ext/FormExtended";
 import Tree from "@hubleto/react-ui/core/Tree";
 import TableExtended from "@hubleto/react-ui/ext/TableExtended";
 import TableExtendedColumnCustomize from "@hubleto/react-ui/ext/TableExtendedColumnsCustomize";
-
-// Primereact
-import { Tooltip } from "primereact/tooltip";
 
 try {
 
@@ -75,6 +72,7 @@ try {
       this.registerReactComponent('InputBoolean', InputBoolean);
       this.registerReactComponent('InputImage', InputImage);
       this.registerReactComponent('InputColor', InputColor);
+      this.registerReactComponent('InputDateTime', InputDateTime);
       this.registerReactComponent('InputHyperlink', InputHyperlink);
       this.registerReactComponent('InputUserSelect', InputUserSelect);
       this.registerReactComponent('InputSharedWith', InputSharedWith);
@@ -93,9 +91,6 @@ try {
       this.registerReactComponent('Tree', Tree);
       this.registerReactComponent('TableColumnsCustomize', TableExtendedColumnCustomize);
       this.registerReactComponent('Chart', Chart);
-
-      // Primereact
-      this.registerReactComponent('Tooltip', Tooltip);
     }
 
     init() {

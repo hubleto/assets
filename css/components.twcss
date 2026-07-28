@@ -14,13 +14,19 @@
     .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
     .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
 
+    .table-sidebar-filter { @apply hidden md:block; }
+
     .table-container {
       @apply border border-slate-100;
       table {
+        @apply w-full;
+
         thead {
           th > div { @apply p-1 flex gap-2 justify-between; }
         }
+
         tbody tr {
+          &:nth-child(even) { @apply bg-gray-50; }
           &.hidden-record { @apply hidden; }
           &:hover:not(.hidden-record) td { @apply bg-gray-100 dark:bg-slate-800; }
 
@@ -30,30 +36,31 @@
           &.hidden-record td { font-size: 0.6em; }
 
           td {
-            @apply border-t-1 border-t-slate-50 cursor-pointer p-0.5;
+            @apply cursor-pointer p-0.5;
             .inline-edit-icon { @apply invisible cursor-pointer; }
             .to-be-deleted { @apply bg-red-100; }
             .to-be-deleted input { @apply text-red-500; }
             &:hover .inline-edit-icon { @apply visible; }
+
+            .table-cell-content {
+              @apply relative overflow-auto scrollbar-none max-w-[38vw] max-h-24 px-1;
+              &.column-lookup { @apply text-primary dark:text-white; }
+              &.column-int { @apply text-right font-semibold; }
+              &.column-float { @apply text-right font-semibold; }
+              &.column-date { @apply text-right; }
+              &.column-datetime { @apply text-right; }
+              &.column-boolean { @apply text-center; }
+              & .cell-buttons { @apply hidden absolute; right: 0; top: 0; }
+              &:hover .cell-buttons { @apply flex gap-2; }
+            }
           }
         }
       }
 
-      .table-sidebar-filter { @apply hidden md:block; }
-
-      .table-body tr td { @apply cursor-pointer; }
-
-      .table-cell-content {
-        @apply relative overflow-auto scrollbar-none max-w-[38vw] max-h-24 px-1;
-        &.column-lookup { @apply text-primary dark:text-white; }
-        &.column-int { @apply text-right font-semibold; }
-        &.column-float { @apply text-right font-semibold; }
-        &.column-date { @apply text-right; }
-        &.column-datetime { @apply text-right; }
-        &.column-boolean { @apply text-center; }
-        & .cell-buttons { @apply hidden absolute; right: 0; top: 0; }
-        &:hover .cell-buttons { @apply flex gap-2; }
+      .table-paginator {
+        @apply flex gap-2 justify-center my-2 items-center;
       }
+
     }
   }
 

@@ -94,8 +94,6 @@ export default {
       '@hubleto/react-ui/core': path.resolve(__dirname, '../react-ui/core'),
       '@hubleto/react-ui/ext': path.resolve(__dirname, '../react-ui/ext'),
       '@hubleto/apps': path.resolve(__dirname, '../erp/apps'),
-      // 'primereact/*': path.resolve(__dirname, '../react-ui/node_modules/primereact'),
-      // '@primereact/*': path.resolve(__dirname, '../react-ui/node_modules/@primereact'),
     },
   }
 };

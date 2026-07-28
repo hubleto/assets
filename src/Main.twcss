@@ -2,12 +2,11 @@
 
 @config "../tailwind.config.js";
 
-@layer theme, base, components, primereact, hubleto-framework, utilities, hubleto-main;
+@layer theme, base, components, hubleto-framework, utilities, hubleto-main;
 
 @import "tailwindcss";
 @import "../css/desktop.twcss";
 @import "../css/components.twcss";
-@import "../css/primereact.twcss";
 @import "../css/color-scales.twcss";
 
 @theme {

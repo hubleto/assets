@@ -5,7 +5,6 @@ module.exports = {
     "../erp/**/*.{html,js,twig,tsx,php}",
     "../enterprise/**/*.{html,js,twig,tsx,php}",
     "../framework/**/*.{tsx,twig,php}",
-    "../react-ui/node_modules/primereact/**/*.{js,ts,jsx,tsx}",
     "../react-ui/css/**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [

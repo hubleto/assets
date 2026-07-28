@@ -13,6 +13,8 @@
     "@babel/preset-typescript": "^8",
     "@babel/runtime": "^8",
     "@hubleto/react-ui": "file:../react-ui",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "babel-loader": "^10",
     "css-loader": "^7",
     "csstype": "^3",
