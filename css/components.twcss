@@ -67,6 +67,8 @@
   
 
   .hubleto.component.input { @apply inline-flex justify-between items-center w-full; }
+  .hubleto.component.input.readonly { @apply opacity-50; }
+  .hubleto.component.input.changed { @apply after:content-['*']; }
   .hubleto.component.input.int input { @apply max-w-[160px] bg-white; }
   .hubleto.component.input.date input { @apply max-w-[160px] bg-white; }
   .hubleto.component.input.datetime input { @apply max-w-[160px] bg-white; }
