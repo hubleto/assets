@@ -66,31 +66,32 @@
 
   
 
-  .hubleto.component.input { @apply inline-flex justify-between items-center w-full; }
-  .hubleto.component.input.readonly { @apply opacity-50; }
-  .hubleto.component.input.changed { @apply after:content-['*']; }
-  .hubleto.component.input.int input { @apply max-w-[160px] bg-white; }
-  .hubleto.component.input.date input { @apply max-w-[160px] bg-white; }
-  .hubleto.component.input.datetime input { @apply max-w-[160px] bg-white; }
+  .hubleto.component.input {
+    @apply inline-flex justify-between items-center w-full;
 
-  .hubleto.component.input .inner { @apply flex w-full items-center rounded gap-1 min-w-0; }
-  .hubleto.component.input .inner .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }
-  .hubleto.component.input .inner .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white min-w-0; min-height: 1.5rem; }
-  .hubleto.component.input .inner .value-element .no-value { @apply text-gray-300 italic after:content-['N/A']; }
-  .hubleto.component.input .inner .inline-editing-buttons { @apply flex flex-1 gap-1 invisible; }
-  .hubleto.component.input .inner .inline-editing-buttons.always-visible { @apply !visible; }
-  .hubleto.component.input .inner .btn { @apply shadow-none }
-  .hubleto.component.input .inner:hover .inline-editing-buttons { @apply !visible }
+    input { @apply w-full }
 
-  .hubleto.component.input .input-after { @apply flex-1 ml-2; }
-  .hubleto.component.input .input-unit { @apply flex-none ml-2 whitespace-nowrap; }
-  .is-invalid, .hubleto.component.input.invalid {
-    @apply !border-red-500 text-red-500;
-  }
+    &.readonly { @apply opacity-50; }
+    &.changed { @apply after:content-['✎'] after:text-gray-300 after:ml-2; }
+    &.int input { @apply max-w-[160px] bg-white; }
+    &.date input { @apply max-w-[160px] bg-white; }
+    &.datetime input { @apply max-w-[160px] bg-white; }
+    &.invalid { @apply !border-red-500 text-red-500; }
 
-  .is-invalid .hubleto-lookup > div:nth-of-type(1),
-  .hubleto.component.input.invalid .hubleto-lookup > div:nth-of-type(1) {
-    @apply !border-red-500;
+    .inner {
+      @apply flex w-full items-center rounded gap-1 min-w-0;
+      .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }
+      .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white min-w-0; min-height: 1.5rem; }
+      .value-element .no-value { @apply text-gray-300 italic after:content-['N/A']; }
+      .inline-editing-buttons { @apply flex flex-1 gap-1 invisible; }
+      .inline-editing-buttons.always-visible { @apply !visible; }
+      .btn { @apply shadow-none }
+      &:hover .inline-editing-buttons { @apply !visible }
+    }
+
+    .input-after { @apply flex-1 ml-2; }
+    .input-unit { @apply flex-none ml-2 whitespace-nowrap; }
+
   }
 
 

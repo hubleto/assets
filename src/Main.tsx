@@ -26,7 +26,7 @@ import InputDateTime from "@hubleto/react-ui/components/cc/Inputs/DateTime";
 import InputLookup from "@hubleto/react-ui/components/cc/Inputs/Lookup";
 import InputImage from "@hubleto/react-ui/components/cc/Inputs/Image";
 import InputHyperlink from "@hubleto/react-ui/components/cc/Inputs/Hyperlink";
-import InputUserSelect from "@hubleto/react-ui/components/cc/Inputs/UserSelect";
+import InputUserSelect from "@hubleto/react-ui/components/fc/Inputs/UserSelect";
 import InputSharedWith from "@hubleto/react-ui/components/cc/Inputs/SharedWith";
 import InputWysiwyg from "@hubleto/react-ui/components/cc/Inputs/Wysiwyg";
 import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/cc/Inputs/TextareaWithHtmlPreview";
