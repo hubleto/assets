@@ -72,14 +72,11 @@
     input { @apply w-full }
 
     &.readonly { @apply opacity-50; }
-    &.changed { @apply after:content-['✎'] after:text-gray-300 after:ml-2; }
-    &.int input { @apply max-w-[160px] bg-white; }
-    &.date input { @apply max-w-[160px] bg-white; }
-    &.datetime input { @apply max-w-[160px] bg-white; }
+    &.x-changed { @apply after:content-['✎'] after:text-gray-300 after:ml-2; }
     &.invalid { @apply !border-red-500 text-red-500; }
 
     .inner {
-      @apply flex w-full items-center rounded gap-1 min-w-0;
+      @apply flex border-r border-r-primary w-full border-r-2 items-center rounded gap-1 min-w-0;
       .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }
       .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white min-w-0; min-height: 1.5rem; }
       .value-element .no-value { @apply text-gray-300 italic after:content-['N/A']; }
@@ -89,8 +86,14 @@
       &:hover .inline-editing-buttons { @apply !visible }
     }
 
+    &.int .inner { @apply max-w-[160px] bg-white; }
+    &.date .inner { @apply max-w-[160px] bg-white; }
+    &.datetime .inner { @apply max-w-[160px] bg-white; }
+
     .input-after { @apply flex-1 ml-2; }
     .input-unit { @apply flex-none ml-2 whitespace-nowrap; }
+
+    &.changed .inner { @apply border-r-yellow-600; }
 
   }
 
