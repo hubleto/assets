@@ -89,6 +89,7 @@
     &.int .inner { @apply max-w-[160px] bg-white; }
     &.date .inner { @apply max-w-[160px] bg-white; }
     &.datetime .inner { @apply max-w-[160px] bg-white; }
+    &.boolean .inner { @apply border-none; }
 
     .input-after { @apply flex-1 ml-2; }
     .input-unit { @apply flex-none ml-2 whitespace-nowrap; }

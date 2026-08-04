@@ -29,7 +29,7 @@ import InputHyperlink from "@hubleto/react-ui/components/fc/Inputs/Hyperlink";
 import InputUserSelect from "@hubleto/react-ui/components/fc/Inputs/UserSelect";
 import InputSharedWith from "@hubleto/react-ui/components/fc/Inputs/SharedWith";
 import InputWysiwyg from "@hubleto/react-ui/components/cc/Inputs/Wysiwyg";
-import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/cc/Inputs/TextareaWithHtmlPreview";
+import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/fc/Inputs/TextareaWithHtmlPreview";
 import InputJson from "@hubleto/react-ui/components/cc/Inputs/Json";
 import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyValue";
 
