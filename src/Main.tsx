@@ -36,6 +36,8 @@ import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyVal
 import TableCellRendererHyperlink from "@hubleto/react-ui/components/cc/TableCellRenderers/Hyperlink";
 import TableCellRendererSharedWith from "@hubleto/react-ui/components/cc/TableCellRenderers/SharedWith";
 
+import Table from "@hubleto/react-ui/components/fc/Table";
+
 // extended hubleto react ui components
 import ErpSearch from "@hubleto/react-ui/components/cc/ErpSearch";
 import FormExtended from "@hubleto/react-ui/components/cc/FormExtended";
@@ -86,7 +88,7 @@ try {
       // Hubleto components
       this.registerReactComponent('Search', ErpSearch);
       this.registerReactComponent('Form', FormExtended);
-      this.registerReactComponent('Table', TableExtended);
+      this.registerReactComponent('Table', Table);
       this.registerReactComponent('Tree', Tree);
       this.registerReactComponent('TableColumnsCustomize', TableExtendedColumnCustomize);
     }
