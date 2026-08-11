@@ -374,8 +374,8 @@
   .modal > .modal-inner > .modal-header:not(.active) { @apply bg-gray-100 text-gray-500; }
   .modal > .modal-inner > .modal-header:not(.active) * { @apply !text-gray-500; }
   .modal > .modal-inner > .modal-header > .modal-header-left { @apply flex gap-1; }
-  .modal > .modal-inner > .modal-header > .modal-header-title { @apply flex-1 text-center text-sm md:text-xl px-2 min-w-0; }
-  .modal > .modal-inner > .modal-header > .modal-header-title h2 { @apply m-0 p-0 text-sm md:text-xl text-primary break-words max-w-full; }
+  .modal > .modal-inner > .modal-header > .modal-header-title { @apply flex-1 text-sm md:text-xl px-4 min-w-0; }
+  .modal > .modal-inner > .modal-header > .modal-header-title h2 { @apply min-h-8 m-0 p-0 text-sm font-semibold tracking-widest md:text-xl text-primary break-words max-w-full; }
   .modal > .modal-inner > .modal-header > .modal-header-right { @apply flex gap-1 justify-end; }
   .modal > .modal-inner > .modal-header-buttons { @apply flex gap-1 p-2 border-b border-b-primary/20; }
   .modal > .modal-inner > .modal-header .btn { @apply flex-nowrap }
