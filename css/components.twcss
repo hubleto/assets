@@ -88,6 +88,27 @@
 
   
 
+  .input-icon { @apply text-lg min-w-8; }
+
+  .input-wrapper {
+    @apply relative justify-between items-center border border-transparent rounded-sm p-1;
+    box-sizing: border-box;
+
+    &.required { @apply before:absolute before:content-['*'] before:text-red-600; }
+
+    .input-label { @apply block text-sm text-gray-400; }
+    .input-label { @apply block text-sm text-gray-400; }
+    .input-body { @apply flex items-center flex-[2]; overflow-wrap: anywhere; }
+    .input-info { @apply text-sm text-gray-500 pr-1; }
+    .input-description { @apply text-sm text-primary pr-1; }
+
+    &:hover .input-label { @apply text-primary; }
+    &.modified .input-label { @apply text-yellow-600; }
+    &.required .input-label { @apply pl-3; }
+  }
+
+  .input-highlighted { @apply bg-primary/20; }
+
   .hubleto.component.input {
     @apply inline-flex justify-between items-center w-full;
 
@@ -99,7 +120,7 @@
 
     .inner {
       @apply flex w-full items-center rounded gap-1 min-w-0;
-      &.fc { @apply border-r border-r-primary border-r-2; }
+      /* &.fc { @apply border-r border-r-primary border-r-2; } */
       .value-element { @apply inline-flex flex-1 items-center pr-1 mr-1 dark:text-white; min-height: 1.5rem; }
       .input-element { @apply flex-1 flex flex-row gap-1 items-center dark:text-white min-w-0; min-height: 1.5rem; }
       .value-element .no-value { @apply text-gray-300 italic after:content-['N/A']; }
@@ -319,26 +340,13 @@
 
   .form { @apply shadow-sm rounded-sm border border-slate-200; }
   .form .form-header { @apply flex border-b border-b-slate-200 text-primary items-baseline w-full justify-between shadow-sm p-2 bg-gray-50; }
-  .form .form-header .modal-header-left { @apply flex flex-1 gap-1; }
-  .form .form-header .modal-header-title { @apply flex-1 text-center; }
-  .form .form-header .modal-header-right { @apply flex flex-1 gap-1 justify-end; }
+  .form .form-header .form-header-left { @apply flex flex-1 gap-1; }
+  .form .form-header .form-header-title { @apply flex gap-2 flex-1 text-center; }
+  .form .form-header .form-header-right { @apply flex flex-1 gap-1 justify-end; }
   .form .form-body { @apply p-2 flex-1 overflow-y-auto; }
   .form .form-body .form-content.not-initialized { opacity: 0.5; }
   .form .form-body .form-top-menu { @apply flex gap-2 p-2 mb-2 border-b border-b-gray-700; }
   .form .form-footer { @apply p-2 border-t border-t-slate-200 bg-gray-50; }
-
-  .input-icon { @apply text-lg min-w-8; }
-
-  .input-wrapper { @apply grow relative justify-between items-center border border-transparent rounded-sm p-1 hover:bg-gray-50 dark:hover:bg-white/10; box-sizing: border-box; }
-  .input-wrapper .input-label { @apply block text-sm text-gray-400; }
-  .input-wrapper.modified .input-label { @apply text-yellow-600; }
-  .input-wrapper.required { @apply before:absolute before:content-['*'] before:text-red-600; }
-  .input-wrapper.required .input-label { @apply pl-3; }
-  .input-wrapper .input-body { @apply flex items-center flex-[2]; overflow-wrap: anywhere; }
-  .input-wrapper .input-info { @apply text-sm text-gray-500 pr-1; }
-  .input-wrapper .input-description { @apply text-sm text-primary pr-1; }
-
-  .input-highlighted { @apply bg-primary/20; }
 
   .key-value-table { @apply leading-8 divide-y border border-slate-200; }
   .key-value-table.dense { @apply leading-4 border border-slate-200; }
@@ -374,7 +382,7 @@
   .modal > .modal-inner > .modal-header:not(.active) { @apply bg-gray-100 text-gray-500; }
   .modal > .modal-inner > .modal-header:not(.active) * { @apply !text-gray-500; }
   .modal > .modal-inner > .modal-header > .modal-header-left { @apply flex gap-1; }
-  .modal > .modal-inner > .modal-header > .modal-header-title { @apply flex-1 text-sm md:text-xl px-4 min-w-0; }
+  .modal > .modal-inner > .modal-header > .modal-header-title { @apply flex gap-2 flex-1 text-sm md:text-xl px-4 min-w-0; }
   .modal > .modal-inner > .modal-header > .modal-header-title h2 { @apply min-h-8 m-0 p-0 text-sm font-semibold tracking-widest md:text-xl text-primary break-words max-w-full; }
   .modal > .modal-inner > .modal-header > .modal-header-right { @apply flex gap-1 justify-end; }
   .modal > .modal-inner > .modal-header-buttons { @apply flex gap-1 p-2 border-b border-b-primary/20; }
