@@ -130,9 +130,9 @@
       &:hover .inline-editing-buttons { @apply !visible }
     }
 
-    &.int .inner { @apply max-w-[160px] bg-white; }
-    &.date .inner { @apply max-w-[160px] bg-white; }
-    &.datetime .inner { @apply max-w-[160px] bg-white; }
+    &.int .inner { @apply max-w-[160px]; }
+    &.date .inner { @apply max-w-[160px]; }
+    &.datetime .inner { @apply max-w-[160px]; }
     &.boolean .inner { @apply border-none; }
 
     .input-after { @apply flex-1 ml-2; }

@@ -117,6 +117,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --tracking-widest: 0.1em;
     --leading-relaxed: 1.625;
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
@@ -465,6 +466,9 @@
   .mr-\[15px\] {
     margin-right: 15px;
   }
+  .mb-0 {
+    margin-bottom: 0px;
+  }
   .mb-1 {
     margin-bottom: var(--spacing);
   }
@@ -690,6 +694,9 @@
   .w-36 {
     width: calc(var(--spacing) * 36);
   }
+  .w-44 {
+    width: calc(var(--spacing) * 44);
+  }
   .w-48 {
     width: calc(var(--spacing) * 48);
   }
@@ -776,9 +783,6 @@
   }
   .max-w-\[150px\] {
     max-width: 150px;
-  }
-  .max-w-\[160px\] {
-    max-width: 160px;
   }
   .max-w-\[400px\] {
     max-width: 400px;
@@ -1056,11 +1060,11 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-l {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 1px;
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
   }
-  .border-l-1 {
+  .border-l {
     border-left-style: var(--tw-border-style);
     border-left-width: 1px;
   }
@@ -1215,6 +1219,9 @@
   .border-r-gray-100 {
     border-right-color: var(--color-gray-100);
   }
+  .border-r-primary {
+    border-right-color: var(--color-primary);
+  }
   .border-r-primary\/10 {
     border-right-color: color-mix(in srgb, #4780bf 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1238,9 +1245,6 @@
   }
   .border-b-slate-200 {
     border-bottom-color: var(--color-slate-200);
-  }
-  .border-l-primary {
-    border-left-color: var(--color-primary);
   }
   .border-l-primary\/10 {
     border-left-color: color-mix(in srgb, #4780bf 10%, transparent);
@@ -1316,6 +1320,12 @@
   }
   .bg-primary {
     background-color: var(--color-primary);
+  }
+  .bg-primary\/5 {
+    background-color: color-mix(in srgb, #4780bf 5%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-primary) 5%, transparent);
+    }
   }
   .bg-primary\/10 {
     background-color: color-mix(in srgb, #4780bf 10%, transparent);
@@ -1549,14 +1559,8 @@
   .pl-0 {
     padding-left: 0px;
   }
-  .pl-0\.5 {
-    padding-left: calc(var(--spacing) * 0.5);
-  }
   .pl-1 {
     padding-left: var(--spacing);
-  }
-  .pl-2 {
-    padding-left: calc(var(--spacing) * 2);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -1648,6 +1652,10 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
   }
   .\!text-nowrap {
     text-wrap: nowrap !important;
@@ -1857,6 +1865,9 @@
   }
   .placeholder-blue-300::placeholder {
     color: var(--color-blue-300);
+  }
+  .opacity-20 {
+    opacity: 20%;
   }
   .opacity-50 {
     opacity: 50%;
@@ -2860,6 +2871,38 @@ body.ajax-loading #ajax-loader {
   text-align: left;
 }
 @layer hubleto-framework {
+  .hubleto.component.loader-bar {
+    height: 3px;
+    margin: 0.5em;
+    display: block;
+    background: linear-gradient(var(--color-secondary) 0 0), linear-gradient(var(--color-secondary) 0 0), #dbdcef;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    animation: hubleto-component-loader-bar 1.2s infinite;
+  }
+  .hubleto.component.loader-bar.xs {
+    height: 1px;
+  }
+  .hubleto.component.loader-bar.sm {
+    height: 2px;
+  }
+  .hubleto.component.loader-bar.lg {
+    height: 4px;
+  }
+  .hubleto.component.loader-bar.xl {
+    height: 5px;
+  }
+  @keyframes hubleto-component-loader-bar {
+    0% {
+      background-position: -150% 0,-150% 0;
+    }
+    66% {
+      background-position: 250% 0,-150% 0;
+    }
+    100% {
+      background-position: 250% 0, 250% 0;
+    }
+  }
   .hubleto.component.table {
     display: flex;
     width: 100%;
@@ -3064,6 +3107,82 @@ body.ajax-loading #ajax-loader {
       }
     }
   }
+  .input-icon {
+    min-width: calc(var(--spacing) * 8);
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .input-wrapper {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--radius-sm);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: transparent;
+    padding: var(--spacing);
+    box-sizing: border-box;
+    &.required {
+      &::before {
+        content: var(--tw-content);
+        position: absolute;
+      }
+      &::before {
+        content: var(--tw-content);
+        color: var(--color-red-600);
+      }
+      &::before {
+        content: var(--tw-content);
+        --tw-content: '*';
+        content: var(--tw-content);
+      }
+    }
+    .input-label {
+      display: block;
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+      color: var(--color-gray-400);
+    }
+    .input-label {
+      display: block;
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+      color: var(--color-gray-400);
+    }
+    .input-body {
+      display: flex;
+      flex: 2;
+      align-items: center;
+      overflow-wrap: anywhere;
+    }
+    .input-info {
+      padding-right: var(--spacing);
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+      color: var(--color-gray-500);
+    }
+    .input-description {
+      padding-right: var(--spacing);
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+      color: var(--color-primary);
+    }
+    &:hover .input-label {
+      color: var(--color-primary);
+    }
+    &.modified .input-label {
+      color: var(--color-yellow-600);
+    }
+    &.required .input-label {
+      padding-left: calc(var(--spacing) * 3);
+    }
+  }
+  .input-highlighted {
+    background-color: color-mix(in srgb, #4780bf 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
+    }
+  }
   .hubleto.component.input {
     display: inline-flex;
     width: 100%;
@@ -3075,7 +3194,7 @@ body.ajax-loading #ajax-loader {
     &.readonly {
       opacity: 50%;
     }
-    &.changed {
+    &.x-changed {
       &::after {
         content: var(--tw-content);
         margin-left: calc(var(--spacing) * 2);
@@ -3089,18 +3208,6 @@ body.ajax-loading #ajax-loader {
         --tw-content: '✎';
         content: var(--tw-content);
       }
-    }
-    &.int input {
-      max-width: 160px;
-      background-color: var(--color-white);
-    }
-    &.date input {
-      max-width: 160px;
-      background-color: var(--color-white);
-    }
-    &.datetime input {
-      max-width: 160px;
-      background-color: var(--color-white);
     }
     &.invalid {
       border-color: var(--color-red-500) !important;
@@ -3162,6 +3269,19 @@ body.ajax-loading #ajax-loader {
         visibility: visible !important;
       }
     }
+    &.int .inner {
+      max-width: 160px;
+    }
+    &.date .inner {
+      max-width: 160px;
+    }
+    &.datetime .inner {
+      max-width: 160px;
+    }
+    &.boolean .inner {
+      --tw-border-style: none;
+      border-style: none;
+    }
     .input-after {
       margin-left: calc(var(--spacing) * 2);
       flex: 1;
@@ -3170,6 +3290,9 @@ body.ajax-loading #ajax-loader {
       margin-left: calc(var(--spacing) * 2);
       flex: none;
       white-space: nowrap;
+    }
+    &.changed .inner {
+      border-right-color: var(--color-yellow-600);
     }
   }
   app-dialog {
@@ -4581,16 +4704,18 @@ body.ajax-loading #ajax-loader {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .form .form-header .modal-header-left {
+  .form .form-header .form-header-left {
     display: flex;
     flex: 1;
     gap: var(--spacing);
   }
-  .form .form-header .modal-header-title {
+  .form .form-header .form-header-title {
+    display: flex;
     flex: 1;
+    gap: calc(var(--spacing) * 2);
     text-align: center;
   }
-  .form .form-header .modal-header-right {
+  .form .form-header .form-header-right {
     display: flex;
     flex: 1;
     justify-content: flex-end;
@@ -4619,80 +4744,6 @@ body.ajax-loading #ajax-loader {
     border-top-color: var(--color-slate-200);
     background-color: var(--color-gray-50);
     padding: calc(var(--spacing) * 2);
-  }
-  .input-icon {
-    min-width: calc(var(--spacing) * 8);
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .input-wrapper {
-    position: relative;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: var(--radius-sm);
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    border-color: transparent;
-    padding: var(--spacing);
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-50);
-      }
-    }
-    &:where(.dark, .dark *) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: color-mix(in srgb, #fff 10%, transparent);
-          @supports (color: color-mix(in lab, red, red)) {
-            background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-          }
-        }
-      }
-    }
-    box-sizing: border-box;
-  }
-  .input-wrapper .input-label {
-    display: block;
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: var(--color-gray-400);
-  }
-  .input-wrapper.modified .input-label {
-    color: var(--color-yellow-600);
-  }
-  .input-wrapper.required::before {
-    position: absolute;
-    color: var(--color-red-600);
-    --tw-content: '*';
-    content: var(--tw-content);
-  }
-  .input-wrapper.required .input-label {
-    padding-left: calc(var(--spacing) * 3);
-  }
-  .input-wrapper .input-body {
-    display: flex;
-    flex: 2;
-    align-items: center;
-    overflow-wrap: anywhere;
-  }
-  .input-wrapper .input-info {
-    padding-right: var(--spacing);
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: var(--color-gray-500);
-  }
-  .input-wrapper .input-description {
-    padding-right: var(--spacing);
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: var(--color-primary);
-  }
-  .input-highlighted {
-    background-color: color-mix(in srgb, #4780bf 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
-    }
   }
   .key-value-table {
     :where(& > :not(:last-child)) {
@@ -4998,10 +5049,11 @@ body.ajax-loading #ajax-loader {
     gap: var(--spacing);
   }
   .modal > .modal-inner > .modal-header > .modal-header-title {
+    display: flex;
     min-width: 0px;
     flex: 1;
-    padding-inline: calc(var(--spacing) * 2);
-    text-align: center;
+    gap: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 4);
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
     @media (width >= 48rem) {
@@ -5011,10 +5063,15 @@ body.ajax-loading #ajax-loader {
   }
   .modal > .modal-inner > .modal-header > .modal-header-title h2 {
     margin: 0px;
+    min-height: calc(var(--spacing) * 8);
     max-width: 100%;
     padding: 0px;
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
     overflow-wrap: break-word;
     color: var(--color-primary);
     @media (width >= 48rem) {
@@ -5929,6 +5986,10 @@ body.ajax-loading #ajax-loader {
   syntax: "*";
   inherits: false;
 }
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ordinal {
   syntax: "*";
   inherits: false;
@@ -6116,6 +6177,7 @@ body.ajax-loading #ajax-loader {
       --tw-gradient-to-position: 100%;
       --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-ordinal: initial;
       --tw-slashed-zero: initial;
       --tw-numeric-figure: initial;
