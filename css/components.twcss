@@ -54,6 +54,7 @@
 
           &.highlighted { @apply divide-none text-primary border-primary border-l border-l-6 border-t border-t-1; }
           &.highlighted td:nth-child(1) > div { @apply ml-2; }
+          &.highlighted { @apply bg-gray-200 opacity-80; }
           &.insert-row { @apply border-none! bg-amber-50!; }
           &.hidden-record td { font-size: 0.6em; }
 
@@ -421,7 +422,7 @@
   .hubleto-lookup *[class*='-indicator'] { padding: 0px !important; }
   .hubleto-lookup *[class*='-control'] { @apply !w-full rounded-sm !bg-white dark:!bg-white/20 dark:!border-slate-500 dark:!text-white; min-height: auto !important; }
   .hubleto-lookup *[class*='-control'] > div { padding-bottom: 0px !important; padding-top: 0px !important; }
-  .hubleto-lookup *[class*='-input-container'] { @apply !p-0.5 !m-0; min-width: 2em; }
+  .hubleto-lookup *[class*='-input-container'] { @apply !p-0 !m-0; min-width: 2em; }
   .hubleto-lookup *[class*='-ValueContainer'] { @apply !p-0; }
   .hubleto-lookup *[class*='-singleValue'] { @apply dark:!text-white; }
   .hubleto-lookup *[class*='-Input'] { @apply !text-sm; }
