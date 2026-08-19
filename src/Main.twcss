@@ -2,12 +2,11 @@
 
 @config "../tailwind.config.js";
 
-@layer theme, base, components, hubleto-framework, utilities, hubleto-main;
+@layer theme, base, utilities, hubleto-components, hubleto-desktop;
 
 @import "tailwindcss";
 @import "../css/desktop.twcss";
 @import "../css/components.twcss";
-@import "../css/color-scales.twcss";
 
 @theme {
   --font-sans: 'Gabarito', 'sans-serif';
@@ -22,75 +21,4 @@
   --radius-4xl: 2rem;
 
   --nav-height: 3rem;
-}
-
-@layer hubleto-main {
-
-  :root {
-    --font-family: 'Gabarito' !important;
-  }
-
-  html { font-size: 10pt; }
-
-  .dark::placeholder { @apply text-white; }
-
-  nav#default-navbar { @apply bg-white; height: var(--nav-height); }
-
-  /* add your custom css here */
-  #app-main-content { @apply ml-0 p-2 md:ml-36; }
-  #app-main-content.sidebar-two-levels { @apply ml-0 md:ml-96; }
-  #app-main-content > h1, h1.app-main-title { @apply flex justify-between w-full p-0 pb-2 m-0 border-b border-b-gray-100 dark:border-b-gray-700 mb-2 text-primary dark:text-white; }
-  h1.app-main-title .app-main-title-buttons { @apply text-base }
-
-  .app-launcher-show-btn { @apply cursor-pointer border border-primary text-primary m-1 p-1 flex items-center gap-2 justify-center rounded hover:bg-primary hover:text-white; }
-
-  aside#default-sidebar nav { @apply w-48 dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white; }
-  aside#default-sidebar .nav-inner { @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-y-auto; }
-  aside#default-sidebar .btn { @apply hover:bg-primary/10 pl-1; }
-  aside#default-sidebar .btn .icon { @apply min-h-0; }
-  aside#default-sidebar .btn .text { @apply min-h-0; }
-  aside#default-sidebar .btn.btn-active { @apply bg-primary border border-primary; }
-  aside#default-sidebar .btn.btn-active .icon { @apply text-white; }
-  aside#default-sidebar .btn.btn-active .text { @apply text-white; }
-  aside#default-sidebar .nav-release-info { @apply text-sm p-1 text-gray-400; }
-  div#app-main-content { @apply md:ml-48; }
-
-  #app-launcher { @apply hidden fixed w-full h-full bg-white/90; z-index: 10000; top: 0; left: 0; overflow: auto; }
-  #app-launcher.visible { @apply block dark:bg-slate-800; }
-  #app-launcher > div { @apply m-auto p-10 flex flex-wrap gap-4; width: 75%; }
-  #app-launcher > div .app-launcher-header { @apply w-full; }
-  #app-launcher > div .app-launcher-header input { @apply bg-white dark:bg-slate-500 dark:text-white w-1/2 mr-2 text-lg border border-primary rounded p-2; }
-  #app-launcher > div .app-launcher-app-button { @apply text-slate-600 dark:bg-slate-600 dark:text-white cursor-pointer w-1/6 bg-white shadow-sm flex flex-col border border-primary hover:bg-primary hover:text-white; }
-  #app-launcher > div .app-launcher-app-button .icon { @apply p-2 text-center text-2xl; }
-  #app-launcher > div .app-launcher-app-button .text { @apply p-2 text-center; }
-
-  .btn-add { @apply bg-amber-600 hover:bg-amber-400; }
-  .btn-add-outline { @apply border-amber-600 text-amber-600 border-solid hover:bg-amber-600/20 dark:bg-transparent; }
-  .btn-edit { @apply bg-amber-600 hover:bg-amber-400; }
-
-  .btn-square { @apply flex-col text-center; }
-  .btn-square .icon { @apply flex justify-center h-12; }
-  .btn-square .text { @apply h-auto; }
-
-  .modal-header-title h2 { @apply dark:text-white; }
-
-  .fc .fc-toolbar-title { @apply !text-base; }
-
-  .sidebar-group .sidebar-group-title { @apply uppercase block font-bold w-full text-primary text-xs p-0.5 pl-1 dark:bg-gray-900 dark:text-white hover:bg-gray-50 hover:no-underline dark:bg-gray-800 hover:dark:bg-gray-700; }
-  .sidebar-group .sidebar-group-btns { @apply relative pl-0 dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white; }
-  .sidebar-group.activated > .btn { @apply bg-primary/20; }
-  .sidebar-group.activated .sidebar-group-btns { @apply block; }
-  .sidebar-group .sidebar-group-btns .btn { @apply ml-1; }
-  .sidebar-group .sidebar-group-btns .btn .icon { @apply p-0.5 text-xs mr-1 text-slate-700 dark:text-white; }
-  .sidebar-group .sidebar-group-btns .btn .text { @apply p-0.5 text-sm text-slate-700 dark:text-white; }
-  .sidebar-group .sidebar-group-btns .btn.btn-active .icon { @apply !text-white; }
-  .sidebar-group .sidebar-group-btns .btn.btn-active .text { @apply !text-white; }
-
-  .sidebar-group.collapsed .sidebar-group-btns { @apply hidden; }
-
-  .sidebar-group .sidebar-group-collapse-expand-btn .icon-expanded { @apply block; }
-  .sidebar-group .sidebar-group-collapse-expand-btn .icon-collapsed { @apply hidden; }
-  .sidebar-group.collapsed .sidebar-group-collapse-expand-btn .icon-expanded { @apply hidden; }
-  .sidebar-group.collapsed .sidebar-group-collapse-expand-btn .icon-collapsed { @apply block; }
-
 }
