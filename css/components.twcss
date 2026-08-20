@@ -36,7 +36,7 @@
     .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
     .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
 
-    &.no-parent-form .table-header-left { @apply pb-2 m-0 p-2 mb-2 bg-gradient-to-b from-primary/10 to-white; }
+    &.no-parent-form .table-header-left { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white; }
 
     .table-sidebar-filter { @apply hidden md:block; }
 
