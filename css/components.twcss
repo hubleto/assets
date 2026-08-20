@@ -103,7 +103,7 @@
     .input-label { @apply block text-sm text-gray-400; }
     .input-body { @apply flex items-center flex-[2]; overflow-wrap: anywhere; }
     .input-info { @apply text-sm text-gray-500 pr-1; }
-    .input-description { @apply text-sm text-primary pr-1; }
+    .input-hint { @apply text-sm text-primary pr-1; }
 
     &:hover .input-label { @apply text-primary; }
     &.modified .input-label { @apply text-yellow-600; }
@@ -398,7 +398,7 @@
   .modal > .modal-inner > .modal-header .btn .text { @apply hidden md:flex }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper { @apply flex w-full justify-between border-gray-100 bg-white dark:bg-slate-900 border-b border-b-primary/20 dark:border-b-slate-600; }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper .btn { @apply p-1 border-none rounded-none shadow-none; }
-  .modal > .modal-inner > .modal-body { @apply p-2 flex-1 overflow-y-auto relative; }
+  .modal > .modal-inner > .modal-body { @apply flex-1 overflow-y-auto relative; }
   .modal > .modal-inner > .modal-footer { @apply flex gap-2 p-2 border-t border-t-gray-200 bg-gray-50 dark:bg-slate-900 dark:border-slate-800; }
   .modal > .modal-inner > .modal-footer-buttons { @apply flex gap-1 p-2 border-t border-t-gray-200 bg-secondary/20; }
 
