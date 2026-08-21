@@ -396,7 +396,8 @@
   .modal > .modal-inner > .modal-header-buttons { @apply flex gap-1 p-2 border-b border-b-primary/20; }
   .modal > .modal-inner > .modal-header .btn { @apply flex-nowrap }
   .modal > .modal-inner > .modal-header .btn .text { @apply hidden md:flex }
-  .modal > .modal-inner > .modal-top-menu .top-menu-wrapper { @apply flex w-full justify-between border-gray-100 bg-white dark:bg-slate-900 border-b border-b-primary/20 dark:border-b-slate-600; }
+  .modal > .modal-inner > .modal-top-menu { @apply shadow-lg }
+  .modal > .modal-inner > .modal-top-menu .top-menu-wrapper { @apply flex w-full justify-between border-gray-100 bg-white dark:bg-slate-900; }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper .btn { @apply p-1 border-none rounded-none shadow-none; }
   .modal > .modal-inner > .modal-body { @apply flex-1 overflow-y-auto relative; }
   .modal > .modal-inner > .modal-footer { @apply flex gap-2 p-2 border-t border-t-gray-200 bg-gray-50 dark:bg-slate-900 dark:border-slate-800; }
