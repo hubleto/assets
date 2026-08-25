@@ -18,6 +18,7 @@
 
 
   .dark::placeholder { @apply text-white; }
+  .flex-dyn { @apply flex flex-col gap-2 md:flex-row; }
 
   .color-scale-text-red-to-green {
     .color-scale-step-1 { color: #ff0000 }

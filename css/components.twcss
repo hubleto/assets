@@ -1,4 +1,4 @@
-@layer hubleto-framework {
+@layer hubleto-components {
 
   .hubleto.component.loader-bar {
     & {
@@ -25,20 +25,24 @@
   /* CLASSES in alphabetical order */
 
   .hubleto.component.table {
-    @apply w-full flex flex-col;
+    @apply w-full !flex flex-col gap-2;
     &.loading { opacity: 0.25; }
     &.header-style-1 { @apply bg-green-50 }
     .column-search .input-element { @apply bg-white dark:bg-slate-800; }
    
-    .table-header-title { @apply grow text-left text-nowrap text-primary text-2xl dark:text-white; }
-    .table-header-left { @apply w-full flex grow gap-1 items-center flex-col md:flex-row; }
+    .table-header { @apply flex gap-2; }
+    .table-header-title { @apply grow text-left text-nowrap text-primary text-lg dark:text-white; }
+    .table-header-left { @apply w-full flex grow gap-1 flex-col md:flex-row; }
     .table-header-right { @apply flex grow text-center gap-1 justify-end; }
     .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
     .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
 
-    &.no-parent-form .table-header-left { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white; }
+    &.no-parent-form .table-header { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white; }
 
     .table-sidebar-filter { @apply hidden md:block; }
+
+    .table-wrapper { @apply flex gap-2 flex-col md:flex-row max-w-[98vw]; }
+    .table-body { @apply overflow-x-auto; }
 
     .table-container {
       @apply border border-slate-100;
@@ -94,7 +98,7 @@
   .input-icon { @apply text-lg min-w-8; }
 
   .input-wrapper {
-    @apply relative justify-between items-center border border-transparent rounded-sm p-1;
+    @apply relative justify-between items-center border border-transparent rounded-sm pt-2;
     box-sizing: border-box;
 
     &.required { @apply before:absolute before:content-['*'] before:text-red-600; }
@@ -134,8 +138,8 @@
     }
 
     &.int .inner { @apply max-w-[160px]; }
-    &.date .inner { @apply max-w-[160px]; }
-    &.datetime .inner { @apply max-w-[160px]; }
+    &.date .inner { @apply max-w-[240px]; }
+    &.time .inner { @apply max-w-[240px]; }
     &.boolean .inner { @apply border-none; }
 
     .input-after { @apply flex-1 ml-2; }
@@ -192,8 +196,8 @@
 
   .btn { @apply relative rounded inline-flex text-left p-0 m-0 items-center bg-primary text-white cursor-pointer border-slate-200 hover:bg-secondary hover:text-white hover:no-underline; box-sizing: border-box; }
   .btn.btn-small { @apply h-auto; }
-  .btn .icon { @apply min-h-8 h-full items-center px-2 py-1 justify-center border-slate-200 flex flex-col; }
-  .btn .text { @apply min-h-8 h-full items-center px-2 py-1 break-words; overflow: hidden; }
+  .btn .icon { @apply min-h-8 h-full flex items-center px-2 py-1 justify-center border-slate-200 flex flex-col; }
+  .btn .text { @apply min-h-8 h-full flex items-center px-2 py-1 break-words text-nowrap; overflow: hidden; }
   .btn .shortcut { @apply flex-1 text-gray-400 pt-1; font-size: 0.5em; overflow: hidden; }
   .btn .hover { @apply hidden absolute text-nowrap text-gray-800 top-10 left-2 p-2 border border-gray-200 bg-gray-50 shadow-lg rounded-lg; z-index: 999999; }
   .btn:hover .hover { @apply block; }
@@ -276,10 +280,17 @@
   .btn.btn-disabled { @apply bg-gray-100 text-gray-600 hover:bg-gray-50; }
 
   .btn.btn-dropdown { @apply items-baseline relative; }
-  .btn.btn-dropdown > .menu { @apply cursor-default invisible absolute bg-white dark:bg-slate-700 shadow-lg; left: 0%; top: 110%; z-index: 1; }
-  .btn.btn-dropdown > .menu > .list { @apply divide-none mt-1 bg-white dark:bg-slate-700 shadow-xl rounded absolute; }
+  .btn.btn-dropdown > .menu { @apply
+    cursor-default hidden mt-1 bg-white z-9999999 shadow-2xl
+    border border-primary/30
+    fixed left-[10vw] top-[10vh] w-[80vw] h-[80vh]
+    md:left-[25vw] md:w-[50vw]
+    /*md:absolute md:left-[0px] md:top-[110%]*/
+    dark:bg-slate-700
+  }
+  .btn.btn-dropdown > .menu > .list { @apply divide-none bg-white dark:bg-slate-700 rounded; }
   .btn.btn-dropdown.open { @apply !bg-gray-100 !text-gray-800 !border-gray-100; }
-  .btn.btn-dropdown.open > .menu { @apply !visible; }
+  .btn.btn-dropdown.open > .menu { @apply block; }
   .btn.btn-dropdown.open > .menu > .list .btn { @apply !text-nowrap dark:bg-slate-800 dark:text-white; }
   .btn.btn-dropdown.open > .menu > .list .btn:hover { @apply dark:bg-slate-600; }
 
@@ -399,7 +410,8 @@
   .modal > .modal-inner > .modal-top-menu { @apply shadow-lg }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper { @apply flex w-full justify-between border-gray-100 bg-white dark:bg-slate-900; }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper .btn { @apply p-1 border-none rounded-none shadow-none; }
-  .modal > .modal-inner > .modal-body { @apply flex-1 overflow-y-auto relative; }
+  .modal > .modal-inner > .modal-top-inputs { @apply overflow-x-auto flex flex-row gap-2 items-start shadow w-full md:max-h-none md:shadow-none md:overflow-hidden }
+  .modal > .modal-inner > .modal-body { @apply flex-1 overflow-y-auto relative p-2; }
   .modal > .modal-inner > .modal-footer { @apply flex gap-2 p-2 border-t border-t-gray-200 bg-gray-50 dark:bg-slate-900 dark:border-slate-800; }
   .modal > .modal-inner > .modal-footer-buttons { @apply flex gap-1 p-2 border-t border-t-gray-200 bg-secondary/20; }
 
