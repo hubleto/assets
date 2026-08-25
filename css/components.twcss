@@ -98,7 +98,7 @@
   .input-icon { @apply text-lg min-w-8; }
 
   .input-wrapper {
-    @apply relative justify-between items-center border border-transparent rounded-sm pt-2;
+    @apply relative justify-between items-center border border-transparent rounded-sm py-1;
     box-sizing: border-box;
 
     &.required { @apply before:absolute before:content-['*'] before:text-red-600; }

@@ -150,7 +150,10 @@
     }
     .second-sidebar {
       @apply w-48 overflow-auto;
-      .app-sidebar-buttons { @apply flex flex-col gap-2 m-2; }
+      .app-sidebar-buttons { @apply flex flex-col m-2 border border-gray-100 rounded-lg p-2 shadow-lg mb-8; }
+      .app-sidebar-buttons .btn { @apply !border-none !rounded-none; }
+      .app-sidebar-buttons .btn .icon { @apply !w-8; }
+      .app-sidebar-buttons .btn .text { @apply !text-wrap; }
     }
   }
 
