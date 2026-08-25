@@ -283,7 +283,7 @@
   .btn.btn-dropdown > .menu { @apply
     cursor-default hidden mt-1 bg-white z-9999999 shadow-2xl
     border border-primary/30
-    fixed left-[10vw] top-[10vh] w-[80vw] h-[80vh]
+    fixed left-[10vw] top-[10vh] w-[80vw]
     md:left-[25vw] md:w-[50vw]
     /*md:absolute md:left-[0px] md:top-[110%]*/
     dark:bg-slate-700
