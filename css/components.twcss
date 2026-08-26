@@ -194,10 +194,10 @@
   .badge-lime { @apply text-lime-800 dark:text-lime-100 bg-lime-100 dark:bg-lime-800; }
   .badge-violet { @apply text-violet-800 dark:text-violet-100 bg-violet-100 dark:bg-violet-800; }
 
-  .btn { @apply relative rounded inline-flex text-left p-0 m-0 items-center bg-primary text-white cursor-pointer border-slate-200 hover:bg-secondary hover:text-white hover:no-underline; box-sizing: border-box; }
+  .btn { @apply relative rounded inline-flex text-left p-0 m-0 min-h-8 items-center bg-primary text-white cursor-pointer border-slate-200 hover:bg-secondary hover:text-white hover:no-underline; box-sizing: border-box; }
   .btn.btn-small { @apply h-auto; }
-  .btn .icon { @apply min-h-8 h-full flex items-center px-2 py-1 justify-center border-slate-200 flex flex-col; }
-  .btn .text { @apply min-h-8 h-full flex items-center px-2 py-1 break-words text-nowrap; overflow: hidden; }
+  .btn .icon { @apply h-full flex items-center px-2 py-1 justify-center border-slate-200 flex flex-col; }
+  .btn .text { @apply h-full flex items-center px-2 py-1 break-words text-nowrap; overflow: hidden; }
   .btn .shortcut { @apply flex-1 text-gray-400 pt-1; font-size: 0.5em; overflow: hidden; }
   .btn .hover { @apply hidden absolute text-nowrap text-gray-800 top-10 left-2 p-2 border border-gray-200 bg-gray-50 shadow-lg rounded-lg; z-index: 999999; }
   .btn:hover .hover { @apply block; }
@@ -412,7 +412,7 @@
   .modal > .modal-inner > .modal-top-menu { @apply shadow-lg }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper { @apply flex w-full justify-between border-gray-100 bg-white dark:bg-slate-900; }
   .modal > .modal-inner > .modal-top-menu .top-menu-wrapper .btn { @apply p-1 border-none rounded-none shadow-none; }
-  .modal > .modal-inner > .modal-top-inputs { @apply overflow-x-auto flex flex-row gap-2 items-start shadow w-full md:max-h-none md:shadow-none md:overflow-hidden }
+  .modal > .modal-inner > .modal-top-inputs { @apply overflow-x-auto flex flex-row px-2 gap-2 items-start shadow w-full md:max-h-none md:shadow-none md:overflow-hidden }
   .modal > .modal-inner > .modal-body { @apply flex-1 overflow-y-auto relative p-2; }
   .modal > .modal-inner > .modal-footer { @apply flex gap-2 p-2 border-t border-t-gray-200 bg-gray-50 dark:bg-slate-900 dark:border-slate-800; }
   .modal > .modal-inner > .modal-footer-buttons { @apply flex gap-1 p-2 border-t border-t-gray-200 bg-secondary/20; }
