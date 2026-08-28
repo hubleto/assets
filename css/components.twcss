@@ -101,7 +101,7 @@
     @apply relative justify-between items-center border border-transparent rounded-sm py-1;
     box-sizing: border-box;
 
-    &.required { @apply before:absolute before:content-['*'] before:text-red-600; }
+    .input-required { @apply absolute h-0 w-0 right-[1em] top-[0.5em] text-lg text-red-600; }
 
     .input-label { @apply block text-sm text-gray-400; }
     .input-label { @apply block text-sm text-gray-400; }
@@ -111,7 +111,6 @@
 
     &:hover .input-label { @apply text-primary; }
     &.modified .input-label { @apply text-yellow-600; }
-    &.required .input-label { @apply pl-3; }
   }
 
   .input-highlighted { @apply bg-primary/20; }
