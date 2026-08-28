@@ -133,20 +133,23 @@
   }
 
   .app-sidebar {
-    @apply flex;
+    @apply hidden md:flex;
+    &.show { @apply !flex }
 
     .first-sidebar {
-      @apply w-48 overflow-auto flex flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white;
+      @apply hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg md:shadow-none;
+      &.show { @apply !flex }
       .app-buttons {
-        @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-y-auto;
+        @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
         .sidebar-btn { @apply bg-white w-full text-sm p-1 flex items-center gap-2 no-underline; }
         .sidebar-btn .icon { @apply w-6; }
         .sidebar-btn .text { @apply grow; }
+        .sidebar-btn .badge { @apply text-red-800 bg-red-600 p-1 rounded ml-auto mr-1; }
         .sidebar-btn:hover { @apply bg-primary text-white; }
         .sidebar-btn.btn-active { @apply text-primary bg-primary/20 font-bold; }
         .sidebar-btn.btn-active:hover { @apply bg-primary text-white; }
       }
-      .app-release-info { @apply text-center text-sm p-1 text-gray-400; }
+      .app-release-info { @apply hidden md:block text-center text-sm p-1 text-gray-400; }
     }
     .second-sidebar {
       @apply w-48 overflow-auto;
