@@ -390,6 +390,8 @@
   .modal { @apply flex flex-col h-screen w-full overflow-auto bg-white dark:bg-gray-950; }
   .modal.fullscreen { @apply !w-full !h-full !left-0 !top-0; }
   .modal.right { @apply max-w-[100vw] max-h-[100%] fixed left-0 top-0 md:left-auto md:right-0 md:w-1/2 z-50 shadow-2xl border-l border-gray-200 dark:border-slate-800 dark:shadow-black; }
+  .modal.right.narrower { @apply md:w-[25%]; }
+  .modal.right.narrow { @apply md:w-[50%]; }
   .modal.right.wide { @apply md:w-[80%]; }
   .modal.right.wider { @apply md:w-[93%]; }
 
