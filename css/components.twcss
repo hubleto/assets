@@ -25,7 +25,7 @@
   /* CLASSES in alphabetical order */
 
   .hubleto.component.table {
-    @apply w-full !flex flex-col gap-2;
+    @apply w-full !flex flex-col gap-2 bg-white dark:bg-black;
     &.loading { opacity: 0.25; }
     &.header-style-1 { @apply bg-green-50 }
     .column-search .input-element { @apply bg-white dark:bg-slate-800; }
@@ -37,7 +37,7 @@
     .table-header-search { @apply flex flex-4 gap-2 w-full p-1 border-slate-200 rounded-none dark:border-slate-600 dark:bg-slate-950 dark:text-white; }
     .table-header-search.active { @apply bg-yellow-50 dark:bg-primary dark:text-white; }
 
-    &.no-parent-form .table-header { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white; }
+    &.no-parent-form .table-header { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white dark:to-black; }
 
     .table-sidebar-filter { @apply hidden md:block; }
 
@@ -45,12 +45,14 @@
     .table-body { @apply overflow-x-auto; }
 
     .table-container {
-      @apply border border-slate-100;
+      @apply border border-slate-100 bg-white dark:bg-black dark:border-none;
       table {
-        @apply w-full;
+        @apply w-full bg-white dark:bg-black;
 
         thead {
-          th > div { @apply p-1 flex gap-2 justify-between; }
+          @apply bg-white dark:bg-black;
+          th { @apply bg-white dark:bg-black; }
+          th > div { @apply p-1 flex gap-2 justify-between bg-white dark:bg-black dark:text-white; }
         }
 
         tbody tr {
@@ -65,7 +67,7 @@
           &.hidden-record td { font-size: 0.6em; }
 
           td {
-            @apply cursor-pointer p-0.5;
+            @apply cursor-pointer p-0.5 bg-white dark:bg-black dark:text-white;
             .inline-edit-icon { @apply invisible cursor-pointer; }
             .to-be-deleted { @apply bg-red-100; }
             .to-be-deleted input { @apply text-red-500; }
@@ -411,7 +413,7 @@
   .modal.inside-parent > .modal-inner { @apply border border-primary shadow; width: calc(100% - 2em); margin: 1em; background: white; }
 
   .modal > .modal-inner { @apply flex flex-col w-full h-full; }
-  .modal > .modal-inner > .modal-header { @apply flex items-center text-primary bg-gradient-to-b from-primary/5 to-white dark:text-white dark:bg-slate-900 dark:border-slate-800 items-baseline w-full justify-between p-2; }
+  .modal > .modal-inner > .modal-header { @apply flex items-center text-primary bg-gradient-to-b from-primary/5 to-white dark:to-black dark:text-white dark:bg-slate-900 dark:border-slate-800 items-baseline w-full justify-between p-2; }
   .modal > .modal-inner > .modal-header:not(.active) { @apply bg-gray-100 text-gray-500; }
   .modal > .modal-inner > .modal-header:not(.active) * { @apply !text-gray-500; }
   .modal > .modal-inner > .modal-header > .modal-header-left { @apply flex gap-1; }

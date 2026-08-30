@@ -118,7 +118,7 @@
 
   .app-desktop { @apply flex w-full; height: calc(100vh - 3em); }
   .app-main-title {
-    @apply flex justify-between w-full text-lg pb-2 m-0 p-2 bg-gradient-to-b from-primary/5 to-white dark:border-b-gray-700 mb-2 text-primary dark:text-white;
+    @apply flex justify-between w-full text-lg pb-2 m-0 p-2 bg-gradient-to-b from-primary/5 to-white dark:to-black dark:border-b-gray-700 mb-2 text-primary dark:text-white;
     .app-main-title-buttons { @apply text-base }
     span { @apply p-1; }
     a {
@@ -141,10 +141,10 @@
       &.show { @apply !flex }
       .app-buttons {
         @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
-        .sidebar-btn { @apply bg-white w-full text-sm p-1 flex items-center gap-2 no-underline; }
+        .sidebar-btn { @apply bg-white w-full text-sm p-1 flex items-center gap-2 no-underline dark:bg-slate-800 dark:text-white; }
         .sidebar-btn .icon { @apply w-6; }
         .sidebar-btn .text { @apply grow; }
-        .sidebar-btn .badge { @apply text-red-800 bg-red-600 p-1 rounded ml-auto mr-1; }
+        .sidebar-btn .notification-badge { @apply text-red-800 bg-red-200 text-xs rounded ml-auto mr-1 px-0.5; }
         .sidebar-btn:hover { @apply bg-primary text-white; }
         .sidebar-btn.btn-active { @apply text-primary bg-primary/20 font-bold; }
         .sidebar-btn.btn-active:hover { @apply bg-primary text-white; }
