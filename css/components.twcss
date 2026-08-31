@@ -419,7 +419,7 @@
   .modal > .modal-inner > .modal-header > .modal-header-left { @apply flex gap-1; }
   .modal > .modal-inner > .modal-header > .modal-header-title { @apply flex gap-2 flex-1 text-sm md:text-xl px-4 min-w-0; }
   .modal > .modal-inner > .modal-header > .modal-header-title h2 { @apply min-h-8 m-0 p-0 text-sm font-semibold tracking-widest md:text-xl text-primary break-words max-w-full dark:text-white; }
-  .modal > .modal-inner > .modal-header > .modal-header-right { @apply flex gap-1 justify-end; }
+  .modal > .modal-inner > .modal-header > .modal-header-right { @apply flex gap-1 justify-end h-full; }
   .modal > .modal-inner > .modal-header .modal-header-buttons { @apply hidden md:flex flex-col; }
   .modal > .modal-inner > .modal-header .modal-header-buttons .btn { @apply border-none; }
   .modal > .modal-inner > .modal-header .btn { @apply flex-nowrap }
