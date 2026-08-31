@@ -106,8 +106,11 @@
     &.collapsed .sidebar-group-collapse-expand-btn .icon-expanded { @apply hidden; }
     &.collapsed .sidebar-group-collapse-expand-btn .icon-collapsed { @apply block; }
 
+    .sidebar-group-collapse-expand-btn { @apply cursor-pointer pr-1; }
     .sidebar-group-collapse-expand-btn .icon-expanded { @apply block; }
     .sidebar-group-collapse-expand-btn .icon-collapsed { @apply hidden; }
+
+    &.activated .sidebar-group-collapse-expand-btn { @apply text-primary bg-primary/10; }
   }
 
   .app-navbar {
@@ -137,7 +140,7 @@
     &.show { @apply !flex }
 
     .first-sidebar {
-      @apply hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg md:shadow-none;
+      @apply min-w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg md:shadow-none;
       &.show { @apply !flex }
       .app-buttons {
         @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
