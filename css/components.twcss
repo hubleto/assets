@@ -103,10 +103,9 @@
     @apply relative justify-between items-center border border-transparent rounded-sm py-1;
     box-sizing: border-box;
 
-    .input-required { @apply absolute h-0 w-0 right-[1em] top-[0.5em] text-lg text-red-600; }
+    .input-required { @apply text-lg text-red-600; }
 
-    .input-label { @apply block text-sm text-gray-400; }
-    .input-label { @apply block text-sm text-gray-400; }
+    .input-label { @apply block text-sm text-gray-400 flex gap-2; }
     .input-body { @apply flex items-center flex-[2]; overflow-wrap: anywhere; }
     .input-info { @apply text-sm text-gray-500 pr-1; }
     .input-hint { @apply text-sm text-primary pr-1; }
