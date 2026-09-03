@@ -166,8 +166,8 @@
     scrollbar-width: none;
   }
 
-  .alert { @apply p-4 items-center flex flex-col md:flex-row gap-4 border; }
-  .alert > .icon { @apply text-4xl min-w-12; }
+  .alert { @apply p-4 items-center flex flex-col md:flex-row gap-4 border border-primary/20 text-primary shadow-sm; }
+  .alert > .icon { @apply text-4xl min-w-12 text-center; }
   .alert-primary { @apply text-primary bg-primary/20 border-primary/40; }
   .alert-secondary { @apply text-secondary bg-secondary/20 border-secondary/40; }
   .alert-info { @apply text-blue-800 bg-blue-50 border-blue-100; }
