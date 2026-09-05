@@ -140,7 +140,7 @@
     &.show { @apply !flex }
 
     .first-sidebar {
-      @apply min-w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg md:shadow-none;
+      @apply min-w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg;
       &.show { @apply !flex }
       .app-buttons {
         @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
@@ -162,6 +162,8 @@
       .app-sidebar-buttons .btn .text { @apply !text-wrap; }
     }
   }
+
+  .app-alerts { @apply hidden bg-red-50 text-red-100 p-4; }
 
   .app-content {
     @apply flex flex-col grow dark:bg-gray-950; overflow: auto;
