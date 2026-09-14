@@ -847,9 +847,6 @@
   .min-w-12 {
     min-width: calc(var(--spacing) * 12);
   }
-  .min-w-48 {
-    min-width: calc(var(--spacing) * 48);
-  }
   .min-w-64 {
     min-width: calc(var(--spacing) * 64);
   }
@@ -2991,7 +2988,7 @@
     }
     .first-sidebar {
       display: none;
-      min-width: calc(var(--spacing) * 48);
+      width: calc(var(--spacing) * 48);
       flex-direction: column;
       overflow: auto;
       background-color: var(--color-white);
