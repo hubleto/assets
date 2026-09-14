@@ -121,7 +121,7 @@
 
     input { @apply w-full }
 
-    &.readonly { @apply opacity-50; }
+    /* &.readonly { @apply opacity-50; } */
     &.x-changed { @apply after:content-['✎'] after:text-gray-300 after:ml-2; }
     &.invalid { @apply !border-red-500 text-red-500; }
 
