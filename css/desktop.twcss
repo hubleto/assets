@@ -1,8 +1,24 @@
 @layer hubleto-desktop {
 
+  @font-face {
+    font-family: 'Gabarito';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/Gabarito/static/Gabarito-Regular.ttf") format('truetype');
+  }
 
-  :root {
-    --font-family: 'Gabarito' !important;
+  @font-face {
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/Jura/static/Jura-SemiBold.ttf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'BaiJamjuree';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/BaiJamjuree/BaiJamjuree-Regular.ttf") format('truetype');
   }
 
   /* HTML tags */
