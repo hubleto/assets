@@ -51,7 +51,7 @@
 
         thead {
           @apply bg-white dark:bg-black;
-          th { @apply bg-white dark:bg-black; }
+          th { @apply border-r border-r-gray-100 dark:border-r-gray-800 bg-white dark:bg-black; }
           th.sorted { @apply bg-primary/20 dark:bg-slate-700; }
           th > div { @apply p-1 flex gap-2 justify-between dark:text-white; }
         }
@@ -68,7 +68,7 @@
           &.hidden-record td { font-size: 0.6em; }
 
           td {
-            @apply cursor-pointer p-0.5 bg-white dark:bg-black dark:text-white;
+            @apply border-r border-r-gray-100 dark:border-r-gray-800 cursor-pointer p-0.5 bg-white dark:bg-black dark:text-white;
             .inline-edit-icon { @apply invisible cursor-pointer; }
             .to-be-deleted { @apply bg-red-100; }
             .to-be-deleted input { @apply text-red-500; }
