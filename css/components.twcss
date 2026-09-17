@@ -52,7 +52,8 @@
         thead {
           @apply bg-white dark:bg-black;
           th { @apply bg-white dark:bg-black; }
-          th > div { @apply p-1 flex gap-2 justify-between bg-white dark:bg-black dark:text-white; }
+          th.sorted { @apply bg-primary/20 dark:bg-slate-700; }
+          th > div { @apply p-1 flex gap-2 justify-between dark:text-white; }
         }
 
         tbody tr {
