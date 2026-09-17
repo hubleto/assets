@@ -4365,6 +4365,22 @@ body.app-loading .app-loader-bar {
         background-color: var(--color-gray-100);
       }
     }
+    &:where(.dark, .dark *) {
+      border-color: var(--color-slate-600);
+    }
+    &:where(.dark, .dark *) {
+      background-color: var(--color-slate-800);
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-slate-200);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-black);
+        }
+      }
+    }
   }
   .btn.btn-light {
     background-color: color-mix(in srgb, #4780bf 10%, transparent);
