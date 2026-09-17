@@ -3004,8 +3004,6 @@
       flex-direction: column;
       overflow: auto;
       background-color: var(--color-white);
-      --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       @media (width >= 48rem) {
         display: flex;
       }
@@ -3517,8 +3515,12 @@ body.app-loading .app-loader-bar {
     }
     .table-sidebar-filter {
       display: none;
+      background-color: var(--color-white);
       @media (width >= 48rem) {
         display: block;
+      }
+      &:where(.dark, .dark *) {
+        background-color: var(--color-gray-950);
       }
     }
     .table-wrapper {
@@ -3539,8 +3541,7 @@ body.app-loading .app-loader-bar {
       border-color: var(--color-slate-100);
       background-color: var(--color-white);
       &:where(.dark, .dark *) {
-        --tw-border-style: none;
-        border-style: none;
+        border-color: var(--color-slate-900);
       }
       &:where(.dark, .dark *) {
         background-color: var(--color-black);
@@ -3582,8 +3583,11 @@ body.app-loading .app-loader-bar {
           }
         }
         tbody tr {
-          &:nth-child(even) {
+          &:nth-child(even) td {
             background-color: var(--color-gray-50);
+            &:where(.dark, .dark *) {
+              background-color: var(--color-slate-900);
+            }
           }
           &.hidden-record {
             display: none;

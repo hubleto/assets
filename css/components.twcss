@@ -39,13 +39,13 @@
 
     &.no-parent-form .table-header { @apply m-0 p-2 bg-gradient-to-b from-primary/5 to-white dark:to-black; }
 
-    .table-sidebar-filter { @apply hidden md:block; }
+    .table-sidebar-filter { @apply hidden md:block bg-white dark:bg-gray-950; }
 
     .table-wrapper { @apply flex gap-2 flex-col md:flex-row max-w-[98vw]; }
     .table-body { @apply overflow-x-auto; }
 
     .table-container {
-      @apply border border-slate-100 bg-white dark:bg-black dark:border-none;
+      @apply border border-slate-100 bg-white dark:bg-black dark:border-slate-900;
       table {
         @apply w-full bg-white dark:bg-black;
 
@@ -57,7 +57,7 @@
         }
 
         tbody tr {
-          &:nth-child(even) { @apply bg-gray-50; }
+          &:nth-child(even) td { @apply bg-gray-50 dark:bg-slate-900; }
           &.hidden-record { @apply hidden; }
           &:hover:not(.hidden-record) td { @apply bg-gray-100 dark:bg-slate-800; }
 

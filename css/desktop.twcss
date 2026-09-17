@@ -156,7 +156,7 @@
     &.show { @apply !flex }
 
     .first-sidebar {
-      @apply w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white shadow-lg;
+      @apply w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white;
       &.show { @apply !flex }
       .app-buttons {
         @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
