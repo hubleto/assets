@@ -179,7 +179,16 @@
     }
   }
 
-  .app-alerts { @apply hidden bg-red-50 text-red-100 p-4; }
+  /* .app-alerts { @apply hidden bg-red-50 text-red-100 p-4; } */
+  .app-alerts {
+    @apply cursor-default hidden mt-1 z-9999999 shadow-2xl
+    border border-red-200
+    bg-red-50 text-red-100 p-4
+    fixed left-[10vw] top-[10vh] w-[80vw]
+    md:left-[25vw] md:w-[50vw]
+    /*md:absolute md:left-[0px] md:top-[110%]*/
+    dark:bg-slate-700
+  }
 
   .app-content {
     @apply flex flex-col grow dark:bg-gray-950; overflow: auto;
