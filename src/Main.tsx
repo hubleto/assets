@@ -14,17 +14,20 @@ import App from '@hubleto/react-ui/core/App'
 import request from "@hubleto/react-ui/core/Request";
 
 // core hubleto react ui components
-import Modal from "@hubleto/react-ui/components/cc/ModalSimple";
+import Modal from "@hubleto/react-ui/components/fc/Modal";
+import Table from "@hubleto/react-ui/components/fc/Table";
+import Form from "@hubleto/react-ui/components/fc/Form";
 import Tree from "@hubleto/react-ui/components/cc/Tree";
+import ErpSearch from "@hubleto/react-ui/components/cc/ErpSearch";
 
-import InputVarchar from "@hubleto/react-ui/components/cc/Inputs/Varchar";
-import InputInt from "@hubleto/react-ui/components/cc/Inputs/Int";
-import InputBoolean from "@hubleto/react-ui/components/cc/Inputs/Boolean";
-import InputColor from "@hubleto/react-ui/components/cc/Inputs/Color";
-import InputDateTime from "@hubleto/react-ui/components/cc/Inputs/DateTime";
-
-import InputLookup from "@hubleto/react-ui/components/cc/Inputs/Lookup";
-import InputImage from "@hubleto/react-ui/components/cc/Inputs/Image";
+// inputs
+import InputVarchar from "@hubleto/react-ui/components/fc/Inputs/Varchar";
+import InputInt from "@hubleto/react-ui/components/fc/Inputs/Int";
+import InputBoolean from "@hubleto/react-ui/components/fc/Inputs/Boolean";
+import InputColor from "@hubleto/react-ui/components/fc/Inputs/Color";
+import InputDateTime from "@hubleto/react-ui/components/fc/Inputs/DateTime";
+import InputLookup from "@hubleto/react-ui/components/fc/Inputs/Lookup";
+import InputImage from "@hubleto/react-ui/components/fc/Inputs/Image";
 import InputHyperlink from "@hubleto/react-ui/components/fc/Inputs/Hyperlink";
 import InputUserSelect from "@hubleto/react-ui/components/fc/Inputs/UserSelect";
 import InputSharedWith from "@hubleto/react-ui/components/fc/Inputs/SharedWith";
@@ -33,16 +36,11 @@ import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/fc/Inputs
 import InputJson from "@hubleto/react-ui/components/cc/Inputs/Json";
 import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyValue";
 
-import TableCellRendererHyperlink from "@hubleto/react-ui/components/cc/TableCellRenderers/Hyperlink";
-import TableCellRendererSharedWith from "@hubleto/react-ui/components/cc/TableCellRenderers/SharedWith";
-
-import Table from "@hubleto/react-ui/components/fc/Table";
-
-// extended hubleto react ui components
-import ErpSearch from "@hubleto/react-ui/components/cc/ErpSearch";
-import FormExtended from "@hubleto/react-ui/components/cc/FormExtended";
-import TableExtended from "@hubleto/react-ui/components/cc/TableExtended";
-import TableExtendedColumnCustomize from "@hubleto/react-ui/components/cc/TableExtendedColumnsCustomize";
+// import TableCellRendererHyperlink from "@hubleto/react-ui/components/cc/TableCellRenderers/Hyperlink";
+// import TableCellRendererSharedWith from "@hubleto/react-ui/components/cc/TableCellRenderers/SharedWith";
+// import FormExtended from "@hubleto/react-ui/components/cc/FormExtended";
+// import TableExtended from "@hubleto/react-ui/components/cc/TableExtended";
+// import TableExtendedColumnCustomize from "@hubleto/react-ui/components/cc/TableExtendedColumnsCustomize";
 
 try {
 
@@ -82,15 +80,11 @@ try {
       this.registerReactComponent('InputJson', InputJson);
       this.registerReactComponent('InputJsonKeyValue', InputJsonKeyValue);
 
-      this.registerReactComponent('TableCellRendererHyperlink', TableCellRendererHyperlink);
-      this.registerReactComponent('TableCellRendererSharedWith', TableCellRendererSharedWith);
-
       // Hubleto components
       this.registerReactComponent('Search', ErpSearch);
-      this.registerReactComponent('Form', FormExtended);
+      this.registerReactComponent('Form', Form);
       this.registerReactComponent('Table', Table);
       this.registerReactComponent('Tree', Tree);
-      this.registerReactComponent('TableColumnsCustomize', TableExtendedColumnCustomize);
     }
 
     init() {
