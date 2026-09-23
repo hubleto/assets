@@ -844,8 +844,14 @@
   .min-w-64 {
     min-width: calc(var(--spacing) * 64);
   }
+  .min-w-72 {
+    min-width: calc(var(--spacing) * 72);
+  }
   .min-w-80 {
     min-width: calc(var(--spacing) * 80);
+  }
+  .min-w-96 {
+    min-width: calc(var(--spacing) * 96);
   }
   .min-w-min {
     min-width: min-content;
