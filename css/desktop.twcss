@@ -36,6 +36,39 @@
   .dark::placeholder { @apply text-white; }
   .flex-dyn { @apply flex flex-col gap-2 md:flex-row; }
 
+  .striped-45 {
+    background-image: repeating-linear-gradient(
+      45deg, #e1e1e1 0, #e1e1e1 1px, transparent 0, transparent 50%
+    );
+    background-size: 10px 10px;
+    background-attachment: fixed;
+  }
+
+  .striped-60 {
+    background-image: repeating-linear-gradient(
+      60deg, #e1e1e1 0, #e1e1e1 1px, transparent 0, transparent 50%
+    );
+    background-size: 10px 10px;
+    background-attachment: fixed;
+  }
+
+  .striped-45-primary {
+    background-image: repeating-linear-gradient(
+      45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 0, transparent 50%
+    );
+    background-size: 10px 10px;
+    background-attachment: fixed;
+  }
+
+  .striped-60-primary {
+    background-image: repeating-linear-gradient(
+      60deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 0, transparent 50%
+    );
+    background-size: 10px 10px;
+    background-attachment: fixed;
+  }
+
+
   .color-scale-text-red-to-green {
     .color-scale-step-1 { color: #ff0000 }
     .color-scale-step-2 { color: #ffa700 }
