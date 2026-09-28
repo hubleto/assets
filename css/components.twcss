@@ -176,6 +176,12 @@
   .alert-success { @apply text-green-800 bg-green-50 border-green-100; }
   .alert-warning { @apply text-yellow-800 bg-yellow-50 border-yellow-100; }
   .alert-error { @apply text-red-800 bg-red-50 border-red-100; }
+  .alert-blue { @apply text-blue-800 bg-blue-50 border-blue-100; }
+  .alert-green { @apply text-green-800 bg-green-50 border-green-100; }
+  .alert-red { @apply text-red-800 bg-red-50 border-red-100; }
+  .alert-yellow { @apply text-yellow-800 bg-yellow-50 border-yellow-100; }
+  .alert-lime { @apply text-lime-800 bg-lime-50 border-lime-100; }
+  .alert-violet { @apply text-violet-800 bg-violet-50 border-violet-100; }
 
   .badge { @apply text-sm p-1 bg-slate-100 dark:bg-slate-700 text-slate-800 rounded inline m-0.5; }
   .badge.badge-large { @apply text-lg m-1 py-1 px-2; }

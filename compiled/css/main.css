@@ -1920,9 +1920,6 @@
   .opacity-60 {
     opacity: 60%;
   }
-  .opacity-70 {
-    opacity: 70%;
-  }
   .\!shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25)) !important;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
@@ -3939,6 +3936,36 @@ body.app-loading .app-loader-bar {
     border-color: var(--color-red-100);
     background-color: var(--color-red-50);
     color: var(--color-red-800);
+  }
+  .alert-blue {
+    border-color: var(--color-blue-100);
+    background-color: var(--color-blue-50);
+    color: var(--color-blue-800);
+  }
+  .alert-green {
+    border-color: var(--color-green-100);
+    background-color: var(--color-green-50);
+    color: var(--color-green-800);
+  }
+  .alert-red {
+    border-color: var(--color-red-100);
+    background-color: var(--color-red-50);
+    color: var(--color-red-800);
+  }
+  .alert-yellow {
+    border-color: var(--color-yellow-100);
+    background-color: var(--color-yellow-50);
+    color: var(--color-yellow-800);
+  }
+  .alert-lime {
+    border-color: var(--color-lime-100);
+    background-color: var(--color-lime-50);
+    color: var(--color-lime-800);
+  }
+  .alert-violet {
+    border-color: var(--color-violet-100);
+    background-color: var(--color-violet-50);
+    color: var(--color-violet-800);
   }
   .badge {
     margin: calc(var(--spacing) * 0.5);
