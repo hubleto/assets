@@ -196,7 +196,8 @@
         .sidebar-btn { @apply bg-white w-full text-sm p-1 flex items-center gap-2 no-underline dark:bg-slate-800 dark:text-white; }
         .sidebar-btn .icon { @apply w-6; }
         .sidebar-btn .text { @apply grow; }
-        .sidebar-btn .notification-badge { @apply text-red-800 bg-red-200 text-xs rounded ml-auto mr-1 px-0.5; }
+        .sidebar-btn .notification-badge { @apply text-xs rounded ml-auto mr-1 px-0.5; }
+        .sidebar-btn .notification-badge.loaded { @apply text-red-800 bg-red-200; }
         .sidebar-btn:hover { @apply bg-primary text-white; }
         .sidebar-btn.btn-active { @apply text-primary bg-primary/20 font-bold; }
         .sidebar-btn.btn-active:hover { @apply bg-primary text-white; }

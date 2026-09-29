@@ -17,6 +17,7 @@ import request from "@hubleto/react-ui/core/Request";
 import Modal from "@hubleto/react-ui/components/fc/Modal";
 import Table from "@hubleto/react-ui/components/fc/Table";
 import Form from "@hubleto/react-ui/components/fc/Form";
+import Spinner from "@hubleto/react-ui/components/fc/Spinner";
 import Tree from "@hubleto/react-ui/components/cc/Tree";
 import ErpSearch from "@hubleto/react-ui/components/cc/ErpSearch";
 
@@ -84,6 +85,7 @@ try {
       this.registerReactComponent('Search', ErpSearch);
       this.registerReactComponent('Form', Form);
       this.registerReactComponent('Table', Table);
+      this.registerReactComponent('Spinner', Spinner);
       this.registerReactComponent('Tree', Tree);
     }
 

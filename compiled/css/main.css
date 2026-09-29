@@ -3040,10 +3040,12 @@
           margin-right: var(--spacing);
           margin-left: auto;
           border-radius: 0.25rem;
-          background-color: var(--color-red-200);
           padding-inline: calc(var(--spacing) * 0.5);
           font-size: var(--text-xs);
           line-height: var(--tw-leading, var(--text-xs--line-height));
+        }
+        .sidebar-btn .notification-badge.loaded {
+          background-color: var(--color-red-200);
           color: var(--color-red-800);
         }
         .sidebar-btn:hover {
