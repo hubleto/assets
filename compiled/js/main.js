@@ -1053,6 +1053,7 @@ eval("{/* (ignored) */\n\n//# sourceURL=webpack:///./util.inspect_(ignored)?\n}"
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/HrRecruitment/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/Invoices/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/Leads/Loader.tsx")))
+/******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/LinkedinMessages/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/Mail/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/Notifications/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["react-ui-vendor","apps","react-ui-core"], () => (__webpack_require__("../erp/apps/Orders/Loader.tsx")))
