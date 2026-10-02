@@ -6,7 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["react-ui-vendor"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["modules"],{
 
 /***/ "../react-ui/node_modules/@emotion/cache/dist/emotion-cache.browser.development.esm.js"
 /*!*********************************************************************************************!*\

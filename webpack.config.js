@@ -20,13 +20,14 @@ function findHubletoAppsInRepository(folder) {
     });
   }
 
-  console.log('Found ' + apps.length + ' apps in `' + folder + '`');
-
   return apps;
 }
 
-const communityApps = findHubletoAppsInRepository(path.resolve(__dirname, 'vendor/hubleto/erp/apps'))
+const communityApps = findHubletoAppsInRepository(path.resolve(__dirname, '../erp/apps'))
 const enterpriseApps = findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps'))
+
+console.log('Found ' + communityApps.length + ' community apps.');
+console.log('Found ' + enterpriseApps.length + ' enterprise apps.');
 
 export default {
   entry: {
