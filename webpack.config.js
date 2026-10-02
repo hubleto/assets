@@ -74,11 +74,6 @@ export default {
           name: 'enterprise-apps',
           chunks: 'all'
         },
-        custom_apps: {
-          test: /[\\/]src[\\/]apps[\\/]/,
-          name: 'custom-apps',
-          chunks: 'all'
-        },
         react_ui: {
           test: /[\\/]react-ui[\\/]/,
           name: 'react-ui',
