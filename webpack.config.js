@@ -88,12 +88,7 @@ export default {
           test: /[\\/]node_modules[\\/]/,
           name: 'modules',
           chunks: 'all'
-        },
-        misc: {
-          test: /[\\/]misc[\\/]/,
-          name: 'misc',
-          chunks: 'all'
-        },
+        }
       }
     },
   },
