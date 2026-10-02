@@ -11,10 +11,17 @@ const __dirname = path.dirname(__filename);
 function findHubletoAppsInRepository(folder) {
   let apps = [];
   if (fs.existsSync(folder) && fs.lstatSync(folder).isDirectory()) {
-    fs.readdirSync(folder).forEach(function(app){
+    fs.readdirSync(folder).forEach(function(app) {
       const stat = fs.statSync(folder + '/' + app);
+      const manifestFile = folder + '/' + app + '/manifest.yaml';
       const loaderEntry = folder + '/' + app + '/Loader';
-      if (stat && stat.isDirectory() && fs.existsSync(loaderEntry + '.tsx')) {
+
+      if (
+        stat
+        && stat.isDirectory()
+        && fs.existsSync(manifestFile)
+        && fs.existsSync(loaderEntry + '.tsx')
+      ) {
         apps.push(loaderEntry);
       }
     });
@@ -23,8 +30,8 @@ function findHubletoAppsInRepository(folder) {
   return apps;
 }
 
-const communityApps = findHubletoAppsInRepository(path.resolve(__dirname, '../erp/apps'))
-const enterpriseApps = findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps'))
+let communityApps = findHubletoAppsInRepository(path.resolve(__dirname, '../erp/apps'))
+let enterpriseApps = findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps'))
 
 console.log('Found ' + communityApps.length + ' community apps.');
 console.log('Found ' + enterpriseApps.length + ' enterprise apps.');
@@ -57,19 +64,34 @@ export default {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        apps: {
-          test: /[\\/]apps[\\/]/,
-          name: 'apps',
+        community_apps: {
+          test: /[\\/]erp[\\/]apps[\\/]/,
+          name: 'community-apps',
           chunks: 'all'
         },
-        react_ui_core: {
+        enterprise_apps: {
+          test: /[\\/]enterprise[\\/]apps[\\/]/,
+          name: 'enterprise-apps',
+          chunks: 'all'
+        },
+        custom_apps: {
+          test: /[\\/]src[\\/]apps[\\/]/,
+          name: 'custom-apps',
+          chunks: 'all'
+        },
+        react_ui: {
           test: /[\\/]react-ui[\\/]/,
           name: 'react-ui',
           chunks: 'all'
         },
-        react_ui_vendor: {
+        modules: {
           test: /[\\/]node_modules[\\/]/,
           name: 'modules',
+          chunks: 'all'
+        },
+        misc: {
+          test: /[\\/]misc[\\/]/,
+          name: 'misc',
           chunks: 'all'
         },
       }
@@ -83,8 +105,7 @@ export default {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],
     alias: {
       '@babel/runtime': path.resolve(__dirname, 'node_modules/@babel/runtime'),
-      '@hubleto/react-ui/core': path.resolve(__dirname, '../react-ui/core'),
-      '@hubleto/react-ui/ext': path.resolve(__dirname, '../react-ui/ext'),
+      '@hubleto/react-ui': path.resolve(__dirname, '../react-ui'),
       '@hubleto/apps': path.resolve(__dirname, '../erp/apps'),
     },
   }
