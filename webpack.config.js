@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 function findHubletoAppsInRepository(folder) {
   let apps = [];
-  if (fs.lstatSync(folder).isDirectory()) {
+  if (fs.existsSync(folder) && fs.lstatSync(folder).isDirectory()) {
     fs.readdirSync(folder).forEach(function(app){
       const stat = fs.statSync(folder + '/' + app);
       const loaderEntry = folder + '/' + app + '/Loader';
@@ -19,26 +19,22 @@ function findHubletoAppsInRepository(folder) {
       }
     });
   }
-  console.log('Found following apps in `' + folder + '`');
-  console.log(apps);
+
+  console.log('Found ' + apps.length + ' apps in `' + folder + '`');
+
   return apps;
 }
 
-let mainEntries = [
-  './src/Main',
-  ...findHubletoAppsInRepository(path.resolve(__dirname, '../erp/apps')),
-];
-
-if (fs.existsSync(path.resolve(__dirname, '../enterprise/apps'))) {
-  mainEntries = [
-    ...mainEntries,
-    ...findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps')),
-  ]
-}
+const communityApps = findHubletoAppsInRepository(path.resolve(__dirname, 'vendor/hubleto/erp/apps'))
+const enterpriseApps = findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps'))
 
 export default {
   entry: {
-    main: mainEntries,
+    main: [
+      './src/Main',
+      ...communityApps,
+      ...enterpriseApps
+    ],
   },
   output: {
     path: path.resolve(__dirname, 'compiled/js'),
@@ -66,18 +62,13 @@ export default {
           chunks: 'all'
         },
         react_ui_core: {
-          test: /[\\/]core[\\/]/,
-          name: 'react-ui-core',
-          chunks: 'all'
-        },
-        react_ui_ext: {
-          test: /[\\/]ext[\\/]/,
-          name: 'react-ui-ext',
+          test: /[\\/]react-ui[\\/]/,
+          name: 'react-ui',
           chunks: 'all'
         },
         react_ui_vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'react-ui-vendor',
+          name: 'modules',
           chunks: 'all'
         },
       }
