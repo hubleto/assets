@@ -1260,9 +1260,6 @@
   .border-r-gray-100 {
     border-right-color: var(--color-gray-100);
   }
-  .border-r-primary {
-    border-right-color: var(--color-primary);
-  }
   .border-b-secondary\/20 {
     border-bottom-color: color-mix(in srgb, #41c50d 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1813,9 +1810,6 @@
       color: color-mix(in oklab, var(--color-primary) 20%, transparent);
     }
   }
-  .text-red-100 {
-    color: var(--color-red-100);
-  }
   .text-red-300 {
     color: var(--color-red-300);
   }
@@ -2167,9 +2161,6 @@
     }
     .md\:right-0 {
       right: 0px;
-    }
-    .md\:left-\[0px\] {
-      left: 0px;
     }
     .md\:left-\[25vw\] {
       left: 25vw;
@@ -2564,7 +2555,7 @@
   table tr td {
     padding: var(--spacing);
   }
-  */ code {
+  code {
     background-color: var(--color-slate-100);
     padding: var(--spacing);
   }
@@ -3355,6 +3346,9 @@ body .app-loader-bar {
 }
 body.app-loading .app-loader-bar {
   visibility: visible;
+}
+div[class^="fc-forma-"] {
+  z-index: 999999 !important;
 }
 @layer hubleto-components {
   .hubleto.component.loader-bar {

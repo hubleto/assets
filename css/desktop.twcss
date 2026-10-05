@@ -282,4 +282,7 @@ body.react-elements-rendered #app-main-content { display: block; }
 body .app-loader-bar { @apply invisible; }
 body.app-loading .app-loader-bar { @apply visible; }
 
-
+/* fix for https://github.com/hubleto/erp/issues/422 */
+div[class^="fc-forma-"] {
+  z-index: 999999 !important;
+}
