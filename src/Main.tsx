@@ -104,6 +104,23 @@ try {
       }
     }
 
+    userHasRole(idRole: number) {
+      if (!this.users) return false;
+
+      const user = this.users[this.idUser];
+      if (!user) return false;
+
+      let hasRole = user.HAS_ALL_GRANTED;
+
+      if (user.ROLES) {
+        user.ROLES.map((role) => {
+          if (role.id == idRole) hasRole = true;
+        })
+      }
+
+      return hasRole;
+    }
+
     translate(orig: string, context?: string, contextInner?: string, vars?: any): string {
       let translated: string = orig;
 
