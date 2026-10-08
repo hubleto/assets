@@ -5743,9 +5743,6 @@ div[class^="fc-forma-"] {
     background-color: var(--color-gray-100);
     color: var(--color-gray-500);
   }
-  .modal > .modal-inner > .modal-header:not(.active) * {
-    color: var(--color-gray-500) !important;
-  }
   .modal > .modal-inner > .modal-header > .modal-header-left {
     display: flex;
     gap: var(--spacing);
@@ -5770,8 +5767,6 @@ div[class^="fc-forma-"] {
     padding: 0px;
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
     overflow-wrap: break-word;
