@@ -37,12 +37,6 @@ import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/fc/Inputs
 import InputJson from "@hubleto/react-ui/components/cc/Inputs/Json";
 import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyValue";
 
-// import TableCellRendererHyperlink from "@hubleto/react-ui/components/cc/TableCellRenderers/Hyperlink";
-// import TableCellRendererSharedWith from "@hubleto/react-ui/components/cc/TableCellRenderers/SharedWith";
-// import FormExtended from "@hubleto/react-ui/components/cc/FormExtended";
-// import TableExtended from "@hubleto/react-ui/components/cc/TableExtended";
-// import TableExtendedColumnCustomize from "@hubleto/react-ui/components/cc/TableExtendedColumnsCustomize";
-
 try {
 
   class HubletoErp extends HubletoReactUi {
@@ -235,7 +229,7 @@ try {
       globalThis.hubleto.init();
       globalThis.hubleto.renderReactElements();
       globalThis.hubleto.createThemeObserver();
-      globalThis.hubleto.registerModalShortcuts();
+      globalThis.hubleto.registerShortcuts();
     }
   });
 } catch (e) {
