@@ -944,6 +944,9 @@
     }
     scrollbar-color: var(--tw-scrollbar-thumb) var(--tw-scrollbar-track);
   }
+  .list-decimal {
+    list-style-type: decimal;
+  }
   .list-disc {
     list-style-type: disc;
   }
