@@ -297,7 +297,7 @@ eval("{/* (ignored) */\n\n//# sourceURL=webpack:///./util.inspect_(ignored)?\n}"
 /******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../erp/apps/Worksheets/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/Accounting/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/Banks/Loader.tsx")))
-/******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/Einvoice/Loader.tsx")))
+/******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/Einvoices/Loader.tsx")))
 /******/ 	__webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/LegalCases/Loader.tsx")))
 /******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, ["modules","community-apps","react-ui","enterprise-apps"], () => (__webpack_require__("../enterprise/apps/Warehouses/Loader.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
