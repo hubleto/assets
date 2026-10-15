@@ -48,6 +48,7 @@ try {
     user: any;
     users: any;
     apps: any = {};
+    debugTranslations: boolean = false;
 
     constructor(config: any) {
       super(config);
@@ -57,6 +58,7 @@ try {
       this.isPremium = config.isPremium;
       this.language = config.language;
       this.dictionary = globalThis.dictionary;
+      this.debugTranslations = config.debugTranslations;
 
       this.registerReactComponent('Modal', Modal);
 
@@ -165,6 +167,7 @@ try {
     }
 
     addToDictionary(orig: string, context: string, contextInner: string) {
+      if (!this.debugTranslations) return;
       request.get(
         'api/dictionary',
         {
