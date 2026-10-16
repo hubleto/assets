@@ -192,7 +192,7 @@
       @apply w-48 hidden md:flex overflow-auto flex-col dark:bg-gray-900 dark:border-b dark:border-b-slate-700 bg-white;
       &.show { @apply !flex }
       .app-buttons {
-        @apply bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
+        @apply grow bg-white dark:bg-gray-900 dark:border-b dark:border-b-slate-700 overflow-hidden hover:overflow-y-auto scrollbar-thumb-primary/10 scrollbar-thin scrollbar-gutter-stable;
         .sidebar-btn { @apply bg-white w-full text-sm p-1 flex items-center gap-2 no-underline dark:bg-slate-800 dark:text-white; }
         .sidebar-btn .icon { @apply w-6; }
         .sidebar-btn .text { @apply grow; }

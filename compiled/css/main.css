@@ -1188,9 +1188,6 @@
   .border-green-400 {
     border-color: var(--color-green-400);
   }
-  .border-green-800 {
-    border-color: var(--color-green-800);
-  }
   .border-lime-100 {
     border-color: var(--color-lime-100);
   }
@@ -1223,9 +1220,6 @@
   }
   .border-red-400 {
     border-color: var(--color-red-400);
-  }
-  .border-red-800 {
-    border-color: var(--color-red-800);
   }
   .border-secondary {
     border-color: var(--color-secondary);
@@ -3004,6 +2998,7 @@
         display: flex !important;
       }
       .app-buttons {
+        flex-grow: 1;
         scrollbar-width: thin;
         --tw-scrollbar-thumb: color-mix(in srgb, #4780bf 10%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
