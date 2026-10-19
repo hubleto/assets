@@ -36,6 +36,7 @@ import InputWysiwyg from "@hubleto/react-ui/components/cc/Inputs/Wysiwyg";
 import InputTextareaWithHtmlPreview from "@hubleto/react-ui/components/fc/Inputs/TextareaWithHtmlPreview";
 import InputJson from "@hubleto/react-ui/components/cc/Inputs/Json";
 import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyValue";
+import InputTextareaMarkdown from "@hubleto/react-ui/components/fc/Inputs/TextareaMarkdown";
 
 try {
 
@@ -76,6 +77,7 @@ try {
       this.registerReactComponent('InputTextareaWithHtmlPreview', InputTextareaWithHtmlPreview);
       this.registerReactComponent('InputJson', InputJson);
       this.registerReactComponent('InputJsonKeyValue', InputJsonKeyValue);
+      this.registerReactComponent('InputTextareaMarkdown', InputTextareaMarkdown);
 
       // Hubleto components
       this.registerReactComponent('Search', ErpSearch);
