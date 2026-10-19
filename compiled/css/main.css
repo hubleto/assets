@@ -378,6 +378,12 @@
   .z-9999999 {
     z-index: 9999999;
   }
+  .col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+  .col-span-5 {
+    grid-column: span 5 / span 5;
+  }
   .float-right {
     float: right;
   }
@@ -438,6 +444,9 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
@@ -488,9 +497,6 @@
   }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
-  }
-  .mb-0 {
-    margin-bottom: 0px;
   }
   .mb-0\.5 {
     margin-bottom: calc(var(--spacing) * 0.5);
@@ -798,9 +804,6 @@
   .max-w-92 {
     max-width: calc(var(--spacing) * 92);
   }
-  .max-w-96 {
-    max-width: calc(var(--spacing) * 96);
-  }
   .max-w-\[38vw\] {
     max-width: 38vw;
   }
@@ -948,6 +951,12 @@
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -3695,11 +3704,13 @@ div[class^="fc-forma-"] {
         }
       }
       .table-paginator {
-        margin-block: calc(var(--spacing) * 2);
+        margin-top: calc(var(--spacing) * 2);
+        margin-bottom: 0px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: calc(var(--spacing) * 2);
+        padding: var(--spacing);
       }
     }
   }

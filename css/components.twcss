@@ -90,7 +90,7 @@
       }
 
       .table-paginator {
-        @apply flex gap-2 justify-center my-2 items-center;
+        @apply flex gap-2 justify-start mt-2 items-center p-1 mb-0;
       }
 
     }
