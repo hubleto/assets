@@ -31,23 +31,26 @@ function findHubletoAppsInRepository(folder) {
 }
 
 let communityApps = findHubletoAppsInRepository(path.resolve(__dirname, '../erp/apps'))
-let enterpriseApps = findHubletoAppsInRepository(path.resolve(__dirname, '../enterprise/apps'))
 
 console.log('Found ' + communityApps.length + ' community apps.');
-console.log('Found ' + enterpriseApps.length + ' enterprise apps.');
+
+let appEntries = {};
+
+communityApps.map((app) => {
+  const appName = /\/(.*?)\/Loader/.exec(app)[1];
+  appEntries['community/' + appName] = { import: app, dependOn: 'main' };
+})
 
 export default {
   entry: {
-    main: [
-      './src/Main',
-      ...communityApps,
-      ...enterpriseApps
-    ],
+    main: './src/Main',
+    ...appEntries,
   },
   output: {
     path: path.resolve(__dirname, 'compiled/js'),
     filename: '[name].js',
-    clean: true
+    clean: true,
+    chunkFilename: '[name].js',
   },
   module: {
     rules: [
@@ -62,34 +65,17 @@ export default {
     ],
   },
   optimization: {
+    runtimeChunk: 'single',            // one shared runtime, no duplicate bootstraps
     splitChunks: {
+      // delete your per-app cacheGroups; keep only shared code
       cacheGroups: {
-        community_apps: {
-          test: /[\\/]erp[\\/]apps[\\/]/,
-          name: 'community-apps',
-          chunks: 'all'
-        },
-        enterprise_apps: {
-          test: /[\\/]enterprise[\\/]apps[\\/]/,
-          name: 'enterprise-apps',
-          chunks: 'all'
-        },
-        react_ui: {
-          test: /[\\/]react-ui[\\/]/,
-          name: 'react-ui',
-          chunks: 'all'
-        },
-        modules: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'modules',
-          chunks: 'all'
-        }
-      }
+        modules: { test: /[\\/]node_modules[\\/]/, name: 'modules', chunks: 'all', enforce: true },
+        reactUi: { test: /[\\/]hubleto[\\/]src[\\/]react-ui[\\/]/, name: 'react-ui', chunks: 'all', enforce: true },
+      },
     },
   },
   resolve: {
     modules: [
-      path.resolve(__dirname, './node_modules'),
       path.resolve(__dirname, '../react-ui/node_modules'),
     ],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'],

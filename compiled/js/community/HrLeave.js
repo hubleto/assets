@@ -1,0 +1,68 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["community/HrLeave"],{
+
+/***/ "../erp/apps/HrLeave/Components/FC/FormLeave.tsx"
+/*!*******************************************************!*\
+  !*** ../erp/apps/HrLeave/Components/FC/FormLeave.tsx ***!
+  \*******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _hubleto_react_ui_core_Translator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/core/Translator */ \"../react-ui/core/Translator.tsx\");\n/* harmony import */ var _hubleto_react_ui_components_fc_Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/Form */ \"../react-ui/components/fc/Form.tsx\");\n/* harmony import */ var _hubleto_react_ui_components_fc_FormInterfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/FormInterfaces */ \"../react-ui/components/fc/FormInterfaces.ts\");\n/* harmony import */ var _hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/FormComponents/Input */ \"../react-ui/components/fc/FormComponents/Input.tsx\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"../react-ui/node_modules/react/jsx-dev-runtime.js\");\n\n\n\n\n\nconst componentName = 'FormLeave';\nconst parentApp = 'Hubleto/App/Community/HrLeave';\nconst T = new _hubleto_react_ui_core_Translator__WEBPACK_IMPORTED_MODULE_0__[\"default\"](parentApp + '/Loader', 'Components/' + componentName);\nconst FormLeave = props => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_Form__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n  componentName: componentName,\n  parentApp: parentApp,\n  model: parentApp + '/Models/Leave',\n  urlSlug: \"hr-leave/balances\",\n  title: {\n    field: 'year',\n    sub: T.translate('Leave entitlement')\n  },\n  tabs: {\n    default: {\n      content: () => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(\"div\", {\n        className: \"grid grid-cols-1 md:grid-cols-2 gap-2\",\n        children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n          field: \"id_user\"\n        }, void 0, false), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n          field: \"id_leave_type\"\n        }, void 0, false), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n          field: \"year\"\n        }, void 0, false), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n          field: \"days_entitled\"\n        }, void 0, false), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxDEV)(_hubleto_react_ui_components_fc_FormComponents_Input__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n          field: \"days_carried_over\"\n        }, void 0, false)]\n      }, void 0, true)\n    }\n  },\n  ...props\n}, void 0, false);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormLeave);\n\n//# sourceURL=webpack:///../erp/apps/HrLeave/Components/FC/FormLeave.tsx?\n}");
+
+/***/ },
+
+/***/ "../erp/apps/HrLeave/Components/FC/TableLeaveRequests.tsx"
+/*!****************************************************************!*\
+  !*** ../erp/apps/HrLeave/Components/FC/TableLeaveRequests.tsx ***!
+  \****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/Table */ \"../react-ui/components/fc/Table.tsx\");\n/* harmony import */ var _hubleto_react_ui_components_fc_TableInterfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/TableInterfaces */ \"../react-ui/components/fc/TableInterfaces.tsx\");\n/* harmony import */ var _FormLeave__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormLeave */ \"../erp/apps/HrLeave/Components/FC/FormLeave.tsx\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"../react-ui/node_modules/react/jsx-dev-runtime.js\");\n\n\n\n\nconst componentName = 'TableLeaveRequests';\nconst parentApp = 'Hubleto/App/Community/HrLeave';\nconst TableLeaveRequests = props => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n  componentName: componentName,\n  parentApp: parentApp,\n  model: parentApp + '/Models/LeaveRequest',\n  baseUrlSlug: \"hr-leaves/requests\",\n  formModalProps: {\n    type: 'right wide'\n  },\n  renderForm: table => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_FormLeave__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    ...table.getDefaultFormProps()\n  }, void 0, false),\n  ...props\n}, void 0, false);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableLeaveRequests);\n\n//# sourceURL=webpack:///../erp/apps/HrLeave/Components/FC/TableLeaveRequests.tsx?\n}");
+
+/***/ },
+
+/***/ "../erp/apps/HrLeave/Components/FC/TableLeaveTypes.tsx"
+/*!*************************************************************!*\
+  !*** ../erp/apps/HrLeave/Components/FC/TableLeaveTypes.tsx ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/Table */ \"../react-ui/components/fc/Table.tsx\");\n/* harmony import */ var _hubleto_react_ui_components_fc_TableInterfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/TableInterfaces */ \"../react-ui/components/fc/TableInterfaces.tsx\");\n/* harmony import */ var _FormLeave__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormLeave */ \"../erp/apps/HrLeave/Components/FC/FormLeave.tsx\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"../react-ui/node_modules/react/jsx-dev-runtime.js\");\n\n\n\n\nconst componentName = 'TableLeaveTypes';\nconst parentApp = 'Hubleto/App/Community/HrLeave';\nconst TableLeaveTypes = props => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n  componentName: componentName,\n  parentApp: parentApp,\n  model: parentApp + '/Models/LeaveType',\n  baseUrlSlug: \"hr-leaves/types\",\n  formModalProps: {\n    type: 'right wide'\n  },\n  renderForm: table => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_FormLeave__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    ...table.getDefaultFormProps()\n  }, void 0, false),\n  ...props\n}, void 0, false);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableLeaveTypes);\n\n//# sourceURL=webpack:///../erp/apps/HrLeave/Components/FC/TableLeaveTypes.tsx?\n}");
+
+/***/ },
+
+/***/ "../erp/apps/HrLeave/Components/FC/TableLeaves.tsx"
+/*!*********************************************************!*\
+  !*** ../erp/apps/HrLeave/Components/FC/TableLeaves.tsx ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/Table */ \"../react-ui/components/fc/Table.tsx\");\n/* harmony import */ var _hubleto_react_ui_components_fc_TableInterfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hubleto/react-ui/components/fc/TableInterfaces */ \"../react-ui/components/fc/TableInterfaces.tsx\");\n/* harmony import */ var _FormLeave__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormLeave */ \"../erp/apps/HrLeave/Components/FC/FormLeave.tsx\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"../react-ui/node_modules/react/jsx-dev-runtime.js\");\n\n\n\n\nconst componentName = 'TableLeaves';\nconst parentApp = 'Hubleto/App/Community/HrLeave';\nconst TableLeaves = props => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_hubleto_react_ui_components_fc_Table__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n  componentName: componentName,\n  parentApp: parentApp,\n  model: parentApp + '/Models/Leave',\n  baseUrlSlug: \"hr-leaves\",\n  formModalProps: {\n    type: 'right wide'\n  },\n  renderForm: table => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxDEV)(_FormLeave__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    ...table.getDefaultFormProps()\n  }, void 0, false),\n  ...props\n}, void 0, false);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableLeaves);\n\n//# sourceURL=webpack:///../erp/apps/HrLeave/Components/FC/TableLeaves.tsx?\n}");
+
+/***/ },
+
+/***/ "../erp/apps/HrLeave/Loader.tsx"
+/*!**************************************!*\
+  !*** ../erp/apps/HrLeave/Loader.tsx ***!
+  \**************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hubleto_react_ui_core_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @hubleto/react-ui/core/App */ \"../react-ui/core/App.tsx\");\n/* harmony import */ var _Components_FC_TableLeaves__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Components/FC/TableLeaves */ \"../erp/apps/HrLeave/Components/FC/TableLeaves.tsx\");\n/* harmony import */ var _Components_FC_TableLeaveRequests__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/FC/TableLeaveRequests */ \"../erp/apps/HrLeave/Components/FC/TableLeaveRequests.tsx\");\n/* harmony import */ var _Components_FC_TableLeaveTypes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/FC/TableLeaveTypes */ \"../erp/apps/HrLeave/Components/FC/TableLeaveTypes.tsx\");\n\n\n\n\nclass HrLeaveApp extends _hubleto_react_ui_core_App__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  init() {\n    super.init();\n    globalThis.hubleto.registerReactComponent('HrLeaveTableLeaves', _Components_FC_TableLeaves__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n    globalThis.hubleto.registerReactComponent('HrLeaveTableLeaveRequests', _Components_FC_TableLeaveRequests__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n    globalThis.hubleto.registerReactComponent('HrLeaveTableLeaveTypes', _Components_FC_TableLeaveTypes__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n  }\n}\nglobalThis.hubleto.registerApp('Hubleto/App/Community/HrLeave', new HrLeaveApp());\n\n//# sourceURL=webpack:///../erp/apps/HrLeave/Loader.tsx?\n}");
+
+/***/ }
+
+},
+/******/ __webpack_require__ => { // webpackRuntimeModules
+/******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+/******/ __webpack_require__.O(0, ["react-ui","modules","main"], () => (__webpack_exec__("../erp/apps/HrLeave/Loader.tsx")));
+/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ }
+]);
