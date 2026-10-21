@@ -1,9 +1,6 @@
-// const path = require('path');
-// const fs = require('fs');
-
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { pathToFileURL } from 'url';
 
 export default async (env) => {
   const logCyan = (s) => console.log('\x1b[36m%s\x1b[0m', s);
@@ -17,7 +14,7 @@ export default async (env) => {
   if (!fs.existsSync(loaderFullPath)) {
     loaderFullPath = path.resolve(process.cwd(), 'vendor', 'hubleto', 'assets', 'assets.config.js');
   }
-  logYellow('Using loader: ' + loaderFullPath);
+  logYellow('Configuration file: ' + loaderFullPath);
 
   const loader = await import(pathToFileURL(loaderFullPath).href);
 

@@ -21,7 +21,6 @@ eval("{// import TableCalendarSyncSources from \"./Components/TableCalendarSyncS
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["react-ui","modules","main"], () => (__webpack_exec__("../erp/apps/Usage/Loader.tsx")));
-/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ var __webpack_exports__ = (__webpack_exec__("../erp/apps/Usage/Loader.tsx"));
 /******/ }
 ]);
