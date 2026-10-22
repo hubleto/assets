@@ -2618,9 +2618,11 @@
     }
   }
   progress::-webkit-progress-value {
-    border-radius: 0.25rem;
+    background-color: var(--color-primary);
+  }
+  progress::-webkit-progress-inner-element {
+    border-radius: var(--radius-sm);
     background-color: var(--color-white);
-    color: var(--color-primary);
   }
   .dark::placeholder {
     color: var(--color-white);
