@@ -1350,6 +1350,9 @@
   .bg-gray-300 {
     background-color: var(--color-gray-300);
   }
+  .bg-gray-400 {
+    background-color: var(--color-gray-400);
+  }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
   }
@@ -2621,8 +2624,7 @@
     background-color: var(--color-primary);
   }
   progress::-webkit-progress-bar {
-    border-radius: var(--radius-sm);
-    background-color: var(--color-white);
+    background-color: var(--color-gray-400);
   }
   .dark::placeholder {
     color: var(--color-white);
