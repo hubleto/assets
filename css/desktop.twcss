@@ -32,7 +32,8 @@
   code { @apply bg-slate-100 p-1; }
   input, textarea, select { @apply border border-slate-200 flex flex-1 rounded-sm w-full p-0.5 dark:border-slate-500; }
 
-  progress::-webkit-progress-value { @apply text-primary bg-white rounded }
+  progress::-webkit-progress-value { @apply bg-primary }
+  progress::-webkit-progress-inner-element { @apply bg-white rounded-sm }
 
   .dark::placeholder { @apply text-white; }
   .flex-dyn { @apply flex flex-col gap-2 md:flex-row; }
