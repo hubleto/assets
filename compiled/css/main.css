@@ -813,9 +813,6 @@
   .max-w-92 {
     max-width: calc(var(--spacing) * 92);
   }
-  .max-w-96 {
-    max-width: calc(var(--spacing) * 96);
-  }
   .max-w-120 {
     max-width: calc(var(--spacing) * 120);
   }
@@ -2276,9 +2273,6 @@
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .md\:grid-cols-5 {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
     .md\:grid-cols-6 {
       grid-template-columns: repeat(6, minmax(0, 1fr));
     }
@@ -2622,6 +2616,11 @@
     &:where(.dark, .dark *) {
       border-color: var(--color-slate-500);
     }
+  }
+  progress::-webkit-progress-value {
+    border-radius: 0.25rem;
+    background-color: var(--color-white);
+    color: var(--color-primary);
   }
   .dark::placeholder {
     color: var(--color-white);
