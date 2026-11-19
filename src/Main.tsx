@@ -1,6 +1,5 @@
 declare global {
   var dictionary: any;
-  var main: any;
   var hubleto: any;
 }
 
@@ -39,8 +38,8 @@ import InputJson from "@hubleto/react-ui/components/cc/Inputs/Json";
 import InputJsonKeyValue from "@hubleto/react-ui/components/cc/Inputs/JsonKeyValue";
 import InputTextareaMarkdown from "@hubleto/react-ui/components/fc/Inputs/TextareaMarkdown";
 
-try {
 
+try {
   class HubletoErp extends HubletoReactUi {
     language: string = 'en';
     currencySymbol: string = '€';
@@ -51,6 +50,7 @@ try {
     users: any;
     apps: any = {};
     debugTranslations: boolean = false;
+    locale: any = {};
 
     constructor(config: any) {
       super(config);
@@ -90,6 +90,18 @@ try {
     }
 
     init() {
+      for (let appNamespace in this.apps) {
+        this.apps[appNamespace].init();
+      }
+
+      this.renderReactElements();
+      this.createThemeObserver();
+      this.registerShortcuts();
+      this.getUsersInfo();
+      this.loadLocale();
+    }
+
+    getUsersInfo() {
       request.post(
         'api/get-users',
         {},
@@ -98,10 +110,40 @@ try {
           this.users = data;
         }
       );
-      for (let appNamespace in this.apps) {
-        // console.log('Init app ' + appNamespace);
-        this.apps[appNamespace].init();
+    }
+
+    loadLocale() {
+      const localeFromLocalStorage = localStorage.getItem("locale");
+      if (localeFromLocalStorage) {
+        try {
+          this.locale = JSON.parse(localeFromLocalStorage);
+        } catch (e) {
+          this.locale = {
+            'currencySymbol': '€',
+            'decimalsSeparator': '.',
+            'thousandsSeparator': ' ',
+            'dateShortFormat': 'Y-m-d',
+            'dateLongFormat': 'Y-m-d',
+            'datetimeFormat': 'Y-m-d H:i:s',
+            'timeFormat': 'H:i:s',
+          }
+        }
+      } else {
+        this.reloadLocale();
       }
+    }
+
+    reloadLocale() {
+      request.post(
+        'api/get-locale',
+        {},
+        {},
+        (data: any) => {
+          this.locale = data;
+          localStorage.setItem("locale", JSON.stringify(data));
+          // console.log('Reloaded locale', this.locale)
+        }
+      );
     }
 
     userHasRole(idRole: number) {
@@ -188,6 +230,7 @@ try {
     registerApp(appNamespace: string, app: App) {
       app.namespace = appNamespace;
       this.apps[appNamespace] = app;
+      // console.log('Registered app', appNamespace);
     }
 
     getApp(appNamespace: string) {
@@ -208,37 +251,22 @@ try {
       })).observe(document, { subtree: true, attributes: true });
     }
 
-    // startConsoleErrorLogger() {
-    //   console.log('Hubleto: Starting console.error debugger.');
-    //   if (window.console && console.error) {
-    //     const ce = console.error;
-    //     console.error = function() {
-    //       request.post(
-    //         'api/log-javascript-error',
-    //         {},
-    //         { errorRoute: '{{ route }}', errors: arguments }
-    //       );
-    //       ce.apply(this, arguments)
-    //     }
-    //   }
-    // }
+
+    formatCurrency(value: number, currencyIsoCode?: string, localeIsoCode?: string): string {
+      currencyIsoCode = currencyIsoCode ?? (this.locale.currencyIsoCode ?? 'EUR');
+      localeIsoCode = localeIsoCode ?? (this.locale.isoCode ?? 'en-EN');
+
+      return new Intl.NumberFormat(
+        localeIsoCode,
+        { style: "currency", currency: currencyIsoCode }
+      ).format(value);
+    }
 
   }
 
-  //@ts-ignore
-  const hubleto: HubletoErp = new HubletoErp(window.ConfigEnv);
-
-  globalThis.main = hubleto; // deprecated
+  const hubleto = new HubletoErp(globalThis.config);
   globalThis.hubleto = hubleto;
 
-  document.addEventListener('readystatechange', function() {
-    if (document.readyState === 'complete') {
-      globalThis.hubleto.init();
-      globalThis.hubleto.renderReactElements();
-      globalThis.hubleto.createThemeObserver();
-      globalThis.hubleto.registerShortcuts();
-    }
-  });
 } catch (e) {
-  console.log('Failed to init Hubleto.', e);
+  console.log('Hubleto failed to load.');
 }
