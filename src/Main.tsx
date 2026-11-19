@@ -41,6 +41,7 @@ import InputTextareaMarkdown from "@hubleto/react-ui/components/fc/Inputs/Textar
 
 try {
   class HubletoErp extends HubletoReactUi {
+    accountUid: string = '';
     language: string = 'en';
     currencySymbol: string = '€';
     idUser: number = 0;
@@ -55,6 +56,7 @@ try {
     constructor(config: any) {
       super(config);
 
+      this.accountUid = config.accountUid;
       this.idUser = config.idUser;
       this.userEmail = config.userEmail;
       this.isPremium = config.isPremium;
@@ -97,23 +99,38 @@ try {
       this.renderReactElements();
       this.createThemeObserver();
       this.registerShortcuts();
-      this.getUsersInfo();
+
+      this.loadUsers();
       this.loadLocale();
     }
 
-    getUsersInfo() {
+    loadUsers() {
+      const usersFromLocalStorage = localStorage.getItem(this.accountUid + "_users");
+      if (usersFromLocalStorage) {
+        try {
+          this.users = JSON.parse(usersFromLocalStorage);
+        } catch (e) {
+          this.users = [];
+        }
+      } else {
+        this.reloadUsers();
+      }
+    }
+
+    reloadUsers() {
       request.post(
         'api/get-users',
         {},
         {},
         (data: any) => {
           this.users = data;
+          localStorage.setItem(this.accountUid + "_users", JSON.stringify(data));
         }
       );
     }
 
     loadLocale() {
-      const localeFromLocalStorage = localStorage.getItem("locale");
+      const localeFromLocalStorage = localStorage.getItem(this.accountUid + "_locale");
       if (localeFromLocalStorage) {
         try {
           this.locale = JSON.parse(localeFromLocalStorage);
@@ -140,8 +157,7 @@ try {
         {},
         (data: any) => {
           this.locale = data;
-          localStorage.setItem("locale", JSON.stringify(data));
-          // console.log('Reloaded locale', this.locale)
+          localStorage.setItem(this.accountUid + "_locale", JSON.stringify(data));
         }
       );
     }
@@ -241,7 +257,7 @@ try {
       // MutationObserver looks for changes in DOM. Anytime a change is detected,
       // a light or dark theme is applied to changed or newly created DOM elements.
       (new MutationObserver((mutations, observer) => {
-        if (localStorage.theme == "dark") {
+        if (localStorage.getItem(this.accountUid + "_theme") == "dark") {
           // Whenever the user explicitly chooses light mode
           $('*').addClass('dark');
         } else {
